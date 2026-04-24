@@ -21,7 +21,6 @@ async function main() {
 
     console.log('🌱 Iniciando seed...');
 
-    // 1. Usuarios
     console.log('👤 Inserindo usuários...');
     await prisma.usuario.createMany({
         data: [
@@ -46,7 +45,6 @@ async function main() {
         ],
     });
 
-    // 2. Livros
     console.log('📚 Inserindo livros...');
     await prisma.livro.createMany({
         data: [
@@ -68,7 +66,6 @@ async function main() {
         ],
     });
 
-    // 3. VideoAulas
     console.log('🎥 Inserindo vídeo aulas...');
     await prisma.videoAula.createMany({
         data: [
@@ -82,7 +79,6 @@ async function main() {
         ],
     });
 
-    // 4. Curiosidades
     console.log('💡 Inserindo curiosidades...');
     await prisma.curiosidade.createMany({
         data: [
@@ -95,7 +91,6 @@ async function main() {
         ],
     });
 
-    // 5. Dicas
     console.log('📌 Inserindo dicas...');
     await prisma.dicas.createMany({
         data: [
@@ -108,7 +103,6 @@ async function main() {
         ],
     });
 
-    // 6. Simulados
     console.log('📝 Inserindo simulados...');
     await prisma.simulado.createMany({
         data: [

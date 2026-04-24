@@ -1,4 +1,3 @@
-// Configuração do banco (ajuste conforme seu .env)
 datasource db {
     provider = "postgresql"
 }
@@ -35,7 +34,6 @@ model Livro {
     analysis          String
 }
 
-// 3. Tabela de Vídeo Aula
 model VideoAula {
     id          Int    @id @default(autoincrement())
     conteudo    String
