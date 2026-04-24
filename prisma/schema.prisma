@@ -1,16 +1,86 @@
-generator client {
-    provider = "prisma-client-js"
-}
-
+// Configuração do banco (ajuste conforme seu .env)
 datasource db {
     provider = "postgresql"
 }
 
-model Exemplo {
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Usuario {
     id        Int      @id @default(autoincrement())
     nome      String
-    estado    Boolean  @default(true)
-    preco     Decimal? @db.Decimal(10, 2)
+    curso     String
+    curse     String
+    foto      String
+    idade     String
+    age       String
+    email     String   @unique
+    createdAt DateTime @default(now())
+}
 
-    @@map("exemplo")
+model Livro {
+    id                Int    @id @default(autoincrement())
+    titulo            String
+    title             String
+    autor             String
+    author            String
+    anoPublicacao     Int
+    publicationYear   Int
+    genero            String
+    genre             String
+    resumo            String @db.Text
+    resume            String @db.Text
+    personagens       String
+    characters        String
+    contextoHistorico String
+    historicContext   String
+    analise           String
+    analysis          String
+}
+
+// 3. Tabela de Vídeo Aula
+model VideoAula {
+    id          Int    @id @default(autoincrement())
+    conteudo    String
+    content     String
+    urlMidia    String
+    descricao   String
+    description String
+}
+
+model Curiosidade {
+    id          Int    @id @default(autoincrement())
+    conteudo    String
+    content     String
+    curiosidade String
+    curiosity   String
+}
+
+model Dicas {
+    id       Int    @id @default(autoincrement())
+    conteudo String
+    content  String
+    dicas    String
+    tips     String
+}
+
+model Simulado {
+    id              Int    @id @default(autoincrement())
+    pergunta        String
+    question        String
+    opcaoA          String
+    optionA         String
+    opcaoB          String
+    optionB         String
+    opcaoC          String
+    optionC         String
+    opcaoD          String
+    optionD         String
+    opcaoE          String
+    optionE         String
+    respostaCorreta String
+    correctAnswer   String
+    explicacao      String
+    explanation     String
 }
