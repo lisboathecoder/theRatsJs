@@ -1,5 +1,5 @@
 import express from 'express';
-import * as controller from '../controllers/exemploController.js';
+import * as controller from '../controllers/livroController.js';
 
 const router = express.Router();
 
@@ -9,4 +9,4 @@ router.get('/:id', controller.buscarPorId);
 router.put('/:id', controller.atualizar);
 router.delete('/:id', controller.deletar);
 
-export default router;
+export default router;  
