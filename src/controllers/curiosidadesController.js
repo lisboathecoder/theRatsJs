@@ -1,4 +1,4 @@
-import ParticipantesModel from '../models/participantesModel.js';
+import CuriosidadesModel from '../models/CuriosidadesModel.js';
 
 export const criar = async (req, res) => {
     try {
@@ -6,46 +6,31 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const { nome, curso, curse, foto, idade, age, email } = req.body;
+        const { conteudo, content, curiosidade, curiosity } = req.body;
 
-        if (!nome) {
-            return res.status(400).json({ error: 'O campo "nome" é obrigatório!' });
+        if (!conteudo) {
+            return res.status(400).json({ error: 'O campo "conteudo" é obrigatório!' });
         }
 
-        if (!curso) {
-            return res.status(400).json({ error: 'O campo "curso" é obrigatório!' });
+        if (!content) {
+            return res.status(400).json({ error: 'O campo "content" é obrigatório!' });
         }
 
-        if (!curse) {
-            return res.status(400).json({ error: 'O campo "curse" é obrigatório!' });
+        if (!curiosidade) {
+            return res.status(400).json({ error: 'O campo "curiosidade" é obrigatório!' });
         }
 
-        if (!foto) {
-            return res.status(400).json({ error: 'O campo "foto" é obrigatório!' });
+        if (!curiosity) {
+            return res.status(400).json({ error: 'O campo "curiosity" é obrigatório!' });
         }
 
-        if (!idade) {
-            return res.status(400).json({ error: 'O campo "idade" é obrigatório!' });
-        }
-
-        if (!age) {
-            return res.status(400).json({ error: 'O campo "age" é obrigatório!' });
-        }
-
-        if (!email) {
-            return res.status(400).json({ error: 'O campo "email" é obrigatório!' });
-        }
-
-        const participante = new ParticipantesModel({
-            nome,
-            curso,
-            curse,
-            foto,
-            idade,
-            age,
-            email,
+        const curiosidade1 = new CuriosidadesModel({
+            conteudo,
+            content,
+            curisiosidades,
+            curiosity,
         });
-        const data = await participante.criar();
+        const data = await curiosidade1.criar();
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });
     } catch (error) {
         console.error('Erro ao criar:', error);
@@ -55,7 +40,7 @@ export const criar = async (req, res) => {
 
 export const buscarTodos = async (req, res) => {
     try {
-        const registros = await ParticipantesModel.buscarTodos(req.query);
+        const registros = await CuriosidadesModel.buscarTodos(req.query);
 
         if (!registros || registros.length === 0) {
             return res.status(400).json({ message: 'Nenhum registro encontrado.' });
@@ -76,13 +61,13 @@ export const buscarPorId = async (req, res) => {
             return res.status(400).json({ error: 'O ID enviado não é um número válido.' });
         }
 
-        const participante = await ParticipantesModel.buscarPorId(parseInt(id));
+        const curiosidade = await CuriosidadesModel.buscarPorId(parseInt(id));
 
-        if (!participante) {
+        if (!curiosidade) {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
-        return res.status(200).json({ data: participante });
+        return res.status(200).json({ data: curiosidade });
     } catch (error) {
         console.error('Erro ao buscar:', error);
         return res.status(500).json({ error: 'Erro ao buscar registro.' });
@@ -101,21 +86,21 @@ export const atualizar = async (req, res) => {
             return res.status(400).json({ error: 'Corpo da requisição vazio. Envie os dados!' });
         }
 
-        const participante = await ParticipantesModel.buscarPorId(parseInt(id));
+        const curiosidade = await CuriosidadesModel.buscarPorId(parseInt(id));
 
-        if (!participante) {
+        if (!curiosidade) {
             return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
         }
 
-        if (req.body.nome!== undefined) {
-            participante.nome = req.body.nome;
+        if (req.body.conteudo !== undefined) {
+            curiosidade.conteudo = req.body.conteudo;
         }
 
-        const data = await participante.atualizar();
+        const data = await curiosidade.atualizar();
 
         return res
             .status(200)
-            .json({ message: `O registro "${data.nome}" foi atualizado com sucesso!`, data });
+            .json({ message: `O registro "${data.conteudo}" foi atualizado com sucesso!`, data });
     } catch (error) {
         console.error('Erro ao atualizar:', error);
         return res.status(500).json({ error: 'Erro ao atualizar registro.' });
@@ -130,19 +115,17 @@ export const deletar = async (req, res) => {
             return res.status(400).json({ error: 'ID inválido.' });
         }
 
-        const participante = await ParticipantesModel.buscarPorId(parseInt(id));
+        const curiosidade = await CuriosidadesModel.buscarPorId(parseInt(id));
 
-        if (!participante) {
+        if (!curiosidade) {
             return res.status(404).json({ error: 'Registro não encontrado para deletar.' });
         }
 
-        await participante.deletar();
-        return res
-            .status(200)
-            .json({
-                message: `O registro "${participante.nome}" foi deletado com sucesso!`,
-                deletado: participante  ,
-            });
+        await curiosidade.deletar();
+        return res.status(200).json({
+            message: `O registro "${curiosidade.conteudo}" foi deletado com sucesso!`,
+            deletado: curiosidade,
+        });
     } catch (error) {
         console.error('Erro ao deletar:', error);
         return res.status(500).json({ error: 'Erro ao deletar registro.' });
