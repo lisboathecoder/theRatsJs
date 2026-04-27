@@ -11,7 +11,7 @@ const prisma = new PrismaClient({ adapter });
 async function main() {
     console.log('🌱 Resetando tabelas...');
 
-    await prisma.usuario.deleteMany();
+    await prisma.participantes.deleteMany();
     await prisma.livro.deleteMany();
     await prisma.videoAula.deleteMany();
     await prisma.curiosidade.deleteMany();
@@ -21,7 +21,7 @@ async function main() {
     console.log('📦 Inserindo dados...');
 
     // Usuario
-    await prisma.usuario.createMany({
+    await prisma.participantes.createMany({
         data: [
             {
                 nome: 'Arthur Morais',
@@ -48,35 +48,38 @@ async function main() {
     await prisma.livro.createMany({
         data: [
             {
-                titulo: "Os Ratos",
-                autor: "Dyonélio Machado",
+                titulo: 'Os Ratos',
+                autor: 'Dyonélio Machado',
+                capa: 'https://i.ibb.co/kgkfQfXh/the-rats.jpg',
                 anoPublicacao: 1935,
-                genero: "Romance psicológico, Realismo",
-                genre: "Psychological novel, Realism",
+                genero: 'Romance psicológico, Realismo',
+                genre: 'Psychological novel, Realism',
 
-                resumo: "O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir dinheiro suficiente para pagar uma dívida urgente de 53 mil-réis com o leiteiro. Ao longo do dia, ele percorre a cidade tentando empréstimos, ajuda de amigos e alternativas para resolver seu problema. Sua jornada é marcada por ansiedade crescente, humilhações, frustrações e um profundo sentimento de impotência diante das dificuldades financeiras. Ao final, mesmo quando encontra uma possível solução, sua mente permanece atormentada pela insegurança e pelo medo constante da falta de dinheiro.",
+                resumo: 'O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir dinheiro suficiente para pagar uma dívida urgente de 53 mil-réis com o leiteiro. Ao longo do dia, ele percorre a cidade tentando empréstimos, ajuda de amigos e alternativas para resolver seu problema. Sua jornada é marcada por ansiedade crescente, humilhações, frustrações e um profundo sentimento de impotência diante das dificuldades financeiras. Ao final, mesmo quando encontra uma possível solução, sua mente permanece atormentada pela insegurança e pelo medo constante da falta de dinheiro.',
 
-                resume: "The novel follows a single day in the life of Naziazeno Barbosa, a low-level public clerk in Porto Alegre who desperately needs money to pay a small but urgent debt to the milkman. Throughout the day, he wanders the city seeking loans and help, facing humiliation, anxiety, and frustration. Even when a possible solution appears, his mind remains trapped in insecurity and fear of poverty.",
+                resume: 'The novel follows a single day in the life of Naziazeno Barbosa, a low-level public clerk in Porto Alegre who desperately needs money to pay a small but urgent debt to the milkman. Throughout the day, he wanders the city seeking loans and help, facing humiliation, anxiety, and frustration. Even when a possible solution appears, his mind remains trapped in insecurity and fear of poverty.',
 
                 personagens: [
-                    "Naziazeno Barbosa",
-                    "Adelaide",
-                    "Duque",
-                    "Alcides",
-                    "Dr. Mondina",
-                    "Leiteiro"
+                    'Naziazeno Barbosa',
+                    'Adelaide',
+                    'Duque',
+                    'Alcides',
+                    'Dr. Mondina',
+                    'Leiteiro',
                 ],
 
-                contextoHistorico: "Brasil urbano da década de 1930, período de crise econômica, crescimento das cidades e aumento das desigualdades sociais após a Revolução de 1930.",
+                contextoHistorico:
+                    'Brasil urbano da década de 1930, período de crise econômica, crescimento das cidades e aumento das desigualdades sociais após a Revolução de 1930.',
 
-                historicContext: "Urban Brazil in the 1930s, marked by economic instability, urban growth, and rising social inequality following the 1930 Revolution.",
+                historicContext:
+                    'Urban Brazil in the 1930s, marked by economic instability, urban growth, and rising social inequality following the 1930 Revolution.',
 
-                analise: "A obra é uma profunda análise psicológica da pobreza e da ansiedade. O autor utiliza fluxo de consciência para mostrar o desespero interno de Naziazeno, evidenciando como a falta de dinheiro afeta não apenas a vida material, mas também a saúde mental. O livro critica a desigualdade social, a burocracia e a fragilidade das relações humanas em um contexto de necessidade. O título 'Os Ratos' simboliza tanto a degradação quanto o pensamento obsessivo que 'corrói' a mente do protagonista.",
+                analise:
+                    "A obra é uma profunda análise psicológica da pobreza e da ansiedade. O autor utiliza fluxo de consciência para mostrar o desespero interno de Naziazeno, evidenciando como a falta de dinheiro afeta não apenas a vida material, mas também a saúde mental. O livro critica a desigualdade social, a burocracia e a fragilidade das relações humanas em um contexto de necessidade. O título 'Os Ratos' simboliza tanto a degradação quanto o pensamento obsessivo que 'corrói' a mente do protagonista.",
 
-                analysis: "The novel offers a deep psychological exploration of poverty and anxiety. Through stream of consciousness, it portrays Naziazeno’s inner turmoil, showing how financial struggle impacts mental health. It criticizes social inequality, bureaucracy, and fragile human relationships. The title 'The Rats' symbolizes both decay and the obsessive thoughts that gnaw at the protagonist’s mind.",
-
-
-            }
+                analysis:
+                    "The novel offers a deep psychological exploration of poverty and anxiety. Through stream of consciousness, it portrays Naziazeno’s inner turmoil, showing how financial struggle impacts mental health. It criticizes social inequality, bureaucracy, and fragile human relationships. The title 'The Rats' symbolizes both decay and the obsessive thoughts that gnaw at the protagonist’s mind.",
+            },
         ],
     });
 
