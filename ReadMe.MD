@@ -1,54 +1,87 @@
-# 1. Criar projeto
-- npm init -y
+# 📚 Clube do Livro - Projeto Integrador (SENAI + SESI)
 
-# 2. Ajustar package.json
-- Adicionar: "type": "module"
-- Adicionar: "main": "server.js"
-- Adicionar dentro do script: "dev": "nodemon server.js"
+![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-# 3. Instalar dependência
-- npm i express dotenv pg @prisma/client @prisma/adapter-pg
-- npm i -D nodemon prisma
+## 📖 Sobre o Projeto
+Este projeto é fruto da integração entre as disciplinas de **Desenvolvimento de Sistemas (SENAI)** e **Língua Portuguesa/Inglês (SESI)**. Trata-se de uma plataforma digital colaborativa focada no estudo de obras literárias essenciais para vestibulares.
 
-# 4. Inicializar Prisma
-- npx prisma init --datasource-provider postgresql
+O foco da nossa equipe é a obra: **[Os Ratos]**.
 
-# 5. Configurar `.env`
-- PORT=3000
-- DATABASE_URL="postgresql://usuario:senha@localhost:porta/nome_do_banco_db"
+A plataforma é totalmente bilíngue (Português/Inglês), com traduções adaptadas manualmente para garantir a fidelidade acadêmica e literária.
 
-# 6. Configurar schema.prisma
-- crie suas tabelas
+---
 
-# 7. Gerar SQL
-- npx prisma migrate dev --name init
-- npx prisma generate
+## 🛠️ Tecnologias Utilizadas
 
-# 8. Semear dados no banco
-- npx prisma db seed
+### Backend
+- **Runtime:** Node.js
+- **Arquitetura:** API REST
+- **Banco de Dados:** PostgreSQL
 
-# 9. Abrir Prisma Studio
-- npx prisma studio
+### Frontend
+- **Framework** React (web)
+- **Consumo de API:** Axios
 
-## Casos de erros
+---
 
-### Após alterar schema.prisma
-- npx prisma migrate dev --name nome_da_alteracao (exemplo: adicionar_tabela_users)
-- npx prisma generate
+## 🚀 Funcionalidades Principais
 
-### Banco inconsistente (⚠️ APAGA TUDO)
-- npx prisma migrate reset
+- 🏠 **Home:** Apresentação visual da obra principal e navegação.
+- 📘 **Análise Literária:** Resumo, personagens e contexto histórico detalhado.
+- 📚 **Biblioteca Integrada:** Consumo de APIs das outras 4 equipes para exibir informações de outras obras.
+- 🎓 **Foco Vestibular:** Dicas de interpretação e possíveis temas de redação.
+- 📝 **Simulados:** Quiz interativo com questões estilo vestibular e correção automática.
+- 🎥 **Videoaula:** Conteúdo audiovisual produzido pela equipe sobre a obra.
+- 🌍 **Suporte Bilíngue:** Todo o sistema disponível em PT-BR e EN-US (tradução manual).
 
-### Apenas popular dados
-- npx prisma db seed
+---
 
-### Dicas
-|   Comando       | Apaga dados?    | Cria migrations? | Uso            |
-| --------------- | ------------    | ---------------- | -------------- |
-| `migrate dev`   | ❌ Não          | ✅ Sim          | Alterar schema |
-| `db seed`       | ❌ Não          | ❌ Não          | Popular dados  |
-| `migrate reset` | ✅ SIM          | ❌ Não          | DEV only       |
+## 👥 Equipe e Funções
+| Integrante | Curso | Função Principal |
+| :--- | :--- | :--- |
+| [Gustavo Teixeira] | Desenvolvimento de Sistemas | Backend / DB |
+| [João Victor] | Desenvolvimento de Sistemas | Backend / DB |
+| [Arthur Morais] | Desenvolvimento de Sistemas | Backend / Frontend |
+| [Victor Ferreira] | Desenvolvimento de Sistemas | Frontend / Figma|
+| [Pedro Urbano] | Desenvolvimento de Sistemas | Frontend / Figma|
+| [Rafael Santos] | Desenvolvimento de Sistemas | Backend / DB |
 
-## Clonou repositório e não existe o banco em seu PC?
-- npm i
-- Siga os passos 5, 7 e 8
+---
+
+## 📂 Estrutura de Documentação
+- [x] Levantamento de Requisitos e Escopo
+- [x] Regras de Negócio
+- [x] Diagrama de Banco de Dados (DER)
+- [x] Cronograma de Gantt
+- [x] Documentação da API (Postman/Swagger)
+
+---
+
+## ⚙️ Como Executar o Projeto
+
+### Pré-requisitos
+- Node.js instalado
+- PostgreSQL configurado
+
+### Passo a passo
+1. **Clonar o repositório**
+   ```bash
+   git clone [https://github.com/seu-usuario/nome-do-projeto.git](https://github.com/seu-usuario/nome-do-projeto.git)
+
+2. **Configurar o Backend**
+```bash
+cd backend
+npm install
+# Configure suas variáveis de ambiente no arquivo .env
+npm start
+```
+
+3. Configurar o Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
