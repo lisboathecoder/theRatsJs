@@ -3,6 +3,7 @@ import 'dotenv/config';
 import livroRoutes from './routes/livroRoute.js';
 import participantesRoutes from './routes/participantesRoute.js';
 import curiosidadesRoutes from './routes/curiosidadesRoute.js';
+import dicasRoutes from './routes/dicasRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,11 +18,12 @@ app.get('/', (req, res) => {
 app.use('/api/livros', livroRoutes);
 app.use('/api/participantes', participantesRoutes);
 app.use('/api/curiosidades', curiosidadesRoutes);
+app.use('/api/dicas', dicasRoutes)
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+    console.log(`📚 Biblioteca rodando em http://localhost:${PORT}`);
 });
