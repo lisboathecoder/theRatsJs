@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 // Rotas
 app.use('/api/livros', livroRoutes);
 app.use('/api/participantes', participantesRoutes);
-app.use('/api/curiosidades', participantesRoutes);
+app.use('/api/curiosidades', curiosidadesRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });

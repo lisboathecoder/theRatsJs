@@ -39,8 +39,8 @@ export default class CuriosidadesModel {
     static async buscarTodos(filtros = {}) {
         const where = {};
 
-        if (filtros.nome) {
-            where.nome = { contains: filtros.nome, mode: 'insensitive' };
+        if (filtros.curiosidade) {
+            where.curiosidade = { contains: filtros.curiosidade, mode: 'insensitive' };
         }
 
         return prisma.curiosidade.findMany({ where });

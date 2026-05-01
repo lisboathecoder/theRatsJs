@@ -25,22 +25,85 @@ async function main() {
         data: [
             {
                 nome: 'Arthur Morais',
-                curso: 'Engenharia',
-                curse: 'Engineering',
-                foto: 'https://foto1.com',
-                idade: '17',
-                age: '17',
-                email: 'arthur1@email.com',
+                curso: 'Desenvolvimento de Sistemas',
+                curse: 'Systems Development',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'arthur.m.santos20@aluno.senai.br',
             },
             {
-                nome: 'Maria Silva',
-                curso: 'Medicina',
-                curse: 'Medicine',
-                foto: 'https://foto2.com',
-                idade: '21',
-                age: '21',
-                email: 'maria@email.com',
+                nome: 'Pedro Arthur',
+                curso: 'Eletroeletrônica',
+                curse: 'Electronics',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'pedro.vitorino7@senaisp.edu.br'
             },
+            {
+                nome: 'João Victor',
+                curso: 'Desenvolvimento de Sistemas',
+                curse: 'Systems Development',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'joao.v.gomes50@aluno.senai.br',
+            },
+            {
+                nome: 'Davi Camoleis',
+                curso: 'Eletroeletrônica',
+                curse: 'Electronics',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'davi.c.nascimento8@aluno.senai.br',
+            },
+            {
+                nome: 'Felipe Augusto',
+                curso: 'Fabricação Mecânica',
+                curse: 'Mechanical Manufacturing',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'felipe.tonhatti@portalsesisp.org.br',
+            },
+            {
+                nome: 'Rafael Santos',
+                curso: 'Desenvolvimento de Sistemas',
+                curse: 'Systems Development',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'rafael.s.mendes6@aluno.senai.br',
+            },
+            {
+                nome: 'Davi Nobrega',
+                curso: 'Eletroeletrônica',
+                curse: 'Electronics',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'davi.nobrega3@portalsesisp.org.br',
+            },
+            {
+                nome: 'Yasmim Vitória',
+                curso: 'Eletroeletrônica',
+                curse: 'Eletronics',
+                foto: '[vamos tirar a foto depois]',
+                idade: '17 anos',
+                age: '17 years old',
+                email: 'yasmim.santos56@portalsesisp.org.br',
+            },
+            {
+                nome: 'Gustavo Teixeira Lisboa',
+                curso: 'Desenvolvimento de Sistemas',
+                curse: 'Systems Development',
+                foto: '[vamos tirar a foto depois]',
+                idade: '16 anos',
+                age: '16 years old',
+                email: 'gustavo.t.lisboa@aluno.senai.br',
+            }
         ],
     });
 
@@ -52,12 +115,12 @@ async function main() {
                 autor: 'Dyonélio Machado',
                 capa: 'https://i.ibb.co/kgkfQfXh/the-rats.jpg',
                 anoPublicacao: 1935,
-                genero: 'Romance psicológico, Realismo',
-                genre: 'Psychological novel, Realism',
+                genero_pt: 'Romance psicológico, Realismo',
+                genero_en: 'Psychological novel, Realism',
 
-                resumo: 'O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir dinheiro suficiente para pagar uma dívida urgente de 53 mil-réis com o leiteiro. Ao longo do dia, ele percorre a cidade tentando empréstimos, ajuda de amigos e alternativas para resolver seu problema. Sua jornada é marcada por ansiedade crescente, humilhações, frustrações e um profundo sentimento de impotência diante das dificuldades financeiras. Ao final, mesmo quando encontra uma possível solução, sua mente permanece atormentada pela insegurança e pelo medo constante da falta de dinheiro.',
+                resumo_pt: 'O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir dinheiro suficiente para pagar uma dívida urgente de 53 mil-réis com o leiteiro. Ao longo do dia, ele percorre a cidade tentando empréstimos, ajuda de amigos e alternativas para resolver seu problema. Sua jornada é marcada por ansiedade crescente, humilhações, frustrações e um profundo sentimento de impotência diante das dificuldades financeiras. Ao final, mesmo quando encontra uma possível solução, sua mente permanece atormentada pela insegurança e pelo medo constante da falta de dinheiro.',
 
-                resume: 'The novel follows a single day in the life of Naziazeno Barbosa, a low-level public clerk in Porto Alegre who desperately needs money to pay a small but urgent debt to the milkman. Throughout the day, he wanders the city seeking loans and help, facing humiliation, anxiety, and frustration. Even when a possible solution appears, his mind remains trapped in insecurity and fear of poverty.',
+                resumo_en: 'The novel follows a single day in the life of Naziazeno Barbosa, a low-level public clerk in Porto Alegre who desperately needs money to pay a small but urgent debt to the milkman. Throughout the day, he wanders the city seeking loans and help, facing humiliation, anxiety, and frustration. Even when a possible solution appears, his mind remains trapped in insecurity and fear of poverty.',
 
                 personagens: [
                     'Naziazeno Barbosa',
@@ -68,16 +131,16 @@ async function main() {
                     'Leiteiro',
                 ],
 
-                contextoHistorico:
+                contextoHistorico_pt:
                     'Brasil urbano da década de 1930, período de crise econômica, crescimento das cidades e aumento das desigualdades sociais após a Revolução de 1930.',
 
-                historicContext:
+                contextoHistorico_en:
                     'Urban Brazil in the 1930s, marked by economic instability, urban growth, and rising social inequality following the 1930 Revolution.',
 
-                analise:
+                analise_pt:
                     "A obra é uma profunda análise psicológica da pobreza e da ansiedade. O autor utiliza fluxo de consciência para mostrar o desespero interno de Naziazeno, evidenciando como a falta de dinheiro afeta não apenas a vida material, mas também a saúde mental. O livro critica a desigualdade social, a burocracia e a fragilidade das relações humanas em um contexto de necessidade. O título 'Os Ratos' simboliza tanto a degradação quanto o pensamento obsessivo que 'corrói' a mente do protagonista.",
 
-                analysis:
+                analise_en:
                     "The novel offers a deep psychological exploration of poverty and anxiety. Through stream of consciousness, it portrays Naziazeno’s inner turmoil, showing how financial struggle impacts mental health. It criticizes social inequality, bureaucracy, and fragile human relationships. The title 'The Rats' symbolizes both decay and the obsessive thoughts that gnaw at the protagonist’s mind.",
             },
         ],
