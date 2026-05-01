@@ -42,12 +42,12 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 ## 👥 Equipe e Funções
 | Integrante | Curso | Função Principal |
 | :--- | :--- | :--- |
-| [Gustavo Teixeira] | Desenvolvimento de Sistemas | Backend / DB |
-| [João Victor] | Desenvolvimento de Sistemas | Backend / DB |
-| [Arthur Morais] | Desenvolvimento de Sistemas | Backend / Frontend |
-| [Victor Ferreira] | Desenvolvimento de Sistemas | Frontend / Figma|
-| [Pedro Urbano] | Desenvolvimento de Sistemas | Frontend / Figma|
-| [Rafael Santos] | Desenvolvimento de Sistemas | Backend / DB |
+| Gustavo Teixeira | Desenvolvimento de Sistemas | Backend / DB |
+| João Victor | Desenvolvimento de Sistemas | Backend / DB |
+| Arthur Morais | Desenvolvimento de Sistemas | Backend / Frontend |
+| Victor Ferreira | Desenvolvimento de Sistemas | Frontend / Figma|
+| Pedro Urbano | Desenvolvimento de Sistemas | Frontend / Figma|
+| Rafael Santos | Desenvolvimento de Sistemas | Backend / DB |
 
 ---
 
