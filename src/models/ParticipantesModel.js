@@ -61,6 +61,10 @@ export default class ParticipantesModel {
             where.nome = { contains: filtros.nome, mode: 'insensitive' };
         }
 
+        if (filtros.curso) {
+            where.curso = { contains: filtros.curso, mode: 'insensitive' };
+        }
+
         return prisma.participantes.findMany({ where });
     }
 

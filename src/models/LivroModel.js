@@ -1,20 +1,20 @@
 import prisma from '../lib/services/prismaClient.js';
 
 export default class LivroModel  {
-    constructor({ id = null, titulo, autor, anoPublicacao, genero, genre, resumo, resume, personagens, contextoHistorico, historicContext, analise, analysis } = {}) {
+    constructor({ id = null, titulo, autor, anoPublicacao, genero_pt, genero_en, resumo_pt, resumo_en, personagens, contextoHistorico_pt, contextoHistorico_en, analise_pt, analise_en } = {}) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.anoPublicacao = anoPublicacao;
-        this.genero = genero;
-        this.genre = genre;
-        this.resumo = resumo;
-        this.resume = resume;
+        this.genero_pt = genero_pt;
+        this.genero_en = genero_en;
+        this.resumo_pt = resumo_pt;
+        this.resumo_en = resumo_en;
         this.personagens = personagens;
-        this.contextoHistorico = contextoHistorico;
-        this.historicContext = historicContext;
-        this.analise = analise;
-        this.analysis = analysis;
+        this.contextoHistorico_pt = contextoHistorico_pt;
+        this.contextoHistorico_en = contextoHistorico_en;
+        this.analise_pt = analise_pt;
+        this.analise_en = analise_en;
     }
 
     async criar() {
@@ -23,15 +23,15 @@ export default class LivroModel  {
                 titulo: this.titulo,
                 autor: this.autor,
                 anoPublicacao: this.anoPublicacao,
-                genero: this.genero,
-                genre: this.genre,
-                resumo: this.resumo,
-                resume: this.resume,
+                genero_pt: this.genero_pt,
+                genero_en: this.genero_en,
+                resumo_pt: this.resumo_pt,
+                resumo_en: this.resumo_en,
                 personagens: this.personagens,
-                contextoHistorico: this.contextoHistorico,
-                historicContext: this.historicContext,
-                analise: this.analise,
-                analysis: this.analysis,
+                contextoHistorico_pt: this.contextoHistorico_pt,
+                contextoHistorico_en: this.contextoHistorico_en,
+                analise_pt: this.analise_pt,
+                analise_en: this.analise_en,
             },
         });
     }
@@ -39,7 +39,20 @@ export default class LivroModel  {
     async atualizar() {
         return prisma.livro.update({
             where: { id: this.id },
-            data: { titulo: this.titulo, autor: this.autor, anoPublicacao: this.anoPublicacao, genero: this.genero, genre: this.genre, resumo: this.resumo, resume: this.resume, personagens: this.personagens, contextoHistorico: this.contextoHistorico, historicContext: this.historicContext, analise: this.analise, analysis: this.analysis },
+            data: {
+                titulo: this.titulo,
+                autor: this.autor,
+                anoPublicacao: this.anoPublicacao,
+                genero_pt: this.genero_pt,
+                genero_en: this.genero_en,
+                resumo_pt: this.resumo_pt,
+                resumo_en: this.resumo_en,
+                personagens: this.personagens,
+                contextoHistorico_pt: this.contextoHistorico_pt,
+                contextoHistorico_en: this.contextoHistorico_en,
+                analise_pt: this.analise_pt,
+                analise_en: this.analise_en,
+            },
         });
     }
 
