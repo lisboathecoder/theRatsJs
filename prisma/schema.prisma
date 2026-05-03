@@ -25,15 +25,31 @@ model Livro {
     capa                 String
     autor                String
     anoPublicacao        Int
+    detalhesAutor_pt     String   
+    detalhesAutor_en     String
+    verossimilhanca_pt   String  
+    verossimilhanca_en   String  
     genero_pt            String
     genero_en            String
     resumo_pt            String   @db.Text
     resumo_en            String   @db.Text
-    personagens          String[]
+    personagens          Personagem[]
     contextoHistorico_pt String
     contextoHistorico_en String
     analise_pt           String
     analise_en           String
+}
+
+model Personagem {
+    id                   Int    @id @default(autoincrement())
+    nome                 String
+    caracteristicas_pt   String
+    caracteristicas_en   String
+    representacao_pt     String
+    representacao_en     String
+
+    livroId              Int
+    livro                Livro  @relation(fields: [livroId], references: [id])      
 }
 
 // 3. Tabela de Vídeo Aula
@@ -81,3 +97,4 @@ model Simulado {
     explicacao      String
     explanation     String
 }
+

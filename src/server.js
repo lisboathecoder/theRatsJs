@@ -4,6 +4,7 @@ import livroRoutes from './routes/livroRoute.js';
 import participantesRoutes from './routes/participantesRoute.js';
 import curiosidadesRoutes from './routes/curiosidadesRoute.js';
 import dicasRoutes from './routes/dicasRoute.js';
+import personagensRoutes from './routes/personagensRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,7 +19,8 @@ app.get('/', (req, res) => {
 app.use('/api/livros', livroRoutes);
 app.use('/api/participantes', participantesRoutes);
 app.use('/api/curiosidades', curiosidadesRoutes);
-app.use('/api/dicas', dicasRoutes)
+app.use('/api/dicas', dicasRoutes);
+app.use('/api/personagens', personagensRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
