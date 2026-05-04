@@ -1,46 +1,84 @@
 import prisma from '../lib/services/prismaClient.js';
 
-export default class LivroModel  {
-    constructor({ id = null, titulo, autor, anoPublicacao, capa, detalhesAutor_pt, detalhesAutor_en, verossimilhanca_pt, verossimilhanca_en, genero_pt, genero_en, resumo_pt, resumo_en, personagens, contextoHistorico_pt, contextoHistorico_en, analise_pt, analise_en } = {}) {
+export default class LivroModel {
+    constructor({
+        id = null,
+        titulo,
+        detalhesAutor,
+        detalhesAutor_en,
+        autor,
+        anoPublicacao,
+        capa,
+        estiloEscrita,
+        estiloEscrita_en,
+        verossimilhanca,
+        verossimilhanca_en,
+        genero,
+        genero_en,
+        resumo,
+        resumo_en,
+        personagens,
+        contexto,
+        contexto_en,
+        conclusao,
+        conclusao_en,
+        caracteristicasLiterarias,
+        caracteristicasLiterarias_en,
+        enredo,
+        enredo_en,
+    } = {}) {
         this.id = id;
         this.titulo = titulo;
+        this.detalhesAutor = detalhesAutor;
+        this.detalhesAutor_en = detalhesAutor_en;
         this.autor = autor;
         this.anoPublicacao = anoPublicacao;
         this.capa = capa;
-        this.detalhesAutor_pt = detalhesAutor_pt;
-        this.detalhesAutor_en = detalhesAutor_en;
-        this.verossimilhanca_pt = verossimilhanca_pt;
+        this.estiloEscrita = estiloEscrita;
+        this.estiloEscrita_en = estiloEscrita_en;
+        this.verossimilhanca = verossimilhanca;
         this.verossimilhanca_en = verossimilhanca_en;
-        this.genero_pt = genero_pt;
+        this.genero = genero;
         this.genero_en = genero_en;
-        this.resumo_pt = resumo_pt;
+        this.resumo = resumo;
         this.resumo_en = resumo_en;
         this.personagens = personagens;
-        this.contextoHistorico_pt = contextoHistorico_pt;
-        this.contextoHistorico_en = contextoHistorico_en;
-        this.analise_pt = analise_pt;
-        this.analise_en = analise_en;
+        this.contexto = contexto;
+        this.contexto_en = contexto_en;
+        this.conclusao = conclusao;
+        this.conclusao_en = conclusao_en;
+        this.caracteristicasLiterarias = caracteristicasLiterarias;
+        this.caracteristicasLiterarias_en = caracteristicasLiterarias_en;
+        this.enredo = enredo;
+        this.enredo_en = enredo_en;
     }
 
     async criar() {
         return prisma.livro.create({
             data: {
                 titulo: this.titulo,
+                capa: this.capa,
                 autor: this.autor,
                 anoPublicacao: this.anoPublicacao,
-                capa: this.capa,
-                detalhesAutor_pt: this.detalhesAutor_pt,
+                detalhesAutor: this.detalhesAutor,
                 detalhesAutor_en: this.detalhesAutor_en,
-                verossimilhanca_pt: this.verossimilhanca_pt,
-                verossimilhanca_en: this.verossimilhanca_en,
-                genero_pt: this.genero_pt,
+                genero: this.genero,
                 genero_en: this.genero_en,
-                resumo_pt: this.resumo_pt,
+                resumo: this.resumo,
                 resumo_en: this.resumo_en,
-                contextoHistorico_pt: this.contextoHistorico_pt,
-                contextoHistorico_en: this.contextoHistorico_en,
-                analise_pt: this.analise_pt,
-                analise_en: this.analise_en,
+                contexto: this.contexto,
+                contexto_en: this.contexto_en,
+                estiloEscrita: this.estiloEscrita,
+                estiloEscrita_en: this.estiloEscrita_en,
+                enredo: this.enredo,
+                enredo_en: this.enredo_en,
+                verossimilhanca: this.verossimilhanca,
+                verossimilhanca_en: this.verossimilhanca_en,
+                personagens: this.personagens,
+                caracteristicasLiterarias: this.caracteristicasLiterarias,
+                caracteristicasLiterarias_en: this.caracteristicasLiterarias_en,
+                conclusao: this.conclusao,
+                conclusao_en: this.conclusao_en,
             },
         });
     }
@@ -50,21 +88,28 @@ export default class LivroModel  {
             where: { id: this.id },
             data: {
                 titulo: this.titulo,
+                capa: this.capa,
                 autor: this.autor,
                 anoPublicacao: this.anoPublicacao,
-                capa: this.capa,
-                detalhesAutor_pt: this.detalhesAutor_pt,
+                detalhesAutor: this.detalhesAutor,
                 detalhesAutor_en: this.detalhesAutor_en,
-                verossimilhanca_pt: this.verossimilhanca_pt,
-                verossimilhanca_en: this.verossimilhanca_en,
-                genero_pt: this.genero_pt,
+                genero: this.genero,
                 genero_en: this.genero_en,
-                resumo_pt: this.resumo_pt,
+                resumo: this.resumo,
                 resumo_en: this.resumo_en,
-                contextoHistorico_pt: this.contextoHistorico_pt,
-                contextoHistorico_en: this.contextoHistorico_en,
-                analise_pt: this.analise_pt,
-                analise_en: this.analise_en,
+                contexto: this.contexto,
+                contexto_en: this.contexto_en,
+                estiloEscrita: this.estiloEscrita,
+                estiloEscrita_en: this.estiloEscrita_en,
+                enredo: this.enredo,
+                enredo_en: this.enredo_en,
+                verossimilhanca: this.verossimilhanca,
+                verossimilhanca_en: this.verossimilhanca_en,
+                personagens: this.personagens,
+                caracteristicasLiterarias: this.caracteristicasLiterarias,
+                caracteristicasLiterarias_en: this.caracteristicasLiterarias_en,
+                conclusao: this.conclusao,
+                conclusao_en: this.conclusao_en,
             },
         });
     }
@@ -82,18 +127,12 @@ export default class LivroModel  {
 
         return prisma.livro.findMany({
             where,
-            include: {
-                personagens: true,
-            },
         });
     }
 
     static async buscarPorId(id) {
         const data = await prisma.livro.findUnique({
             where: { id },
-            include: {
-                personagens: true,
-            },
         });
         if (!data) {
             return null;

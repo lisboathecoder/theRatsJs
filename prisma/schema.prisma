@@ -20,24 +20,30 @@ model Participantes {
 }
 
 model Livro {
-    id                   Int      @id @default(autoincrement())
-    titulo               String
-    capa                 String
-    autor                String
-    anoPublicacao        Int
-    detalhesAutor_pt     String   
-    detalhesAutor_en     String
-    verossimilhanca_pt   String  
-    verossimilhanca_en   String  
-    genero_pt            String
-    genero_en            String
-    resumo_pt            String   @db.Text
-    resumo_en            String   @db.Text
-    personagens          Personagem[]
-    contextoHistorico_pt String
-    contextoHistorico_en String
-    analise_pt           String
-    analise_en           String
+  id                            Int      @id @default(autoincrement())
+  titulo                        String
+  capa                          String
+  autor                         String
+  detalhesAutor                 String
+  detalhesAutor_en              String
+  anoPublicacao                 Int
+  genero                        String
+  genero_en                     String
+  resumo                        String   @db.Text
+  resumo_en                     String   @db.Text
+  contexto                      String   @db.Text
+  contexto_en                   String   @db.Text
+  estiloEscrita                 String   @db.Text
+  estiloEscrita_en              String   @db.Text
+  enredo                        String   @db.Text
+  enredo_en                     String   @db.Text
+  verossimilhanca               String   @db.Text
+  verossimilhanca_en            String   @db.Text
+  personagens                   String[]
+  caracteristicasLiterarias     String   @db.Text
+  caracteristicasLiterarias_en  String   @db.Text
+  conclusao                     String   @db.Text
+  conclusao_en                  String   @db.Text
 }
 
 model Personagem {
@@ -47,9 +53,6 @@ model Personagem {
     caracteristicas_en   String
     representacao_pt     String
     representacao_en     String
-
-    livroId              Int
-    livro                Livro  @relation(fields: [livroId], references: [id])      
 }
 
 // 3. Tabela de Vídeo Aula
@@ -97,4 +100,3 @@ model Simulado {
     explicacao      String
     explanation     String
 }
-

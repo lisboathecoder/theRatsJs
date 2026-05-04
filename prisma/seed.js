@@ -114,85 +114,101 @@ async function main() {
     await prisma.livro.create({
         data: {
             titulo: 'Os Ratos',
-            autor: 'Dyonélio Machado',
             capa: 'https://i.ibb.co/kgkfQfXh/the-rats.jpg',
+            autor: 'Dyonélio Machado',
             anoPublicacao: 1935,
 
-            detalhesAutor_pt:
-                'Dyonélio Machado foi um escritor e médico brasileiro, conhecido por obras psicológicas e sociais.',
+            // Antigo detalhesAutor_pt
+            detalhesAutor:
+                'Dyonélio Machado foi um escritor e médico brasileiro, um dos expoentes do Modernismo de 1930. Sua obra combina uma análise clínica da psique humana com a crítica social das classes trabalhadoras urbanas.',
             detalhesAutor_en:
-                'Dyonélio Machado was a Brazilian writer and physician known for psychological and social works.',
+                'Dyonélio Machado was a Brazilian writer and physician, a key figure in the 1930s Modernism. His work combines a clinical analysis of the human psyche with social criticism of the urban working classes.',
 
-            verossimilhanca_pt:
-                'A obra apresenta forte realismo ao retratar dificuldades financeiras urbanas.',
-            verossimilhanca_en:
-                'The novel strongly reflects realism in portraying urban financial struggles.',
+            genero: 'Romance psicológico, Realismo social',
+            genero_en: 'Psychological novel, Social realism',
 
-            genero_pt: 'Romance psicológico, Realismo',
-            genero_en: 'Psychological novel, Realism',
-
-            resumo_pt:
-                'O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir dinheiro suficiente para pagar uma dívida urgente de 53 mil-réis com o leiteiro. Ao longo do dia, ele percorre a cidade tentando empréstimos, ajuda de amigos e alternativas para resolver seu problema. Sua jornada é marcada por ansiedade crescente, humilhações, frustrações e um profundo sentimento de impotência diante das dificuldades financeiras. Ao final, mesmo quando encontra uma possível solução, sua mente permanece atormentada pela insegurança e pelo medo constante da falta de dinheiro.',
+            resumo: 'O livro acompanha um único dia na vida de Naziazeno Barbosa, um funcionário público que vive em Porto Alegre e está desesperado para conseguir 53 mil-réis para pagar o leiteiro. A narrativa mergulha na angústia existencial e no cansaço físico do protagonista enquanto ele percorre a cidade em busca de um empréstimo impossível.',
             resumo_en:
-                'The novel follows a single day in the life of Naziazeno Barbosa, a low-level public clerk in Porto Alegre who desperately needs money to pay a small but urgent debt to the milkman. Throughout the day, he wanders the city seeking loans and help, facing humiliation, anxiety, and frustration. Even when a possible solution appears, his mind remains trapped in insecurity and fear of poverty.',
+                'The novel follows a single day in the life of Naziazeno Barbosa, a civil servant in Porto Alegre who is desperate to find 53 mil-réis to pay the milkman. The narrative dives into the existential anguish and physical exhaustion of the protagonist as he wanders the city in search of an impossible loan.',
 
-            contextoHistorico_pt:
-                'Brasil urbano da década de 1930, com crise econômica.',
-            contextoHistorico_en:
-                'Urban Brazil in the 1930s with economic crisis.',
+            contexto:
+                'Brasil urbano da década de 1930, período marcado pela Grande Depressão e pela ascensão de regimes autoritários, refletindo a precariedade da classe média baixa.',
+            contexto_en:
+                'Urban Brazil in the 1930s, a period marked by the Great Depression and the rise of authoritarian regimes, reflecting the precariousness of the lower middle class.',
 
-            analise_pt:
-                'A obra explora a ansiedade causada pela pobreza.',
-            analise_en:
-                'The novel explores anxiety caused by poverty.',
+            estiloEscrita:
+                'Narrativa introspectiva e fragmentada, utilizando o fluxo de consciência para transmitir a ansiedade e a obsessão do protagonista por números e dinheiro.',
+            estiloEscrita_en:
+                "Introspective and fragmented narrative, using stream of consciousness to convey the protagonist's anxiety and obsession with numbers and money.",
 
-            personagens: {
-                create: [
-                    {
-                        nome: 'Naziazeno Barbosa',
-                        caracteristicas_pt: 'Ansioso, endividado, inseguro',
-                        caracteristicas_en: 'Anxious, indebted, insecure',
-                        representacao_pt: 'Homem comum oprimido',
-                        representacao_en: 'Oppressed common man',
-                    },
-                    {
-                        nome: 'Adelaide',
-                        caracteristicas_pt: 'Preocupada, prática',
-                        caracteristicas_en: 'Worried, practical',
-                        representacao_pt: 'Pressão familiar',
-                        representacao_en: 'Family pressure',
-                    },
-                    {
-                        nome: 'Duque',
-                        caracteristicas_pt: 'Esperto, oportunista',
-                        caracteristicas_en: 'Clever, opportunistic',
-                        representacao_pt: 'Sobrevivência social',
-                        representacao_en: 'Social survival',
-                    },
-                    {
-                        nome: 'Alcides',
-                        caracteristicas_pt: 'Amigo, solidário',
-                        caracteristicas_en: 'Friendly, supportive',
-                        representacao_pt: 'Apoio social',
-                        representacao_en: 'Social support',
-                    },
-                    {
-                        nome: 'Dr. Mondina',
-                        caracteristicas_pt: 'Autoritário, distante',
-                        caracteristicas_en: 'Authoritative, distant',
-                        representacao_pt: 'Elite burocrática',
-                        representacao_en: 'Bureaucratic elite',
-                    },
-                    {
-                        nome: 'Leiteiro',
-                        caracteristicas_pt: 'Cobrador, direto',
-                        caracteristicas_en: 'Demanding, direct',
-                        representacao_pt: 'Pressão econômica',
-                        representacao_en: 'Economic pressure',
-                    },
-                ],
-            },
+            enredo: 'A trama se desenvolve em um ciclo de humilhação e busca. Naziazeno tenta sucessivos empréstimos com amigos, agiotas e superiores, enfrentando a burocracia e a indiferença social até um desfecho irônico e amargo.',
+            enredo_en:
+                'The plot unfolds in a cycle of humiliation and quest. Naziazeno tries successive loans with friends, money lenders, and superiors, facing bureaucracy and social indifference until an ironic and bitter conclusion.',
+
+            verossimilhanca:
+                'A obra apresenta forte realismo ao retratar dificuldades financeiras urbanas e a psicologia do desespero de forma crua e direta.',
+            verossimilhanca_en:
+                'The novel strongly reflects realism in portraying urban financial struggles and the psychology of despair in a raw and direct way.',
+
+            personagens: ['Naziazeno Barbosa', 'Dulce', 'Alcides', 'O Leiteiro', 'O Diretor'],
+
+            caracteristicasLiterarias:
+                'Uso de repetições rítmicas que simulam a obsessão mental; foco no tempo psicológico em oposição ao tempo cronológico; crítica ao capitalismo urbano.',
+            caracteristicasLiterarias_en:
+                'Use of rhythmic repetitions that simulate mental obsession; focus on psychological time versus chronological time; critique of urban capitalism.',
+
+            conclusao:
+                'Os Ratos permanece como um dos maiores estudos sobre a ansiedade humana na literatura brasileira, onde o "rato" torna-se a metáfora perfeita para o pensamento que corrói o indivíduo.',
+            conclusao_en:
+                'The Rats remains one of the greatest studies of human anxiety in Brazilian literature, where the "rat" becomes the perfect metaphor for the thought that gnaws at the individual.',
         },
+    });
+
+    await prisma.personagem.createMany({
+        data: [
+            {
+                nome: 'Naziazeno Barbosa',
+                caracteristicas_pt: 'Ansioso, endividado, inseguro',
+                caracteristicas_en: 'Anxious, indebted, insecure',
+                representacao_pt: 'Homem comum oprimido',
+                representacao_en: 'Oppressed common man',
+            },
+            {
+                nome: 'Adelaide',
+                caracteristicas_pt: 'Preocupada, prática',
+                caracteristicas_en: 'Worried, practical',
+                representacao_pt: 'Pressão familiar',
+                representacao_en: 'Family pressure',
+            },
+            {
+                nome: 'Duque',
+                caracteristicas_pt: 'Esperto, oportunista',
+                caracteristicas_en: 'Clever, opportunistic',
+                representacao_pt: 'Sobrevivência social',
+                representacao_en: 'Social survival',
+            },
+            {
+                nome: 'Alcides',
+                caracteristicas_pt: 'Amigo, solidário',
+                caracteristicas_en: 'Friendly, supportive',
+                representacao_pt: 'Apoio social',
+                representacao_en: 'Social support',
+            },
+            {
+                nome: 'Dr. Mondina',
+                caracteristicas_pt: 'Autoritário, distante',
+                caracteristicas_en: 'Authoritative, distant',
+                representacao_pt: 'Elite burocrática',
+                representacao_en: 'Bureaucratic elite',
+            },
+            {
+                nome: 'Leiteiro',
+                caracteristicas_pt: 'Cobrador, direto',
+                caracteristicas_en: 'Demanding, direct',
+                representacao_pt: 'Pressão econômica',
+                representacao_en: 'Economic pressure',
+            },
+        ],
     });
 
     // VideoAula
