@@ -1,4 +1,4 @@
-import ParticipantesModel from '../models/participantesModel.js';
+import ParticipantesModel from '../models/ParticipantesModel.js';
 
 export const criar = async (req, res) => {
     try {
