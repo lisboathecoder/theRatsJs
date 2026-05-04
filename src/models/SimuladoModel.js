@@ -1,4 +1,4 @@
-import prisma from "../lib/services/prismaClient.js";
+import prisma from '../lib/services/prismaClient.js';
 
 export default class SimuladoModel {
   constructor({
@@ -90,11 +90,11 @@ export default class SimuladoModel {
     return prisma.simulado.delete({ where: { id: this.id } });
   }
 
-  static async buscarTodos(filtros = {}) {
-    const where = {};
+        if (filtros.pergunta) {
+            where.pergunta = { contains: filtros.pergunta, mode: 'insensitive' };
+        }
 
-    if (filtros.pergunta) {
-      where.pergunta = { contains: filtros.pergunta, mode: "insensitive" };
+        return prisma.simulado.findMany({ where });
     }
 
     return prisma.simulado.findMany({ where });
@@ -105,6 +105,4 @@ export default class SimuladoModel {
     if (!data) {
       return null;
     }
-    return new SimuladoModel(data);
-  }
 }

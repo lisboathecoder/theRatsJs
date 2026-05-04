@@ -21,7 +21,7 @@ export default class DicasModel {
     }
 
     async atualizar() {
-        return prisma.dica.update({
+        return prisma.dicas.update({
             where: { id: this.id },
             data: {
                 conteudo: this.conteudo,
@@ -33,7 +33,7 @@ export default class DicasModel {
     }
 
     async deletar() {
-        return prisma.dica.delete({ where: { id: this.id } });
+        return prisma.dicas.delete({ where: { id: this.id } });
     }
 
     static async buscarTodos(filtros = {}) {
@@ -43,11 +43,11 @@ export default class DicasModel {
             where.dica = { contains: filtros.dica, mode: 'insensitive' };
         }
 
-        return prisma.dica.findMany({ where });
+        return prisma.dicas.findMany({ where });
     }
 
     static async buscarPorId(id) {
-        const data = await prisma.dica.findUnique({ where: { id } });
+        const data = await prisma.dicas.findUnique({ where: { id } });
         if (!data) {
             return null;
         }

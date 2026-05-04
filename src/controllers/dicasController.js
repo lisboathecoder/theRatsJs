@@ -27,7 +27,7 @@ export const criar = async (req, res) => {
         const dica1 = new DicasModel({
             conteudo,
             content,
-            dica: dica,
+            dicas: dicas,
             tips,
         });
         const data = await dica1.criar();
@@ -96,7 +96,7 @@ export const atualizar = async (req, res) => {
             dica.conteudo = req.body.conteudo;
         }
 
-        const data = await curiosidade.atualizar();
+        const data = await dica.atualizar();
 
         return res
             .status(200)

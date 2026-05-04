@@ -1,20 +1,20 @@
 import prisma from '../lib/services/prismaClient.js';
 
 export default class CuriosidadesModel {
-    constructor({ id = null, conteudo, content, curisiosidades, curiosity } = {}) {
+    constructor({ id = null, conteudo, content, curiosidade, curiosity } = {}) {
         this.id = id;
         this.conteudo = conteudo;
         this.content = content;
-        this.curisiosidades = curisiosidades;
+        this.curiosidade = curiosidade;
         this.curiosity = curiosity;
     }
 
     async criar() {
-        return prisma.curiosidades.create({
+        return prisma.curiosidade.create({
             data: {
                 conteudo: this.conteudo,
                 content: this.content,
-                curisiosidades: this.curisiosidades,
+                curiosidade: this.curiosidade,
                 curiosity: this.curiosity,
             },
         });
@@ -26,7 +26,7 @@ export default class CuriosidadesModel {
             data: {
                 conteudo: this.conteudo,
                 content: this.content,
-                curisiosidades: this.curisiosidades,
+                curiosidade: this.curiosidade,
                 curiosity: this.curiosity,
             },
         });
