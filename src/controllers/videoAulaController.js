@@ -32,7 +32,7 @@ export const criar = async (req, res) => {
             content,
             descricao: descricao,
             description,
-            urlMidia
+            urlMidia,
         });
         const data = await aula1.criar();
         return res.status(201).json({ message: 'Registro de aula criado com sucesso!', data });
@@ -71,7 +71,7 @@ export const buscarPorId = async (req, res) => {
             return res.status(404).json({ error: 'Registro não encontrado.' });
         }
 
-        return res.status(200).json({ data:  videoAula});
+        return res.status(200).json({ data: videoAula });
     } catch (error) {
         console.error('Erro ao buscar:', error);
         return res.status(500).json({ error: 'Erro ao buscar registro.' });
@@ -96,11 +96,19 @@ export const atualizar = async (req, res) => {
             return res.status(404).json({ error: 'Registro não encontrado para atualizar.' });
         }
 
-        if (req.body.conteudo = videoAula) {
-            videoAula.conteudo = req.body.videoAula;
-            videoAula.content = req.body.videoAula;
+        if (req.body.conteudo !== undefined) {
+            videoAula.conteudo = req.body.conteudo;
+        }
+        if (req.body.content !== undefined) {
+            videoAula.content = req.body.content;
+        }
+        if (req.body.descricao !== undefined) {
             videoAula.descricao = req.body.descricao;
+        }
+        if (req.body.description !== undefined) {
             videoAula.description = req.body.description;
+        }
+        if (req.body.urlMidia !== undefined) {
             videoAula.urlMidia = req.body.urlMidia;
         }
 
