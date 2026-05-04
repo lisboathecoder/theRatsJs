@@ -27,7 +27,7 @@ export const criar = async (req, res) => {
         const curiosidade1 = new CuriosidadesModel({
             conteudo,
             content,
-            curisiosidade: curiosidade,
+            curiosidade: curiosidade,
             curiosity,
         });
         const data = await curiosidade1.criar();
