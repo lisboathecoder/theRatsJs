@@ -28,17 +28,12 @@ export const criar = async (req, res) => {
             return res.status(400).json({ error: 'O campo "representacao_en" é obrigatório!' });
         }
 
-        if (livroId === undefined || livroId === null) {
-            return res.status(400).json({ error: 'O campo "livroId" é obrigatório para relacionar o personagem a um livro.' });
-        }
-
         const personagem = new PersonagemModel({
             nome,
             caracteristicas_pt,
             caracteristicas_en,
             representacao_pt,
             representacao_en,
-            livroId,
         });
         const data = await personagem.criar();
         return res.status(201).json({ message: 'Registro criado com sucesso!', data });

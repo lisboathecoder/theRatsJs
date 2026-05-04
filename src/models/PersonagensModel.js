@@ -11,8 +11,6 @@ export default class PersonagemModel {
         representacao_pt,
         representacao_en,
 
-        livroId = null,
-        livro = null,
     } = {}) {
         this.id = id;
         this.nome = nome;
@@ -22,9 +20,6 @@ export default class PersonagemModel {
 
         this.representacao_pt = representacao_pt;
         this.representacao_en = representacao_en;
-
-        this.livroId = livroId;
-        this.livro = livro;
     }
 
     async criar() {
@@ -35,7 +30,6 @@ export default class PersonagemModel {
                 caracteristicas_pt: this.caracteristicas_pt,
                 representacao_en: this.representacao_en,
                 representacao_pt: this.representacao_pt,
-                livroId: this.livroId,
             },
         });
     }
@@ -49,7 +43,6 @@ export default class PersonagemModel {
                 caracteristicas_pt: this.caracteristicas_pt,
                 representacao_en: this.representacao_en,
                 representacao_pt: this.representacao_pt,
-                livroId: this.livroId,
             },
         });
     }
@@ -67,18 +60,12 @@ export default class PersonagemModel {
 
         return prisma.personagem.findMany({
             where,
-            include: {
-                livro: true,
-            },
         });
     }
 
     static async buscarPorId(id) {
         const data = await prisma.personagem.findUnique({
             where: { id },
-            include: {
-                livro: true,
-            },
         });
         if (!data) {
             return null;
@@ -86,3 +73,4 @@ export default class PersonagemModel {
         return new PersonagemModel(data);
     }
 }
+    

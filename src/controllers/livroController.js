@@ -1,4 +1,4 @@
-import LivroModel from '../models/livroModel.js';
+import LivroModel from '../models/LivroModel.js';
 
 export const criar = async (req, res) => {
     try {
@@ -8,80 +8,118 @@ export const criar = async (req, res) => {
 
         const {
             titulo,
+            capa,
             autor,
+            detalhesAutor,
+            detalhesAutor_en,
             anoPublicacao,
             genero,
-            genre,
+            genero_en,
             resumo,
-            resume,
+            resumo_en,
+            contexto,
+            contexto_en,
+            estiloEscrita,
+            estiloEscrita_en,
+            enredo,
+            enredo_en,
+            verossimilhanca,
+            verossimilhanca_en,
             personagens,
-            contextoHistorico,
-            historicContext,
-            analise,
-            analysis,
+            caracteristicasLiterarias,
+            caracteristicasLiterarias_en,
+            conclusao,
+            conclusao_en,
         } = req.body;
 
-        if (!titulo) {
+        if (!titulo)
             return res.status(400).json({ error: 'O campo "titulo" é obrigatório!' });
-        }
 
-        if (!autor) {
+        if (!capa)
+            return res.status(400).json({ error: 'O campo "capa" é obrigatório!' });
+
+        if (!autor)
             return res.status(400).json({ error: 'O campo "autor" é obrigatório!' });
-        }
 
-        if (!anoPublicacao) {
+        if (!anoPublicacao)
             return res.status(400).json({ error: 'O campo "anoPublicacao" é obrigatório!' });
-        }
 
-        if (!genero) {
+        if (!genero)
             return res.status(400).json({ error: 'O campo "genero" é obrigatório!' });
-        }
 
-        if (!genre) {
-            return res.status(400).json({ error: 'O campo "genre" é obrigatório!' });
-        }
+        if (!genero_en)
+            return res.status(400).json({ error: 'O campo "genero_en" é obrigatório!' });
 
-        if (!resumo) {
+        if (!resumo)
             return res.status(400).json({ error: 'O campo "resumo" é obrigatório!' });
-        }
 
-        if (!resume) {
-            return res.status(400).json({ error: 'O campo "resume" é obrigatório!' });
-        }
+        if (!resumo_en)
+            return res.status(400).json({ error: 'O campo "resumo_en" é obrigatório!' });
 
-        if (!personagens) {
-            return res.status(400).json({ error: 'O campo "personagens" é obrigatório!' });
-        }
+        if (!contexto) return res.status(400).json({ error: 'O campo "contexto" é obrigatório!' });
 
-        if (!contextoHistorico) {
-            return res.status(400).json({ error: 'O campo "contextoHistorico" é obrigatório!' });
-        }
+        if (!contexto_en)
+            return res.status(400).json({ error: 'O campo "contexto_en" é obrigatório!' });
 
-        if (!historicContext) {
-            return res.status(400).json({ error: 'O campo "historicContext" é obrigatório!' });
-        }
+        if (!estiloEscrita)
+            return res.status(400).json({ error: 'O campo "estiloEscrita" é obrigatório!' });
 
-        if (!analise) {
-            return res.status(400).json({ error: 'O campo "analise" é obrigatório!' });
-        }
+        if (!estiloEscrita_en)
+            return res.status(400).json({ error: 'O campo "estiloEscrita_en" é obrigatório!' });
 
-        if (!analysis) {
-            return res.status(400).json({ error: 'O campo "analysis" é obrigatório!' });
-        }
+        if (!enredo) return res.status(400).json({ error: 'O campo "enredo" é obrigatório!' });
+
+        if (!enredo_en)
+            return res.status(400).json({ error: 'O campo "enredo_en" é obrigatório!' });
+
+        if (!verossimilhanca)
+            return res.status(400).json({ error: 'O campo "verossimilhanca" é obrigatório!' });
+
+        if (!verossimilhanca_en)
+            return res.status(400).json({ error: 'O campo "verossimilhanca_en" é obrigatório!' });
+
+        if (!caracteristicasLiterarias)
+            return res.status(400).json({ error: 'O campo "caracteristicasLiterarias" é obrigatório!' });
+
+        if (!caracteristicasLiterarias_en)
+            return res.status(400).json({ error: 'O campo "caracteristicasLiterarias_en" é obrigatório!' });
+
+        if (!conclusao)
+            return res.status(400).json({ error: 'O campo "conclusao" é obrigatório!' });
+
+        if (!conclusao_en)
+            return res.status(400).json({ error: 'O campo "conclusao_en" é obrigatório!' });
+
+        if (!detalhesAutor)
+            return res.status(400).json({ error: 'O campo "detalhesAutor" é obrigatório!' });
+
+        if (!detalhesAutor_en)
+            return res.status(400).json({ error: 'O campo "detalhesAutor_en" é obrigatório!' });
 
         const livro = new LivroModel({
             titulo,
+            capa,
             autor,
+            detalhesAutor,
+            detalhesAutor_en,
             anoPublicacao,
             genero,
-            genre,
+            genero_en,
             resumo,
-            resume,
+            resumo_en,
+            contexto,
+            contexto_en,
+            estiloEscrita,
+            estiloEscrita_en,
+            enredo,
+            enredo_en,
+            verossimilhanca,
+            verossimilhanca_en,
             personagens,
-            contextoHistorico,
-            historicContext,
-            analise,
-            analysis,
+            caracteristicasLiterarias,
+            caracteristicasLiterarias_en,
+            conclusao,
+            conclusao_en,
         });
         const data = await livro.criar();
 
@@ -148,6 +186,94 @@ export const atualizar = async (req, res) => {
 
         if (req.body.titulo !== undefined) {
             livro.titulo = req.body.titulo;
+        }
+
+        if (req.body.capa !== undefined) {
+            livro.capa = req.body.capa;
+        }
+
+        if (req.body.autor !== undefined) {
+            livro.autor = req.body.autor;
+        }
+
+        if (req.body.detalhesAutor !== undefined) {
+            livro.detalhesAutor = req.body.detalhesAutor_en;
+        }
+
+        if (req.body.autor !== undefined) {
+            livro.autor = req.body.autor;
+        }
+
+        if (req.body.anoPublicacao !== undefined) {
+            livro.anoPublicacao = req.body.anoPublicacao;
+        }
+
+        if (req.body.genero !== undefined) {
+            livro.genero = req.body.genero;
+        }
+
+        if (req.body.genero_en !== undefined) {
+            livro.genero_en = req.body.genero_en;
+        }
+
+        if (req.body.resumo !== undefined) {
+            livro.resumo = req.body.resumo;
+        }
+
+        if (req.body.resumo_en !== undefined) {
+            livro.resumo_en = req.body.resumo_en;
+        }
+
+        if (req.body.contexto !== undefined) {
+            livro.contexto = req.body.contexto;
+        }
+
+        if (req.body.contexto_en !== undefined) {
+            livro.contexto_en = req.body.contexto_en;
+        }
+
+        if (req.body.estiloEscrita !== undefined) {
+            livro.estiloEscrita = req.body.estiloEscrita;
+        }
+
+        if (req.body.estiloEscrita_en !== undefined) {
+            livro.estiloEscrita_en = req.body.estiloEscrita_en;
+        }
+
+        if (req.body.enredo !== undefined) {
+            livro.enredo = req.body.enredo;
+        }
+
+        if (req.body.enredo_en !== undefined) {
+            livro.enredo_en = req.body.enredo_en;
+        }
+
+        if (req.body.verossimilhanca !== undefined) {
+            livro.verossimilhanca = req.body.verossimilhanca;
+        }
+
+        if (req.body.verossimilhanca_en !== undefined) {
+            livro.verossimilhanca_en = req.body.verossimilhanca_en;
+        }
+
+        if (req.body.personagens !== undefined) {
+            livro.personagens = req.body.personagens;
+        }
+
+        if (req.body.caracteristicasLiterarias !== undefined) {
+            livro.caracteristicasLiterarias = req.body.caracteristicasLiterarias;
+        }
+
+        if (req.body.caracteristicasLiterarias_en !== undefined) {
+            livro.caracteristicasLiterarias_en = req.body.caracteristicasLiterarias_en;
+        }
+
+        if (req.body.conclusao !== undefined) {
+            livro.conclusao = req.body.conclusao;
+        }
+
+        if (req.body.conclusao_en !== undefined) {
+            livro.conclusao_en = req.body.conclusao_en;
         }
 
         const data = await livro.atualizar();
