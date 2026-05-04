@@ -6,6 +6,7 @@ import curiosidadesRoutes from './routes/curiosidadesRoute.js';
 import dicasRoutes from './routes/dicasRoute.js';
 import personagensRoutes from './routes/personagensRoute.js';
 import videoAulaRoutes from './routes/videoAulaRoute.js';
+import simuladoRoutes from './routes/simuladoRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -23,6 +24,7 @@ app.use('/api/curiosidades', curiosidadesRoutes);
 app.use('/api/dicas', dicasRoutes);
 app.use('/api/personagens', personagensRoutes);
 app.use('/api/videoAulas', videoAulaRoutes);
+app.use('/api/simulados', simuladoRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
