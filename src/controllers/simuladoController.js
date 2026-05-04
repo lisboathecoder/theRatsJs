@@ -1,4 +1,4 @@
-import SimuladoModel from "../models/SimuladoModel";
+import SimuladoModel from "../models/SimuladoModel.js";
 
 export const criar = async (req, res) => {
   try {
@@ -21,7 +21,7 @@ export const criar = async (req, res) => {
       optionD,
       opcaoE,
       optionE,
-      repostaCorreta,
+      respostaCorreta,
       correctAnswer,
       explicacao,
       explanation,
@@ -120,7 +120,7 @@ export const criar = async (req, res) => {
       optionD: req.body.optionD,
       opcaoE: req.body.opcaoE,
       optionE: req.body.optionE,
-      repostaCorreta: req.body.repostaCorreta,
+      respostaCorreta: req.body.respostaCorreta,
       correctAnswer: req.body.correctAnswer,
       explicacao: req.body.explicacao,
       explanation: req.body.explanation,
@@ -191,7 +191,7 @@ export const atualizar = async (req, res) => {
       optionD,
       opcaoE,
       optionE,
-      repostaCorreta,
+      respostaCorreta,
       correctAnswer,
       explicacao,
       explanation,
@@ -250,6 +250,9 @@ export const atualizar = async (req, res) => {
     }
     if (req.body.correctAnswer !== undefined) {
       simulado.correctAnswer = req.body.correctAnswer;
+    }
+    if(req.body.respostaCorreta !== undefined) {
+      simulado.respostaCorreta = req.body.respostaCorreta;
     }
     if (req.body.explanation !== undefined) {
       simulado.explanation = req.body.explanation;

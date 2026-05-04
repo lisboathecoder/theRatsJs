@@ -15,7 +15,7 @@ export default class SimuladoModel {
     optionD,
     opcaoE,
     optionE,
-    repostaCorreta,
+    respostaCorreta,
     correctAnswer,
     explicacao,
     explanation,
@@ -33,14 +33,14 @@ export default class SimuladoModel {
     this.optionD = optionD;
     this.opcaoE = opcaoE;
     this.optionE = optionE;
-    this.repostaCorreta = repostaCorreta;
+    this.respostaCorreta = respostaCorreta;
     this.correctAnswer = correctAnswer;
     this.explicacao = explicacao;
     this.explanation = explanation;
   }
 
   async criar() {
-    return prisma.simulados.create({
+    return prisma.simulado.create({
       data: {
         pergunta: this.pergunta,
         question: this.question,
@@ -63,7 +63,7 @@ export default class SimuladoModel {
   }
 
   async atualizar() {
-    return prisma.simulados.update({
+    return prisma.simulado.update({
       where: { id: this.id },
       data: {
         pergunta: this.pergunta,
@@ -87,7 +87,7 @@ export default class SimuladoModel {
   }
 
   async deletar() {
-    return prisma.simulados.delete({ where: { id: this.id } });
+    return prisma.simulado.delete({ where: { id: this.id } });
   }
 
   static async buscarTodos(filtros = {}) {
@@ -97,11 +97,11 @@ export default class SimuladoModel {
       where.pergunta = { contains: filtros.pergunta, mode: "insensitive" };
     }
 
-    return prisma.simulados.findMany({ where });
+    return prisma.simulado.findMany({ where });
   }
 
   static async buscarPorId(id) {
-    const data = await prisma.simulados.findUnique({ where: { id } });
+    const data = await prisma.simulado.findUnique({ where: { id } });
     if (!data) {
       return null;
     }
