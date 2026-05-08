@@ -117,16 +117,62 @@ export const criar = async (req, res) => {
 
 export const buscarTodos = async (req, res) => {
     try {
-        const registros = await SimuladoModel.buscarTodos(req.query);
+
+        const { lang = 'pt', ...filtros } = req.query;
+
+        const registros = await SimuladoModel.buscarTodos(filtros);
 
         if (!registros || registros.length === 0) {
-            return res.status(400).json({ message: 'Nenhum registro encontrado.' });
+            return res
+                .status(404)
+                .json({ message: 'Nenhum registro encontrado.' });
         }
 
-        return res.status(200).json(registros);
+        const formatados = registros.map((q) => ({
+            id: q.id,
+
+            pergunta:
+                lang === 'en'
+                    ? q.question
+                    : q.pergunta,
+
+            opcoes:
+                lang === 'en'
+                    ? [
+                          q.optionA,
+                          q.optionB,
+                          q.optionC,
+                          q.optionD,
+                          q.optionE,
+                      ]
+                    : [
+                          q.opcaoA,
+                          q.opcaoB,
+                          q.opcaoC,
+                          q.opcaoD,
+                          q.opcaoE,
+                      ],
+
+            respostaCorreta:
+                lang === 'en'
+                    ? q.correctAnswer
+                    : q.respostaCorreta,
+
+            explicacao:
+                lang === 'en'
+                    ? q.explanation
+                    : q.explicacao,
+        }));
+
+        return res.status(200).json(formatados);
+
     } catch (error) {
+
         console.error('Erro ao buscar:', error);
-        return res.status(500).json({ error: 'Erro ao buscar registros.' });
+
+        return res.status(500).json({
+            error: 'Erro ao buscar registros.',
+        });
     }
 };
 
