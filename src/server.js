@@ -7,7 +7,6 @@ import dicasRoutes from './routes/dicasRoute.js';
 import personagensRoutes from './routes/personagensRoute.js';
 import videoAulaRoutes from './routes/videoAulaRoute.js';
 import simuladoRoutes from './routes/simuladoRoute.js';
-import autenticarApiKey from '../src/utils/apiKey.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -19,13 +18,13 @@ app.get('/', (req, res) => {
 });
 
 // Rotas
-app.use('/api/livros', autenticarApiKey, livroRoutes);
-app.use('/api/participantes', autenticarApiKey, participantesRoutes);
-app.use('/api/curiosidades', autenticarApiKey, curiosidadesRoutes);
-app.use('/api/dicas', autenticarApiKey, dicasRoutes);
-app.use('/api/personagens', autenticarApiKey, personagensRoutes);
-app.use('/api/videoAulas', autenticarApiKey, videoAulaRoutes);
-app.use('/api/simulados', autenticarApiKey, simuladoRoutes);
+app.use('/api/livros', livroRoutes);
+app.use('/api/participantes', participantesRoutes);
+app.use('/api/curiosidades', curiosidadesRoutes);
+app.use('/api/dicas', dicasRoutes);
+app.use('/api/personagens', personagensRoutes);
+app.use('/api/videoAulas', videoAulaRoutes);
+app.use('/api/simulados', simuladoRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
