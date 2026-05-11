@@ -499,6 +499,12 @@ async function main() {
                 dicas: 'Evite multitarefa',
                 tips: 'Avoid multitasking',
             },
+            {
+                conteudo: '5 dicas para passar na redação do vestibular:',
+                content: '5 tips to pass the entrance exam essay:',
+                dicas: '\n1. Leia o edital e entenda o tema proposto.\n2. Faça um planejamento do texto antes de começar a escrever.\n3. Use uma linguagem clara e objetiva, evitando gírias e expressões coloquiais.\n4. Apresente argumentos consistentes e bem fundamentados, utilizando dados, fatos ou exemplos para sustentar suas ideias.\n5. Revise o texto para corrigir erros gramaticais, de ortografia e de coesão.',
+                tips: '\n1. Read the public notice and understand the proposed theme.\n2. Plan the text before you start writing.\n3. Use clear and objective language, avoiding slang and colloquial expressions.\n4. Present consistent and well-founded arguments, using data, facts, or examples to support your ideas.\n5. Proofread the text to correct grammar, spelling, and cohesion errors.',
+            },
         ],
     });
 
