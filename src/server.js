@@ -7,6 +7,7 @@ import dicasRoutes from './routes/dicasRoute.js';
 import personagensRoutes from './routes/personagensRoute.js';
 import videoAulaRoutes from './routes/videoAulaRoute.js';
 import simuladoRoutes from './routes/simuladoRoute.js';
+import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -25,6 +26,7 @@ app.use('/api/dicas', dicasRoutes);
 app.use('/api/personagens', personagensRoutes);
 app.use('/api/videoAulas', videoAulaRoutes);
 app.use('/api/simulados', simuladoRoutes);
+app.use('/api/biblioteca', bibliotecaRoutes);
 
 app.use((req, res) => {
     res.status(404).json({ error: 'Rota não encontrada' });
