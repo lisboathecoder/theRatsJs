@@ -28,7 +28,7 @@ async function main() {
                 nome: 'Arthur Morais',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '',
+                foto: 'https://i.ibb.co/R4yFtVzb/arthur.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'arthur.m.santos20@aluno.senai.br',
@@ -37,7 +37,7 @@ async function main() {
                 nome: 'Pedro Arthur',
                 curso: 'Eletroeletrônica',
                 curse: 'Electronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/8n26Wf6H/pesca.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'pedro.vitorino7@senaisp.edu.br',
@@ -46,7 +46,7 @@ async function main() {
                 nome: 'João Victor',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/sdhW8P81/joao.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'joao.v.gomes50@aluno.senai.br',
@@ -55,7 +55,7 @@ async function main() {
                 nome: 'Davi Camoleis',
                 curso: 'Eletroeletrônica',
                 curse: 'Electronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/21bXdySL/davi.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'davi.c.nascimento8@aluno.senai.br',
@@ -64,7 +64,7 @@ async function main() {
                 nome: 'Felipe Augusto',
                 curso: 'Fabricação Mecânica',
                 curse: 'Mechanical Manufacturing',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/Qww2Qn4/feli.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'felipe.tonhatti@portalsesisp.org.br',
@@ -73,7 +73,7 @@ async function main() {
                 nome: 'Rafael Santos',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/dvm9y9K/rafael.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'rafael.s.mendes6@aluno.senai.br',
@@ -82,7 +82,7 @@ async function main() {
                 nome: 'Davi Nobrega',
                 curso: 'Eletroeletrônica',
                 curse: 'Electronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/nTv66zs/davi-nobr.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'davi.nobrega3@portalsesisp.org.br',
@@ -91,7 +91,7 @@ async function main() {
                 nome: 'Yasmim Vitória',
                 curso: 'Eletroeletrônica',
                 curse: 'Eletronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/Y7HRYffY/yasmin.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'yasmim.santos56@portalsesisp.org.br',
@@ -100,7 +100,7 @@ async function main() {
                 nome: 'Gustavo Teixeira Lisboa',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/217JtSQb/lisboa.jpg',
                 idade: '16 anos',
                 age: '16 years old',
                 email: 'gustavo.t.lisboa@aluno.senai.br',
@@ -109,7 +109,7 @@ async function main() {
                 nome: 'Victor Ferreira de Oliveira',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/ycqQH0BK/victor.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'victor.f.oliveira14@aluno.senai.br',
@@ -118,7 +118,7 @@ async function main() {
                 nome: 'Antonio Gabriel',
                 curso: 'Eletroeletrônica',
                 curse: 'Electronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/DfDN955v/antonio.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'antonio-silva38@portalsesisp.org.br',
@@ -127,16 +127,16 @@ async function main() {
                 nome: 'Pedro de Siqueira Silva ',
                 curso: 'Eletroeletrônica',
                 curse: 'Electronics',
-                foto: '[vamos tirar a foto depois]',
+                foto: 'https://i.ibb.co/60mrgMsM/pedrinh.jpg',
                 idade: '16 anos',
                 age: '16 years old',
                 email: 'pedro.silva34@portalsesisp.org.br',
             },
             {
-                nome: 'Pedro Henrique Urbano',
+                nome: 'Pedro Henrique Urbano Escapalete ',
                 curso: 'Desenvolvimento de Sistemas',
                 curse: 'Systems Development',
-                foto: '',
+                foto: 'https://i.ibb.co/qYNzpkS8/pedro.jpg',
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'pedro.escapalete@aluno.senai.br',
@@ -487,122 +487,162 @@ async function main() {
             {
                 conteudo: 'Escrito em tempo recorde',
                 content: 'Written in record time',
-                curiosidade: 'Dyonélio Machado escreveu "Os Ratos" em apenas 20 noites, após trabalhar durante o dia como médico psiquiatra.',
-                curiosity: 'Dyonélio Machado wrote "Os Ratos" in just 20 nights, after working during the day as a psychiatrist.',
+                curiosidade:
+                    'Dyonélio Machado escreveu "Os Ratos" em apenas 20 noites, após trabalhar durante o dia como médico psiquiatra.',
+                curiosity:
+                    'Dyonélio Machado wrote "Os Ratos" in just 20 nights, after working during the day as a psychiatrist.',
             },
             {
                 conteudo: 'Nove anos de maturação',
                 content: 'Nine years of maturation',
-                curiosidade: 'Antes de escrever o romance, o autor passou nove anos amadurecendo a ideia, que originalmente seria apenas um conto.',
-                curiosity: 'Before writing the novel, the author spent nine years developing the idea, which was originally meant to be just a short story.',
+                curiosidade:
+                    'Antes de escrever o romance, o autor passou nove anos amadurecendo a ideia, que originalmente seria apenas um conto.',
+                curiosity:
+                    'Before writing the novel, the author spent nine years developing the idea, which was originally meant to be just a short story.',
             },
             {
                 conteudo: 'Origem do projeto literário',
                 content: 'Origin of the literary project',
-                curiosidade: 'O livro foi escrito para participar do Prêmio Machado de Assis, da Editora Nacional de São Paulo, por incentivo do escritor Érico Veríssimo.',
-                curiosity: 'The book was written to compete for the Machado de Assis Prize from Editora Nacional de São Paulo, encouraged by writer Érico Veríssimo.',
+                curiosidade:
+                    'O livro foi escrito para participar do Prêmio Machado de Assis, da Editora Nacional de São Paulo, por incentivo do escritor Érico Veríssimo.',
+                curiosity:
+                    'The book was written to compete for the Machado de Assis Prize from Editora Nacional de São Paulo, encouraged by writer Érico Veríssimo.',
             },
             {
                 conteudo: 'Prêmio dividido',
                 content: 'Shared prize',
-                curiosidade: 'Ao concorrer ao Prêmio Machado de Assis, Dyonélio não venceu sozinho — dividiu o prêmio com outros quatro autores.',
-                curiosity: 'When competing for the Machado de Assis Prize, Dyonélio did not win alone — he shared it with four other authors.',
+                curiosidade:
+                    'Ao concorrer ao Prêmio Machado de Assis, Dyonélio não venceu sozinho — dividiu o prêmio com outros quatro autores.',
+                curiosity:
+                    'When competing for the Machado de Assis Prize, Dyonélio did not win alone — he shared it with four other authors.',
             },
             {
                 conteudo: 'A dívida central da trama',
                 content: 'The central debt of the plot',
-                curiosidade: 'Todo o drama do livro gira em torno de uma dívida de 53 mil réis com o leiteiro, valor que precisava ser pago em 24 horas.',
-                curiosity: 'The entire drama of the book revolves around a debt of 53,000 réis owed to the milkman, which needed to be paid within 24 hours.',
+                curiosidade:
+                    'Todo o drama do livro gira em torno de uma dívida de 53 mil réis com o leiteiro, valor que precisava ser pago em 24 horas.',
+                curiosity:
+                    'The entire drama of the book revolves around a debt of 53,000 réis owed to the milkman, which needed to be paid within 24 hours.',
             },
             {
                 conteudo: 'Narrativa de um único dia',
                 content: 'Single-day narrative',
-                curiosidade: 'Toda a trama de "Os Ratos" se passa em aproximadamente 24 horas, tornando-o um dos romances mais concentrados no tempo da literatura brasileira.',
-                curiosity: 'The entire plot of "Os Ratos" takes place in approximately 24 hours, making it one of the most temporally concentrated novels in Brazilian literature.',
+                curiosidade:
+                    'Toda a trama de "Os Ratos" se passa em aproximadamente 24 horas, tornando-o um dos romances mais concentrados no tempo da literatura brasileira.',
+                curiosity:
+                    'The entire plot of "Os Ratos" takes place in approximately 24 hours, making it one of the most temporally concentrated novels in Brazilian literature.',
             },
             {
                 conteudo: 'Inspiração no "Ulysses" de Joyce',
                 content: "Inspired by Joyce's Ulysses",
-                curiosidade: 'Críticos comparam a estrutura de "Os Ratos" ao "Ulysses" de James Joyce, pois ambos constroem protagonistas anônimos em jornadas urbanas de um único dia.',
-                curiosity: 'Critics compare the structure of "Os Ratos" to James Joyces "Ulysses", as both build anonymous protagonists in single-day urban journeys.',
+                curiosidade:
+                    'Críticos comparam a estrutura de "Os Ratos" ao "Ulysses" de James Joyce, pois ambos constroem protagonistas anônimos em jornadas urbanas de um único dia.',
+                curiosity:
+                    'Critics compare the structure of "Os Ratos" to James Joyces "Ulysses", as both build anonymous protagonists in single-day urban journeys.',
             },
             {
                 conteudo: 'O significado do título',
                 content: 'The meaning of the title',
-                curiosidade: 'O título vem de uma alucinação do protagonista: ao conseguir o dinheiro, ele imagina ratos roendo as cédulas durante a noite, expressando sua paranoia e angústia.',
-                curiosity: 'The title comes from the protagonists hallucination: after getting the money, he imagines rats gnawing at the bills overnight, expressing his paranoia and anguish.',
+                curiosidade:
+                    'O título vem de uma alucinação do protagonista: ao conseguir o dinheiro, ele imagina ratos roendo as cédulas durante a noite, expressando sua paranoia e angústia.',
+                curiosity:
+                    'The title comes from the protagonists hallucination: after getting the money, he imagines rats gnawing at the bills overnight, expressing his paranoia and anguish.',
             },
             {
                 conteudo: 'Autor era médico psiquiatra',
                 content: 'Author was a psychiatrist',
-                curiosidade: 'Dyonélio Machado era formado em psiquiatria, e isso se reflete diretamente na profundidade da análise psicológica do personagem Naziazeno ao longo da obra.',
-                curiosity: 'Dyonélio Machado was trained as a psychiatrist, which is directly reflected in the depth of the psychological analysis of the character Naziazeno throughout the novel.',
+                curiosidade:
+                    'Dyonélio Machado era formado em psiquiatria, e isso se reflete diretamente na profundidade da análise psicológica do personagem Naziazeno ao longo da obra.',
+                curiosity:
+                    'Dyonélio Machado was trained as a psychiatrist, which is directly reflected in the depth of the psychological analysis of the character Naziazeno throughout the novel.',
             },
             {
                 conteudo: 'Porto Alegre como cenário real',
                 content: 'Porto Alegre as a real setting',
-                curiosidade: 'O livro descreve locais reais de Porto Alegre nos anos 1930, como a Praça da Alfândega, o Mercado Público, o Café Nacional e o New York Bank.',
-                curiosity: 'The book describes real locations in Porto Alegre in the 1930s, such as the Praça da Alfândega, the Public Market, the Café Nacional, and the New York Bank.',
+                curiosidade:
+                    'O livro descreve locais reais de Porto Alegre nos anos 1930, como a Praça da Alfândega, o Mercado Público, o Café Nacional e o New York Bank.',
+                curiosity:
+                    'The book describes real locations in Porto Alegre in the 1930s, such as the Praça da Alfândega, the Public Market, the Café Nacional, and the New York Bank.',
             },
             {
                 conteudo: 'Crítica ao capitalismo',
                 content: 'Critique of capitalism',
-                curiosidade: 'Os ratos da alucinação final são interpretados por críticos como uma alegoria do capitalismo, que consome e corrói tudo o que o indivíduo tenta conquistar.',
-                curiosity: 'The rats in the final hallucination are interpreted by critics as an allegory for capitalism, which consumes and erodes everything the individual tries to achieve.',
+                curiosidade:
+                    'Os ratos da alucinação final são interpretados por críticos como uma alegoria do capitalismo, que consome e corrói tudo o que o indivíduo tenta conquistar.',
+                curiosity:
+                    'The rats in the final hallucination are interpreted by critics as an allegory for capitalism, which consumes and erodes everything the individual tries to achieve.',
             },
             {
                 conteudo: 'Segundo modernismo brasileiro',
                 content: 'Second phase of Brazilian modernism',
-                curiosidade: '"Os Ratos" pertence à segunda fase do Modernismo brasileiro, marcada pela reflexão sobre conflitos existenciais e problemas sociais contemporâneos.',
-                curiosity: '"Os Ratos" belongs to the second phase of Brazilian Modernism, marked by reflection on existential conflicts and contemporary social problems.',
+                curiosidade:
+                    '"Os Ratos" pertence à segunda fase do Modernismo brasileiro, marcada pela reflexão sobre conflitos existenciais e problemas sociais contemporâneos.',
+                curiosity:
+                    '"Os Ratos" belongs to the second phase of Brazilian Modernism, marked by reflection on existential conflicts and contemporary social problems.',
             },
             {
                 conteudo: 'Discurso indireto livre',
                 content: 'Free indirect discourse',
-                curiosidade: 'A narrativa em terceira pessoa utiliza o discurso indireto livre, dando ao leitor acesso direto aos pensamentos e angústias de Naziazeno sem filtros explícitos.',
-                curiosity: 'The third-person narrative uses free indirect discourse, giving the reader direct access to Naziazenos thoughts and anguish without explicit filters.',
+                curiosidade:
+                    'A narrativa em terceira pessoa utiliza o discurso indireto livre, dando ao leitor acesso direto aos pensamentos e angústias de Naziazeno sem filtros explícitos.',
+                curiosity:
+                    'The third-person narrative uses free indirect discourse, giving the reader direct access to Naziazenos thoughts and anguish without explicit filters.',
             },
             {
                 conteudo: 'Linguagem objetiva e sem sentimentalismo',
                 content: 'Objective, unsentimental language',
-                curiosidade: 'A linguagem da obra é direta, econômica e sem sentimentalismo, com frases curtas que mimetizam a tensão e a vertigem vividas pelo protagonista.',
-                curiosity: 'The language of the work is direct, economical, and without sentimentalism, with short sentences that mimic the tension and vertigo experienced by the protagonist.',
+                curiosidade:
+                    'A linguagem da obra é direta, econômica e sem sentimentalismo, com frases curtas que mimetizam a tensão e a vertigem vividas pelo protagonista.',
+                curiosity:
+                    'The language of the work is direct, economical, and without sentimentalism, with short sentences that mimic the tension and vertigo experienced by the protagonist.',
             },
             {
                 conteudo: 'Obra comparada a "Vidas Secas"',
                 content: 'Work compared to "Vidas Secas"',
-                curiosidade: 'O crítico Davi Arrigucci Jr. posiciona "Os Ratos" ao lado de "Vidas Secas", de Graciliano Ramos, como correlato urbano de uma mesma miséria humana.',
-                curiosity: 'Critic Davi Arrigucci Jr. places "Os Ratos" alongside Graciliano Ramos "Vidas Secas" as an urban counterpart of the same human misery.',
+                curiosidade:
+                    'O crítico Davi Arrigucci Jr. posiciona "Os Ratos" ao lado de "Vidas Secas", de Graciliano Ramos, como correlato urbano de uma mesma miséria humana.',
+                curiosity:
+                    'Critic Davi Arrigucci Jr. places "Os Ratos" alongside Graciliano Ramos "Vidas Secas" as an urban counterpart of the same human misery.',
             },
             {
                 conteudo: 'Expressionismo literário',
                 content: 'Literary expressionism',
-                curiosidade: '"Os Ratos" incorpora procedimentos do expressionismo literário, com deformação subjetiva do tempo, espaço e ambientes percebidos pelo protagonista.',
-                curiosity: '"Os Ratos" incorporates procedures from literary expressionism, with subjective distortion of time, space, and environments as perceived by the protagonist.',
+                curiosidade:
+                    '"Os Ratos" incorpora procedimentos do expressionismo literário, com deformação subjetiva do tempo, espaço e ambientes percebidos pelo protagonista.',
+                curiosity:
+                    '"Os Ratos" incorporates procedures from literary expressionism, with subjective distortion of time, space, and environments as perceived by the protagonist.',
             },
             {
                 conteudo: 'Preso por convicções políticas',
                 content: 'Imprisoned for political convictions',
-                curiosidade: 'Dyonélio Machado foi preso por dois anos durante o governo Vargas por suas posições políticas de esquerda, experiência que influenciou profundamente sua escrita.',
-                curiosity: 'Dyonélio Machado was imprisoned for two years during the Vargas government due to his left-wing political positions, an experience that profoundly influenced his writing.',
+                curiosidade:
+                    'Dyonélio Machado foi preso por dois anos durante o governo Vargas por suas posições políticas de esquerda, experiência que influenciou profundamente sua escrita.',
+                curiosity:
+                    'Dyonélio Machado was imprisoned for two years during the Vargas government due to his left-wing political positions, an experience that profoundly influenced his writing.',
             },
             {
                 conteudo: 'Datilógrafa como primeira leitora',
                 content: 'Typist as the first reader',
-                curiosidade: 'Na 15ª noite de escrita, a datilógrafa que transcrevia o livro perguntou ao autor se Naziazeno seria feliz — sinal de que já havia capturado o interesse do leitor.',
-                curiosity: 'On the 15th night of writing, the typist transcribing the book asked the author if Naziazeno would be happy — a sign that it had already captured the readers interest.',
+                curiosidade:
+                    'Na 15ª noite de escrita, a datilógrafa que transcrevia o livro perguntou ao autor se Naziazeno seria feliz — sinal de que já havia capturado o interesse do leitor.',
+                curiosity:
+                    'On the 15th night of writing, the typist transcribing the book asked the author if Naziazeno would be happy — a sign that it had already captured the readers interest.',
             },
             {
                 conteudo: 'Leitura obrigatória da FUVEST',
                 content: 'Required reading for FUVEST',
-                curiosidade: '"Os Ratos" integra a lista de leituras obrigatórias da FUVEST para os vestibulares da USP de 2025 a 2029, evidenciando sua importância no cânone literário brasileiro.',
-                curiosity: '"Os Ratos" is on the FUVEST required reading list for USP entrance exams from 2025 to 2029, highlighting its importance in the Brazilian literary canon.',
+                curiosidade:
+                    '"Os Ratos" integra a lista de leituras obrigatórias da FUVEST para os vestibulares da USP de 2025 a 2029, evidenciando sua importância no cânone literário brasileiro.',
+                curiosity:
+                    '"Os Ratos" is on the FUVEST required reading list for USP entrance exams from 2025 to 2029, highlighting its importance in the Brazilian literary canon.',
             },
             {
                 conteudo: '90 anos de relevância',
                 content: '90 years of relevance',
-                curiosidade: 'Publicado em 1935, o livro completa 90 anos em 2025 e permanece atual, pois o ciclo de endividamento e precariedade vivido por Naziazeno ainda ecoa na realidade brasileira.',
-                curiosity: 'Published in 1935, the book turns 90 in 2025 and remains relevant, as the cycle of debt and precariousness experienced by Naziazeno still echoes in Brazilian reality.',
+                curiosidade:
+                    'Publicado em 1935, o livro completa 90 anos em 2025 e permanece atual, pois o ciclo de endividamento e precariedade vivido por Naziazeno ainda ecoa na realidade brasileira.',
+                curiosity:
+                    'Published in 1935, the book turns 90 in 2025 and remains relevant, as the cycle of debt and precariousness experienced by Naziazeno still echoes in Brazilian reality.',
             },
         ],
     });
