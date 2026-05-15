@@ -25,11 +25,19 @@ export default class BibliotecaModel {
             ),
         );
 
-        return resultados.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
+        const livros = resultados
+            .filter((r) => r.status === 'fulfilled')
+            .flatMap((r) => r.value);
+
+        return livros.map((livro, index) => ({
+            ...livro,
+            id: index + 1,
+        }));
     }
 
     static async buscarPorId(id) {
         const todos = await this.buscarTodos();
-        return todos.find((livro) => livro.id === id) ?? null;
+
+        return todos.find((livro) => livro.id === Number(id)) ?? null;
     }
 }
