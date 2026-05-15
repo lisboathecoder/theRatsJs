@@ -8,6 +8,10 @@ export default class BibliotecaModel {
             url: 'https://olhosdagua.onrender.com/api/livro',
             key: process.env.API_KEY_GRUPO2,
         },
+        {
+            url: 'https://clubelivro-backend.onrender.com/api/livros',
+            key: process.env.API_KEY_GRUPO3,
+        },
     ];
 
     static async buscarTodos() {
@@ -17,17 +21,15 @@ export default class BibliotecaModel {
                     headers: {
                         'x-api-key': key,
                     },
-                }).then(res => res.json())
-            )
+                }).then((res) => res.json()),
+            ),
         );
 
-        return resultados
-            .filter(r => r.status === 'fulfilled')
-            .flatMap(r => r.value);
+        return resultados.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
     }
 
     static async buscarPorId(id) {
         const todos = await this.buscarTodos();
-        return todos.find(livro => livro.id === id) ?? null;
+        return todos.find((livro) => livro.id === id) ?? null;
     }
 }
