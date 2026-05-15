@@ -140,7 +140,7 @@ async function main() {
                 idade: '17 anos',
                 age: '17 years old',
                 email: 'pedro.escapalete@aluno.senai.br',
-            },
+            }
         ],
     });
 
