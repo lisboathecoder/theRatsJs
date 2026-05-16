@@ -277,6 +277,7 @@ async function main() {
     // Curiosidade
     await prisma.curiosidade.createMany({
         data: [
+            // --- BIOLOGIA ---
             {
                 conteudo: 'Biologia',
                 content: 'Biology',
@@ -376,6 +377,7 @@ async function main() {
                 curiosity:
                     'Cleopatra lived closer to the invention of the iPhone than to the construction of the pyramids.',
             },
+            // --- LITERATURA ---
             {
                 conteudo: 'Literatura',
                 content: 'Literature',
@@ -480,7 +482,167 @@ async function main() {
                 content: 'Literature',
                 curiosidade: 'A obra influenciou grandes nomes do existencialismo no Brasil.',
                 curiosity: 'The work influenced major names of existentialism in Brazil.',
-            }
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Dyonélio Machado escreveu "Os Ratos" em apenas 20 noites, após trabalhar durante o dia como médico psiquiatra.',
+                curiosity:
+                    'Dyonélio Machado wrote "Os Ratos" in just 20 nights, after working during the day as a psychiatrist.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Antes de escrever o romance, o autor passou nove anos amadurecendo a ideia, que originalmente seria apenas um conto.',
+                curiosity:
+                    'Before writing the novel, the author spent nine years developing the idea, which was originally meant to be just a short story.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'O livro foi escrito para participar do Prêmio Machado de Assis, da Editora Nacional de São Paulo, por incentivo do escritor Érico Veríssimo.',
+                curiosity:
+                    'The book was written to compete for the Machado de Assis Prize from Editora Nacional de São Paulo, encouraged by writer Érico Veríssimo.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Ao concorrer ao Prêmio Machado de Assis, Dyonélio não venceu sozinho — dividiu o prêmio com outros quatro autores.',
+                curiosity:
+                    'When competing for the Machado de Assis Prize, Dyonélio did not win alone — he shared it with four other authors.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Todo o drama do livro gira em torno de uma dívida de 53 mil réis com o leiteiro, valor que precisava ser pago em 24 horas.',
+                curiosity:
+                    'The entire drama of the book revolves around a debt of 53,000 réis owed to the milkman, which needed to be paid within 24 hours.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Toda a trama de "Os Ratos" se passa em aproximadamente 24 horas, tornando-o um dos romances mais concentrados no tempo da literatura brasileira.',
+                curiosity:
+                    'The entire plot of "Os Ratos" takes place in approximately 24 hours, making it one of the most temporally concentrated novels in Brazilian literature.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Críticos comparam a estrutura de "Os Ratos" ao "Ulysses" de James Joyce, pois ambos constroem protagonistas anônimos em jornadas urbanas de um único dia.',
+                curiosity:
+                    'Critics compare the structure of "Os Ratos" to James Joyces "Ulysses", as both build anonymous protagonists in single-day urban journeys.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'O título vem de uma alucinação do protagonista: ao conseguir o dinheiro, ele imagina ratos roendo as cédulas durante a noite, expressando sua paranoia e angústia.',
+                curiosity:
+                    'The title comes from the protagonists hallucination: after getting the money, he imagines rats gnawing at the bills overnight, expressing his paranoia and anguish.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Dyonélio Machado era formado em psiquiatria, e isso se reflete diretamente na profundidade da análise psicológica do personagem Naziazeno ao longo da obra.',
+                curiosity:
+                    'Dyonélio Machado was trained as a psychiatrist, which is directly reflected in the depth of the psychological analysis of the character Naziazeno throughout the novel.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'O livro descreve locais reais de Porto Alegre nos anos 1930, como a Praça da Alfândega, o Mercado Público, o Café Nacional e o New York Bank.',
+                curiosity:
+                    'The book describes real locations in Porto Alegre in the 1930s, such as the Praça da Alfândega, the Public Market, the Café Nacional, and the New York Bank.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Os ratos da alucinação final são interpretados por críticos como uma alegoria do capitalismo, que consome e corrói tudo o que o indivíduo tenta conquistar.',
+                curiosity:
+                    'The rats in the final hallucination are interpreted by critics as an allegory for capitalism, which consumes and erodes everything the individual tries to achieve.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    '"Os Ratos" pertence à segunda fase do Modernismo brasileiro, marcada pela reflexão sobre conflitos existenciais e problemas sociais contemporâneos.',
+                curiosity:
+                    '"Os Ratos" belongs to the second phase of Brazilian Modernism, marked by reflection on existential conflicts and contemporary social problems.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'A narrativa em terceira pessoa utiliza o discurso indireto livre, dando ao leitor acesso direto aos pensamentos e angústias de Naziazeno sem filtros explícitos.',
+                curiosity:
+                    'The third-person narrative uses free indirect discourse, giving the reader direct access to Naziazenos thoughts and anguish without explicit filters.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'A linguagem da obra é direta, econômica e sem sentimentalismo, com frases curtas que mimetizam a tensão e a vertigem vividas pelo protagonista.',
+                curiosity:
+                    'The language of the work is direct, economical, and without sentimentalism, with short sentences that mimic the tension and vertigo experienced by the protagonist.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'O crítico Davi Arrigucci Jr. posiciona "Os Ratos" ao lado de "Vidas Secas", de Graciliano Ramos, como correlato urbano de uma mesma miséria humana.',
+                curiosity:
+                    'Critic Davi Arrigucci Jr. places "Os Ratos" alongside Graciliano Ramos "Vidas Secas" as an urban counterpart of the same human misery.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    '"Os Ratos" incorpora procedimentos do expressionismo literário, com deformação subjetiva do tempo, espaço e ambientes percebidos pelo protagonista.',
+                curiosity:
+                    '"Os Ratos" incorporates procedures from literary expressionism, with subjective distortion of time, space, and environments as perceived by the protagonist.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Dyonélio Machado foi preso por dois anos durante o governo Vargas por suas posições políticas de esquerda, experiência que influenciou profundamente sua escrita.',
+                curiosity:
+                    'Dyonélio Machado was imprisoned for two years during the Vargas government due to his left-wing political positions, an experience that profoundly influenced his writing.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Na 15ª noite de escrita, a datilógrafa que transcrevia o livro perguntou ao autor se Naziazeno seria feliz — sinal de que já havia capturado o interesse do leitor.',
+                curiosity:
+                    'On the 15th night of writing, the typist transcribing the book asked the author if Naziazeno would be happy — a sign that it had already captured the readers interest.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    '"Os Ratos" integra a lista de leituras obrigatórias da FUVEST para os vestibulares da USP de 2025 a 2029, evidenciando sua importância no cânone literário brasileiro.',
+                curiosity:
+                    '"Os Ratos" is on the FUVEST required reading list for USP entrance exams from 2025 to 2029, highlighting its importance in the Brazilian literary canon.',
+            },
+            {
+                conteudo: 'Literatura',
+                content: 'Literature',
+                curiosidade:
+                    'Publicado em 1935, o livro completa 90 anos em 2025 e permanece atual, pois o ciclo de endividamento e precariedade vivido por Naziazeno ainda ecoa na realidade brasileira.',
+                curiosity:
+                    'Published in 1935, the book turns 90 in 2025 and remains relevant, as the cycle of debt and precariousness experienced by Naziazeno still echoes in Brazilian reality.',
+            },
         ],
     });
 
@@ -500,10 +662,95 @@ async function main() {
                 tips: 'Avoid multitasking',
             },
             {
-                conteudo: '5 dicas para passar na redação do vestibular:',
-                content: '5 tips to pass the entrance exam essay:',
-                dicas: '\n1. Leia o edital e entenda o tema proposto.\n2. Faça um planejamento do texto antes de começar a escrever.\n3. Use uma linguagem clara e objetiva, evitando gírias e expressões coloquiais.\n4. Apresente argumentos consistentes e bem fundamentados, utilizando dados, fatos ou exemplos para sustentar suas ideias.\n5. Revise o texto para corrigir erros gramaticais, de ortografia e de coesão.',
-                tips: '\n1. Read the public notice and understand the proposed theme.\n2. Plan the text before you start writing.\n3. Use clear and objective language, avoiding slang and colloquial expressions.\n4. Present consistent and well-founded arguments, using data, facts, or examples to support your ideas.\n5. Proofread the text to correct grammar, spelling, and cohesion errors.',
+                conteudo: 'Dica de saúde mental',
+                content: 'Mental health tip',
+                dicas: 'Mantenha o sono em dia para fixar o conteúdo.',
+                tips: 'Get enough sleep to consolidate what you learned.',
+            },
+            {
+                conteudo: 'Dica de organização',
+                content: 'Organization tip',
+                dicas: 'Crie um cronograma semanal realista.',
+                tips: 'Create a realistic weekly study schedule.',
+            },
+            {
+                conteudo: 'Dica de prova',
+                content: 'Exam tip',
+                dicas: 'Comece pelas questões mais fáceis para ganhar confiança.',
+                tips: 'Start with the easiest questions to build confidence.',
+            },
+            {
+                conteudo: 'Dica de revisão',
+                content: 'Review tip',
+                dicas: 'Use mapas mentais para revisar temas complexos.',
+                tips: 'Use mind maps to review complex topics.',
+            },
+            {
+                conteudo: 'Dica de ambiente',
+                content: 'Environment tip',
+                dicas: 'Estude em um local bem iluminado e silencioso.',
+                tips: 'Study in a well-lit and quiet place.',
+            },
+            {
+                conteudo: 'Dica de memorização',
+                content: 'Memorization tip',
+                dicas: 'Explique a matéria para si mesmo em voz alta.',
+                tips: 'Explain the subject to yourself out loud.',
+            },
+            {
+                conteudo: 'Dica de simulados',
+                content: 'Practice test tip',
+                dicas: 'Faça simulados cronometrando o tempo oficial.',
+                tips: 'Take practice tests timing yourself against the official clock.',
+            },
+            {
+                conteudo: 'Dica de redação (Repertório)',
+                content: 'Essay tip (Knowledge base)',
+                dicas: 'Esteja atualizado sobre os principais fatos do mundo.',
+                tips: 'Stay up to date on major world events.',
+            },
+            {
+                conteudo: 'Dica de foco',
+                content: 'Focus tip',
+                dicas: 'Deixe o celular em outro cômodo durante o estudo.',
+                tips: 'Leave your phone in another room while studying.',
+            },
+            {
+                conteudo: 'Dica de bem-estar',
+                content: 'Well-being tip',
+                dicas: 'Beba água e faça pequenos alongamentos.',
+                tips: 'Drink water and do some light stretching.',
+            },
+            // Para colocar na acordion
+            {
+                conteudo: 'Dica 1 para redação do vestibular',
+                content: 'Tip 1 for the college entrance exam essay',
+                dicas: 'Leia o edital e entenda o tema proposto.',
+                tips: 'Read the public notice and understand the proposed theme.',
+            },
+            {
+                conteudo: 'Dica 2 para redação do vestibular',
+                content: 'Tip 2 for the college entrance exam essay',
+                dicas: 'Faça um planejamento do texto antes de começar a escrever.',
+                tips: 'Plan the text before you start writing.',
+            },
+            {
+                conteudo: 'Dica 3 para redação do vestibular',
+                content: 'Tip 3 for the college entrance exam essay',
+                dicas: 'Use uma linguagem clara e objetiva, evitando gírias e expressões coloquiais.',
+                tips: 'Use clear and objective language, avoiding slang and colloquial expressions.',
+            },
+            {
+                conteudo: 'Dica 4 para redação do vestibular',
+                content: 'Tip 4 for the college entrance exam essay',
+                dicas: 'Apresente argumentos consistentes e bem fundamentados, utilizando dados, fatos ou exemplos para sustentar suas ideias.',
+                tips: 'Present consistent and well-founded arguments, using data, facts, or examples to support your ideas.',
+            },
+            {
+                conteudo: 'Dica 5 para redação do vestibular',
+                content: 'Tip 5 for the college entrance exam essay',
+                dicas: 'Revise o texto para corrigir erros gramaticais, de ortografia e de coesão.',
+                tips: 'Proofread the text to correct grammar, spelling, and cohesion errors.',
             },
         ],
     });
