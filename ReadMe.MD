@@ -86,7 +86,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 
 ---
 
-## ⚙️ Como Executar o Projeto Localmente
+## Como Executar o Projeto Localmente
 
 ### Pré-requisitos
 - Node.js instalado
@@ -108,5 +108,5 @@ npm run dev
 ## Como Testar Online
 1. Utilize o Postman para uma melhor experiência
 2. Coloque a url: https://ratsjs.onrender.com/
-3. Escolha um endpoint que pode ser encontrado no [https://documenter.getpostman.com/view/48022417/2sBXqQHJQo](Postman)
+3. Escolha um endpoint que pode ser encontrado em [Postman](https://documenter.getpostman.com/view/48022417/2sBXqQHJQo)
 
