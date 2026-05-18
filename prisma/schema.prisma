@@ -99,4 +99,5 @@ model Simulado {
     correctAnswer   String
     explicacao      String
     explanation     String
+    materia         String
 }

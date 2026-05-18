@@ -117,16 +117,19 @@ export const criar = async (req, res) => {
 
 export const buscarTodos = async (req, res) => {
     try {
-        const registros = await SimuladoModel.buscarTodos(req.query);
+        const registros = await SimuladoModel.buscarTodos();
 
         if (!registros || registros.length === 0) {
-            return res.status(400).json({ message: 'Nenhum registro encontrado.' });
+            return res.status(404).json({ message: 'Nenhum registro encontrado.' });
         }
 
         return res.status(200).json(registros);
     } catch (error) {
         console.error('Erro ao buscar:', error);
-        return res.status(500).json({ error: 'Erro ao buscar registros.' });
+
+        return res.status(500).json({
+            error: 'Erro ao buscar registros.',
+        });
     }
 };
 
