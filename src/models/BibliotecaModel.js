@@ -38,7 +38,7 @@ export default class BibliotecaModel {
     }
 
     static async buscarPorId(id) {
-        const todos = await this.buscarTodos();
-        return todos.find((livro) => livro.id === Number(id)) ?? null;
+        const data = await prisma.curiosidade.findUnique({ where: { id } });;
+        return data.find((livro) => livro.id === Number(id)) ?? null;
     }
 }
