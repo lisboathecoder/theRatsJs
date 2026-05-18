@@ -51,7 +51,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
       <a href="https://github.com/arthurmorais0227" title="Arthur">
         <img src="https://github.com/arthurmorais0227.png" width="100px;" alt="Foto do Arthur"/><br>
         <sub>
-          <b>Fabio Henrique </b>
+          <b>Arthur Morais</b>
         </sub>
       </a>
     </td>
@@ -77,7 +77,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
       <a href="https://github.com/VictorO04" title="Victor">
         <img src="https://github.com/VictorO04.png" width="100px;" alt="Foto do Victor"/><br>
         <sub>
-          <b>João Stopiglia</b>
+          <b>Victor Ferreira</b>
         </sub>
       </a>
     </td>
