@@ -12,7 +12,6 @@ export default class BibliotecaModel {
             url: 'https://clubelivro-backend.onrender.com/api/livros',
             key: process.env.API_KEY_GRUPO3,
         },
-
     ];
 
     static async buscarTodos() {
@@ -22,15 +21,6 @@ export default class BibliotecaModel {
                     headers: {
                         'x-api-key': key,
                     },
-
-                }).then(res => res.json())
-            )
-        );
-
-        return resultados
-            .filter(r => r.status === 'fulfilled')
-            .flatMap(r => r.value);
-
                 }).then((res) => res.json()),
             ),
         );
@@ -43,15 +33,10 @@ export default class BibliotecaModel {
             ...livro,
             id: index + 1,
         }));
-
     }
 
     static async buscarPorId(id) {
         const todos = await this.buscarTodos();
-
-        return todos.find(livro => livro.id === id) ?? null;
-
-
         return todos.find((livro) => livro.id === Number(id)) ?? null;
     }
 }
