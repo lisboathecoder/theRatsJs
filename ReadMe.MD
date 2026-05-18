@@ -96,7 +96,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 1. **Clonar o repositório**
    ```bash
    git clone [https://github.com/lisboathecoder/theRatsJs.git](https://github.com/lisboathecoder/theRatsJs)
-
+   ```
 2. **Configurar o Backend**
 ```bash
 cd backend
@@ -108,5 +108,5 @@ npm run dev
 ## Como Testar Online
 1. Utilize o Postman para uma melhor experiência
 2. Coloque a url: https://ratsjs.onrender.com/
-3. Escolha um endpoint que pode ser encontrado em [Postman](https://documenter.getpostman.com/view/48022417/2sBXqQHJQo)
+3. Escolha um endpoint que pode ser encontrado no [Postman](https://documenter.getpostman.com/view/48022417/2sBXqQHJQo)
 
