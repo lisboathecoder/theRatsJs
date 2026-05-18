@@ -1,6 +1,6 @@
 # Clube do Livro - Projeto Integrador (SENAI + SESI)
 
-![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Status do Projeto](https://img.shields.io/badge/Status-Em%20Entregue-green)
 ![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -20,11 +20,6 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 - **Runtime:** Node.js
 - **Arquitetura:** API REST
 - **Banco de Dados:** PostgreSQL
-
-### Frontend
-- **Framework** React (web)
-- **Consumo de API:** Axios
-
 ---
 
 ## Nossa Equipe
