@@ -12,6 +12,10 @@ export default class BibliotecaModel {
             url: 'https://clubelivro-backend.onrender.com/api/livros',
             key: process.env.API_KEY_GRUPO3,
         },
+        {
+            url: 'https://atividade-portugues-backend.onrender.com/api/livro',
+            key: process.env.API_KEY_GRUPO4,
+        },
     ];
 
     static async buscarTodos() {
@@ -25,9 +29,7 @@ export default class BibliotecaModel {
             ),
         );
 
-        const livros = resultados
-            .filter((r) => r.status === 'fulfilled')
-            .flatMap((r) => r.value);
+        const livros = resultados.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
 
         return livros.map((livro, index) => ({
             ...livro,
