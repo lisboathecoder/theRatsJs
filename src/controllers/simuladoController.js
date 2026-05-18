@@ -117,7 +117,7 @@ export const criar = async (req, res) => {
 
 export const buscarTodos = async (req, res) => {
     try {
-        const registros = await SimuladoModel.buscarTodos();
+        const registros = await SimuladoModel.buscarTodos(req.query);
 
         if (!registros || registros.length === 0) {
             return res.status(404).json({ message: 'Nenhum registro encontrado.' });
