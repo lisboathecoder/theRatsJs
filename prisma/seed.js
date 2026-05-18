@@ -333,7 +333,7 @@ async function main() {
     // Curiosidade
     await prisma.curiosidade.createMany({
         data: [
-            // --- BIOLOGIA ---
+            // Biologia
             {
                 conteudo: 'Biologia',
                 content: 'Biology',
@@ -349,16 +349,44 @@ async function main() {
             {
                 conteudo: 'Biologia',
                 content: 'Biology',
-                curiosidade:
-                    'Existem mais bactérias no seu corpo do que estrelas na nossa galáxia.',
+                curiosidade: 'Existem mais bactérias no seu corpo do que estrelas na nossa galáxia.',
                 curiosity: 'There are more bacteria in your body than stars in our galaxy.',
             },
-            // --- FÍSICA ---
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'As impressões digitais dos coalas são tão parecidas com as humanas que podem confundir peritos em cenas de crime.',
+                curiosity: 'Koalas have fingerprints so similar to humans that they can confuse crime scene investigators.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os polvos têm três corações e o sangue deles é azul por ser baseado em cobre.',
+                curiosity: 'Octopuses have three hearts and their blood is blue because it is copper-based.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os fungos são geneticamente mais parecidos com os animais do que com as plantas.',
+                curiosity: 'Fungi are genetically closer to animals than they are to plants.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os dentes humanos são tão fortes quanto os dentes de um tubarão.',
+                curiosity: 'Human teeth are just as strong as shark teeth.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os flamingos são naturalmente brancos; eles ficam rosa por causa dos pigmentos dos alimentos que comem.',
+                curiosity: 'Flamingos are naturally white; they turn pink because of the pigments in the food they eat.',
+            },
+            // Física
             {
                 conteudo: 'Física',
                 content: 'Physics',
-                curiosidade:
-                    'A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra.',
+                curiosidade: 'A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra.',
                 curiosity: 'Sunlight takes about 8 minutes and 20 seconds to reach Earth.',
             },
             {
@@ -373,7 +401,37 @@ async function main() {
                 curiosidade: 'Se você viajasse à velocidade da luz, o tempo pararia para você.',
                 curiosity: 'If you traveled at the speed of light, time would stop for you.',
             },
-            // --- QUÍMICA ---
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'Toda a matéria que compõe a raça humana caberia dentro de um cubo de açúcar se removêssemos o espaço vazio dos átomos.',
+                curiosity: 'All the matter that makes up the human race would fit inside a sugar cube if we removed the empty space in atoms.',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'A água pode congelar e ferver ao mesmo tempo sob condições específicas de pressão e temperatura (ponto triplo).',
+                curiosity: 'Water can freeze and boil at the same time under specific pressure and temperature conditions (triple point).',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'A gravidade na Lua é cerca de 16,6% da gravidade da Terra, o que permite pular muito mais alto.',
+                curiosity: "The Moon's gravity is about 16.6% of Earth's gravity, allowing you to jump much higher.",
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'O vidro é tecnicamente um sólido amorfo, o que significa que seus átomos não estão perfeitamente alinhados.',
+                curiosity: 'Glass is technically an amorphous solid, meaning its atoms are not perfectly aligned.',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'Um ano-luz é uma medida de distância, não de tempo, e equivale a cerca de 9,5 trilhões de quilômetros.',
+                curiosity: 'A light-year is a measure of distance, not time, and equals about 9.5 trillion kilometers.',
+            },
+            // Química
             {
                 conteudo: 'Química',
                 content: 'Chemistry',
@@ -392,7 +450,37 @@ async function main() {
                 curiosidade: 'O oxigênio líquido tem uma cor azul pálida.',
                 curiosity: 'Liquid oxygen has a pale blue color.',
             },
-            // --- GEOGRAFIA ---
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'A tabela periódica não possui a letra "J" em nenhum dos nomes dos elementos químicos.',
+                curiosity: 'The periodic table does not have the letter "J" in any of the chemical element names.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O elemento mais abundante no universo visível é o Hidrogênio, seguido pelo Hélio.',
+                curiosity: 'The most abundant element in the observable universe is Hydrogen, followed by Helium.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O sal de cozinha é feito de Sódio (um metal altamente reativo) e Cloro (um gás tóxico), mas juntos eles são inofensivos.',
+                curiosity: 'Table salt is made of Sodium (a highly reactive metal) and Chlorine (a toxic gas), but together they are harmless.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'A água expande quando congela, ao contrário da maioria das outras substâncias líquidas.',
+                curiosity: 'Water expands when it freezes, unlike most other liquid substances.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O fósforo recebeu esse nome a partir de uma palavra grega que significa "portador da luz", pois ele brilha no escuro.',
+                curiosity: 'Phosphorus was named after a Greek word meaning "light-bearer" because it glows in the dark.',
+            },
+            // Geografia
             {
                 conteudo: 'Geografia',
                 content: 'Geography',
@@ -411,7 +499,37 @@ async function main() {
                 curiosidade: 'O lugar mais seco da Terra é o Deserto do Atacama, no Chile.',
                 curiosity: 'The driest place on Earth is the Atacama Desert in Chile.',
             },
-            // --- HISTÓRIA ---
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'O maior deserto do mundo não é o Saara, mas sim a Antártida, já que deserto é definido pela falta de precipitação.',
+                curiosity: 'The largest desert in the world is not the Sahara, but Antarctica, as a desert is defined by its lack of precipitation.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'O Canadá possui mais lagos do que todos os outros países do mundo somados.',
+                curiosity: 'Canada has more lakes than all the other countries in the world combined.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'Istambul é a única cidade do mundo que se estende por dois continentes: Europa e Ásia.',
+                curiosity: 'Istanbul is the only city in the world that spans across two continents: Europe and Asia.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'A Fossa das Marianas é o ponto mais profundo dos oceanos, chegando a quase 11 quilômetros de profundidade.',
+                curiosity: 'The Mariana Trench is the deepest point in the oceans, reaching nearly 11 kilometers in depth.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'A linha do equador passa por 13 países diferentes ao redor do mundo.',
+                curiosity: 'The equator passes through 13 different countries around the world.',
+            },
+            // História
             {
                 conteudo: 'História',
                 content: 'History',
@@ -421,19 +539,46 @@ async function main() {
             {
                 conteudo: 'História',
                 content: 'History',
-                curiosidade:
-                    'As pirâmides do Egito foram construídas antes da existência dos mamutes.',
+                curiosidade: 'As pirâmides do Egito foram construídas antes da existência dos mamutes.',
                 curiosity: 'The pyramids of Egypt were built before mammoths existed.',
             },
             {
                 conteudo: 'História',
                 content: 'History',
-                curiosidade:
-                    'A Cleópatra viveu mais próxima da invenção do iPhone do que da construção das pirâmides.',
-                curiosity:
-                    'Cleopatra lived closer to the invention of the iPhone than to the construction of the pyramids.',
+                curiosidade: 'A Cleópatra viveu mais próxima da invenção do iPhone do que da construção das pirâmides.',
+                curiosity: 'Cleopatra lived closer to the invention of the iPhone than to the construction of the pyramids.',
             },
-            // --- LITERATURA ---
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O herói romano Júlio César foi sequestrado por piratas na juventude e exigiu que eles aumentassem o valor do seu próprio resgate.',
+                curiosity: 'The Roman hero Julius Caesar was kidnapped by pirates in his youth and demanded they increase his own ransom value.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'A universidade de Oxford é mais antiga do que o Império Asteca.',
+                curiosity: 'Oxford University is older than the Aztec Empire.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O famoso cientista Albert Einstein recebeu uma proposta para se tornar o presidente de Israel em 1952.',
+                curiosity: 'The famous scientist Albert Einstein was offered the presidency of Israel in 1952.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'Antes do uso de moedas, o sal era tão valioso que os soldados romanos eram pagos com ele, origem da palavra "salário".',
+                curiosity: 'Before the use of coins, salt was so valuable that Roman soldiers were paid with it, which is the origin of the word "salary".',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O ano de 1816 ficou conhecido como "O ano sem verão" devido à erupção de um supervulcão na Indonésia que bloqueou o Sol.',
+                curiosity: 'The year 1816 became known as "The year without a summer" due to the eruption of a supervolcano in Indonesia that blocked the Sun.',
+            },
+            // Literatura
             {
                 conteudo: 'Literatura',
                 content: 'Literature',
