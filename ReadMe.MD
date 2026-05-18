@@ -8,7 +8,7 @@
 ## Sobre o Projeto
 Este projeto é fruto da integração entre as disciplinas de **Desenvolvimento de Sistemas (SENAI)** e **Língua Portuguesa/Inglês (SESI)**. Trata-se de uma plataforma digital colaborativa focada no estudo de obras literárias essenciais para vestibulares.
 
-O foco da nossa equipe é a obra: **[Os Ratos]**.
+O foco da nossa equipe é a obra: **Os Ratos**.
 
 A plataforma é totalmente bilíngue (Português/Inglês), com traduções adaptadas manualmente para garantir a fidelidade acadêmica e literária.
 
