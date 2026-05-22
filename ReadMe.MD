@@ -2,7 +2,6 @@
 
 ![Status do Projeto](https://img.shields.io/badge/Status-%20Entregue-green)
 ![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## Sobre o Projeto
@@ -90,7 +89,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 ### Passo a passo
 1. **Clonar o repositório**
    ```bash
-   git clone [https://github.com/lisboathecoder/theRatsJs.git](https://github.com/lisboathecoder/theRatsJs)
+   git clone https://github.com/lisboathecoder/theRatsJs
    ```
 2. **Configurar o Backend**
 ```bash
