@@ -16,6 +16,10 @@ export default class BibliotecaModel {
             url: 'https://atividade-portugues-backend.onrender.com/api/livro',
             key: process.env.API_KEY_GRUPO4,
         },
+        {
+            url: 'https://clubelivro-backend-zui4.onrender.com/api/livro',
+            key: process.env.API_KEY_GRUPO5,
+        },
     ];
 
     static async buscarTodos() {
