@@ -10,6 +10,7 @@ import simuladoRoutes from './routes/simuladoRoute.js';
 import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
