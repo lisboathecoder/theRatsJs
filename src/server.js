@@ -1,5 +1,4 @@
 import express from 'express';
-import cors from 'cors';
 import 'dotenv/config';
 import livroRoutes from './routes/livroRoute.js';
 import participantesRoutes from './routes/participantesRoute.js';
@@ -11,9 +10,6 @@ import simuladoRoutes from './routes/simuladoRoute.js';
 import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173'
-}));
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
