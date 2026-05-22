@@ -11,12 +11,7 @@ import simuladoRoutes from './routes/simuladoRoute.js';
 import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
-app.use(cors({
-    origin: [
-        'http://localhost:5173',
-        'https://ratsjs.onrender.com'
-    ]
-}));
+app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
