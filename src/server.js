@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+
 import livroRoutes from './routes/livroRoute.js';
 import participantesRoutes from './routes/participantesRoute.js';
 import curiosidadesRoutes from './routes/curiosidadesRoute.js';
@@ -10,7 +11,15 @@ import simuladoRoutes from './routes/simuladoRoute.js';
 import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'x-api-key']
+}));
+
+app.options('*', cors());
+
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
