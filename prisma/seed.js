@@ -260,16 +260,72 @@ async function main() {
             {
                 conteudo: 'Aula sobre Revolução Francesa',
                 content: 'Class about French Revolution',
-                urlMidia: 'https://video1.com',
-                descricao: 'Explicação completa',
-                description: 'Full explanation',
+                urlMidia: 'https://www.youtube.com/watch?v=ppInSLfkRWo',
+                descricao: 'Uma explicação completa e detalhada sobre a Revolução Francesa, abordando desde a crise do Antigo Regime, a divisão da sociedade estamental em três estados, a queda da Bastilha, até o período do terror jacobino e a posterior ascensão de Napoleão Bonaparte ao poder.',
+                description: 'A complete and detailed explanation of the French Revolution, covering everything from the crisis of the Old Regime, the division of the estamental society into three estates, the fall of the Bastille, to the period of Jacobean terror and the subsequent rise of Napoleon Bonaparte to power.',
             },
             {
                 conteudo: 'Aula de Matemática',
                 content: 'Math class',
-                urlMidia: 'https://video2.com',
-                descricao: 'Funções lineares',
-                description: 'Linear functions',
+                urlMidia: 'https://www.youtube.com/watch?v=G_k7FFJv3rU',
+                descricao: 'Uma aula aprofundada focada em funções lineares e funções afins, explicando passo a passo como identificar e diferenciar os coeficientes angular e linear na lei de formação, além de demonstrar como esses elementos determinam o comportamento e a inclinação da reta no gráfico.',
+                description: 'An in-depth class focused on linear and affine functions, explaining step-by-step how to identify and differentiate the angular and linear coefficients in the formation law, in addition to demonstrating how these elements determine the behavior and slope of the line on the graph.',
+            },
+            {
+                conteudo: 'Aula de Biologia: Citologia',
+                content: 'Biology class: Cytology',
+                urlMidia: 'https://www.youtube.com/watch?v=VwRVOcqWo2o',
+                descricao: 'Uma introdução abrangente à área da citologia para o vestibular, detalhando detalhadamente a diferença estrutural entre as células eucariontes e procariontes, a presença ou ausência da carioteca, e as características fundamentais dos seres celulares versus acelulares.',
+                description: 'A comprehensive introduction to cytology for college exams, detailing the structural differences between eukaryotic and prokaryotic cells, the presence or absence of the nuclear membrane, and the fundamental characteristics of cellular versus acellular organisms.',
+            },
+            {
+                conteudo: 'Aula de Química: Modelos Atômicos',
+                content: 'Chemistry class: Atomic Models',
+                urlMidia: 'https://www.youtube.com/watch?v=AAPKgOX4_NM',
+                descricao: 'Uma análise cronológica detalhada da evolução os modelos atômicos na história da ciência, explicando de forma clara as propostas de Dalton, Thomson, Rutherford e Bohr, ressaltando os conceitos de esferas maciças, a descoberta do elétron, o núcleo atômico e as órbitas quantizadas de energia.',
+                description: 'A detailed chronological analysis of the evolution of atomic models in science history, clearly explaining the proposals of Dalton, Thomson, Rutherford, and Bohr, highlighting concepts of solid spheres, the discovery of electrons, the atomic nucleus, and quantized energy orbits.',
+            },
+            {
+                conteudo: 'Aula de Geografia: Globalização',
+                content: 'Geography class: Globalization',
+                urlMidia: 'https://www.youtube.com/watch?v=U0SrpjB9Lfw',
+                descricao: 'Uma discussão crítica sobre o processo de globalização e a internacionalização de mercados e capitais, explicando como o capital financeiro, o avanço tecnológico e a atuação das empresas transnacionais moldam os blocos econômicos e afetam as dinâmicas sociais locais.',
+                description: 'A critical discussion on the globalization process and the internationalization of markets and capital, explaining how financial capital, technological breakthroughs, and the role of transnational corporations shape economic blocs and affect local social dynamics.',
+            },
+            {
+                conteudo: 'Aula de Física: Cinemática',
+                content: 'Physics class: Kinematics',
+                urlMidia: 'https://www.youtube.com/watch?v=wlTa_yTElGM',
+                descricao: 'Um resumão completo focado em mecânica e cinemática escalar, abordando conceitos essenciais de movimento uniforme e uniformemente variado, equações de velocidade e aceleração, além de interpretar de maneira aprofundada gráficos de posição e velocidade em função do tempo.',
+                description: 'A complete summary focused on mechanics and scalar kinematics, covering essential concepts of uniform and uniformly varied motion, speed and acceleration equations, along with an in-depth interpretation of position and velocity graphs versus time.',
+            },
+            {
+                conteudo: 'Aula de Português: Sintaxe do Período',
+                content: 'Portuguese class: Sentence Syntax',
+                urlMidia: 'https://www.youtube.com/watch?v=ZR_Ou01WsK0',
+                descricao: 'Explicação didática detalhada sobre a sintaxe das orações coordenadas e subordinadas, ensinando a identificar os termos essenciais, integrantes e acessórios da oração para aplicar de forma correta as regras de concordância e pontuação nos vestibulares.',
+                description: 'Detailed educational explanation of coordinate and subordinate clause syntax, teaching how to identify the essential, core, and accessory terms of a sentence to correctly apply agreement and punctuation rules in college entrance exams.',
+            },
+            {
+                conteudo: 'Aula de Filosofia: Introdução à Filosofia',
+                content: 'Philosophy class: Introduction to Philosophy',
+                urlMidia: 'https://www.youtube.com/watch?v=TIIzrsbx74E',
+                descricao: 'Uma introdução ao pensamento filosófico, abordando a transição crucial da mitologia grega para a racionalidade (Logos) na Grécia Antiga, apresentando os primeiros pensadores da história e a busca pelo princípio fundamental do universo.',
+                description: 'An introduction to philosophical thought, covering the crucial transition from Greek mythology to rationality (Logos) in Ancient Greece, presenting history\'s first thinkers and their quest for the fundamental principle of the universe.',
+            },
+            {
+                conteudo: 'Aula de Literatura: Romantismo no Brasil',
+                content: 'Literature class: Romanticism in Brazil',
+                urlMidia: 'https://www.youtube.com/watch?v=M7okFxuX8fM',
+                descricao: 'Uma contextualização histórica e estética do movimento romântico no Brasil, explicando detalhadamente as três gerações da poesia romântica, os principais autores nacionais e as marcas estilísticas de idealização, nacionalismo e egocentrismo literário.',
+                description: 'A historical and aesthetic contextualization of the Romantic movement in Brazil, explaining in detail the three generations of romantic poetry, the main national authors, and the stylistic marks of idealization, nationalism, and literary egocentrism.',
+            },
+            {
+                conteudo: 'Aula de História: Segunda Guerra Mundial',
+                content: 'History class: World War II',
+                urlMidia: 'https://www.youtube.com/watch?v=ZffDTZTmLGI',
+                descricao: 'Uma retrospectiva profunda da Segunda Guerra Mundial, detalhando as raízes geopolíticas da crise europeia, as estratégias militares do Eixo e dos Aliados, as principais batalhas decisivas e o impacto do conflito na reorganização geopolítica global do século XX.',
+                description: 'An in-depth retrospective of World War II, detailing the geopolitical roots of the European crisis, the military strategies of the Axis and Allies, the main decisive battles, and the impact of the conflict on the global'
             },
         ],
     });
@@ -277,7 +333,7 @@ async function main() {
     // Curiosidade
     await prisma.curiosidade.createMany({
         data: [
-            // --- BIOLOGIA ---
+            // Biologia
             {
                 conteudo: 'Biologia',
                 content: 'Biology',
@@ -293,16 +349,44 @@ async function main() {
             {
                 conteudo: 'Biologia',
                 content: 'Biology',
-                curiosidade:
-                    'Existem mais bactérias no seu corpo do que estrelas na nossa galáxia.',
+                curiosidade: 'Existem mais bactérias no seu corpo do que estrelas na nossa galáxia.',
                 curiosity: 'There are more bacteria in your body than stars in our galaxy.',
             },
-            // --- FÍSICA ---
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'As impressões digitais dos coalas são tão parecidas com as humanas que podem confundir peritos em cenas de crime.',
+                curiosity: 'Koalas have fingerprints so similar to humans that they can confuse crime scene investigators.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os polvos têm três corações e o sangue deles é azul por ser baseado em cobre.',
+                curiosity: 'Octopuses have three hearts and their blood is blue because it is copper-based.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os fungos são geneticamente mais parecidos com os animais do que com as plantas.',
+                curiosity: 'Fungi are genetically closer to animals than they are to plants.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os dentes humanos são tão fortes quanto os dentes de um tubarão.',
+                curiosity: 'Human teeth are just as strong as shark teeth.',
+            },
+            {
+                conteudo: 'Biologia',
+                content: 'Biology',
+                curiosidade: 'Os flamingos são naturalmente brancos; eles ficam rosa por causa dos pigmentos dos alimentos que comem.',
+                curiosity: 'Flamingos are naturally white; they turn pink because of the pigments in the food they eat.',
+            },
+            // Física
             {
                 conteudo: 'Física',
                 content: 'Physics',
-                curiosidade:
-                    'A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra.',
+                curiosidade: 'A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar à Terra.',
                 curiosity: 'Sunlight takes about 8 minutes and 20 seconds to reach Earth.',
             },
             {
@@ -317,7 +401,37 @@ async function main() {
                 curiosidade: 'Se você viajasse à velocidade da luz, o tempo pararia para você.',
                 curiosity: 'If you traveled at the speed of light, time would stop for you.',
             },
-            // --- QUÍMICA ---
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'Toda a matéria que compõe a raça humana caberia dentro de um cubo de açúcar se removêssemos o espaço vazio dos átomos.',
+                curiosity: 'All the matter that makes up the human race would fit inside a sugar cube if we removed the empty space in atoms.',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'A água pode congelar e ferver ao mesmo tempo sob condições específicas de pressão e temperatura (ponto triplo).',
+                curiosity: 'Water can freeze and boil at the same time under specific pressure and temperature conditions (triple point).',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'A gravidade na Lua é cerca de 16,6% da gravidade da Terra, o que permite pular muito mais alto.',
+                curiosity: "The Moon's gravity is about 16.6% of Earth's gravity, allowing you to jump much higher.",
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'O vidro é tecnicamente um sólido amorfo, o que significa que seus átomos não estão perfeitamente alinhados.',
+                curiosity: 'Glass is technically an amorphous solid, meaning its atoms are not perfectly aligned.',
+            },
+            {
+                conteudo: 'Física',
+                content: 'Physics',
+                curiosidade: 'Um ano-luz é uma medida de distância, não de tempo, e equivale a cerca de 9,5 trilhões de quilômetros.',
+                curiosity: 'A light-year is a measure of distance, not time, and equals about 9.5 trillion kilometers.',
+            },
+            // Química
             {
                 conteudo: 'Química',
                 content: 'Chemistry',
@@ -336,7 +450,37 @@ async function main() {
                 curiosidade: 'O oxigênio líquido tem uma cor azul pálida.',
                 curiosity: 'Liquid oxygen has a pale blue color.',
             },
-            // --- GEOGRAFIA ---
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'A tabela periódica não possui a letra "J" em nenhum dos nomes dos elementos químicos.',
+                curiosity: 'The periodic table does not have the letter "J" in any of the chemical element names.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O elemento mais abundante no universo visível é o Hidrogênio, seguido pelo Hélio.',
+                curiosity: 'The most abundant element in the observable universe is Hydrogen, followed by Helium.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O sal de cozinha é feito de Sódio (um metal altamente reativo) e Cloro (um gás tóxico), mas juntos eles são inofensivos.',
+                curiosity: 'Table salt is made of Sodium (a highly reactive metal) and Chlorine (a toxic gas), but together they are harmless.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'A água expande quando congela, ao contrário da maioria das outras substâncias líquidas.',
+                curiosity: 'Water expands when it freezes, unlike most other liquid substances.',
+            },
+            {
+                conteudo: 'Química',
+                content: 'Chemistry',
+                curiosidade: 'O fósforo recebeu esse nome a partir de uma palavra grega que significa "portador da luz", pois ele brilha no escuro.',
+                curiosity: 'Phosphorus was named after a Greek word meaning "light-bearer" because it glows in the dark.',
+            },
+            // Geografia
             {
                 conteudo: 'Geografia',
                 content: 'Geography',
@@ -355,7 +499,37 @@ async function main() {
                 curiosidade: 'O lugar mais seco da Terra é o Deserto do Atacama, no Chile.',
                 curiosity: 'The driest place on Earth is the Atacama Desert in Chile.',
             },
-            // --- HISTÓRIA ---
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'O maior deserto do mundo não é o Saara, mas sim a Antártida, já que deserto é definido pela falta de precipitação.',
+                curiosity: 'The largest desert in the world is not the Sahara, but Antarctica, as a desert is defined by its lack of precipitation.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'O Canadá possui mais lagos do que todos os outros países do mundo somados.',
+                curiosity: 'Canada has more lakes than all the other countries in the world combined.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'Istambul é a única cidade do mundo que se estende por dois continentes: Europa e Ásia.',
+                curiosity: 'Istanbul is the only city in the world that spans across two continents: Europe and Asia.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'A Fossa das Marianas é o ponto mais profundo dos oceanos, chegando a quase 11 quilômetros de profundidade.',
+                curiosity: 'The Mariana Trench is the deepest point in the oceans, reaching nearly 11 kilometers in depth.',
+            },
+            {
+                conteudo: 'Geografia',
+                content: 'Geography',
+                curiosidade: 'A linha do equador passa por 13 países diferentes ao redor do mundo.',
+                curiosity: 'The equator passes through 13 different countries around the world.',
+            },
+            // História
             {
                 conteudo: 'História',
                 content: 'History',
@@ -365,19 +539,46 @@ async function main() {
             {
                 conteudo: 'História',
                 content: 'History',
-                curiosidade:
-                    'As pirâmides do Egito foram construídas antes da existência dos mamutes.',
+                curiosidade: 'As pirâmides do Egito foram construídas antes da existência dos mamutes.',
                 curiosity: 'The pyramids of Egypt were built before mammoths existed.',
             },
             {
                 conteudo: 'História',
                 content: 'History',
-                curiosidade:
-                    'A Cleópatra viveu mais próxima da invenção do iPhone do que da construção das pirâmides.',
-                curiosity:
-                    'Cleopatra lived closer to the invention of the iPhone than to the construction of the pyramids.',
+                curiosidade: 'A Cleópatra viveu mais próxima da invenção do iPhone do que da construção das pirâmides.',
+                curiosity: 'Cleopatra lived closer to the invention of the iPhone than to the construction of the pyramids.',
             },
-            // --- LITERATURA ---
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O herói romano Júlio César foi sequestrado por piratas na juventude e exigiu que eles aumentassem o valor do seu próprio resgate.',
+                curiosity: 'The Roman hero Julius Caesar was kidnapped by pirates in his youth and demanded they increase his own ransom value.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'A universidade de Oxford é mais antiga do que o Império Asteca.',
+                curiosity: 'Oxford University is older than the Aztec Empire.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O famoso cientista Albert Einstein recebeu uma proposta para se tornar o presidente de Israel em 1952.',
+                curiosity: 'The famous scientist Albert Einstein was offered the presidency of Israel in 1952.',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'Antes do uso de moedas, o sal era tão valioso que os soldados romanos eram pagos com ele, origem da palavra "salário".',
+                curiosity: 'Before the use of coins, salt was so valuable that Roman soldiers were paid with it, which is the origin of the word "salary".',
+            },
+            {
+                conteudo: 'História',
+                content: 'History',
+                curiosidade: 'O ano de 1816 ficou conhecido como "O ano sem verão" devido à erupção de um supervulcão na Indonésia que bloqueou o Sol.',
+                curiosity: 'The year 1816 became known as "The year without a summer" due to the eruption of a supervolcano in Indonesia that blocked the Sun.',
+            },
+            // Literatura
             {
                 conteudo: 'Literatura',
                 content: 'Literature',
@@ -652,105 +853,104 @@ async function main() {
             {
                 conteudo: 'Dica de estudo',
                 content: 'Study tip',
-                dicas: 'Estude 25 minutos e descanse 5',
-                tips: 'Study 25 min, rest 5',
+                dicas: 'Utilize o método Pomodoro de forma estratégica: estude com foco total e sem interrupções por 25 minutos e, em seguida, faça uma pausa de 5 minutos para descansar a mente e oxigenar o cérebro, repetindo o ciclo até completar quatro blocos, quando você deverá fazer uma pausa mais longa de 15 a 30 minutos.',
+                tips: 'Utilize the Pomodoro technique strategically: study with absolute focus and zero distractions for 25 minutes, then take a 5-minute break to rest your mind and refresh your brain, repeating this cycle until you complete four blocks, after which you should take a longer restorative break of 15 to 30 minutes.',
+            },
+            {
+                conteudo: 'Dica 1 para redação do vestibular',
+                content: 'Tip 1 for the college entrance exam essay',
+                dicas: 'Leia o edital com extrema atenção para conhecer todos os critérios de correção e dedique os primeiros minutos da prova a interpretar o tema proposto de forma minuciosa, evitando tangenciamentos e garantindo que você compreendeu o recorte temático exato exigido pela banca examinadora.',
+                tips: 'Read the exam guidelines with extreme attention to know all the grading criteria and dedicate the first few minutes of the test to carefully interpreting the proposed theme, preventing any off-topic drift and ensuring you fully understand the exact thematic scope required by the examination board.',
             },
             {
                 conteudo: 'Dica de produtividade',
                 content: 'Productivity tip',
-                dicas: 'Evite multitarefa',
-                tips: 'Avoid multitasking',
-            },
-            {
-                conteudo: 'Dica de saúde mental',
-                content: 'Mental health tip',
-                dicas: 'Mantenha o sono em dia para fixar o conteúdo.',
-                tips: 'Get enough sleep to consolidate what you learned.',
-            },
-            {
-                conteudo: 'Dica de organização',
-                content: 'Organization tip',
-                dicas: 'Crie um cronograma semanal realista.',
-                tips: 'Create a realistic weekly study schedule.',
-            },
-            {
-                conteudo: 'Dica de prova',
-                content: 'Exam tip',
-                dicas: 'Comece pelas questões mais fáceis para ganhar confiança.',
-                tips: 'Start with the easiest questions to build confidence.',
-            },
-            {
-                conteudo: 'Dica de revisão',
-                content: 'Review tip',
-                dicas: 'Use mapas mentais para revisar temas complexos.',
-                tips: 'Use mind maps to review complex topics.',
-            },
-            {
-                conteudo: 'Dica de ambiente',
-                content: 'Environment tip',
-                dicas: 'Estude em um local bem iluminado e silencioso.',
-                tips: 'Study in a well-lit and quiet place.',
-            },
-            {
-                conteudo: 'Dica de memorização',
-                content: 'Memorization tip',
-                dicas: 'Explique a matéria para si mesmo em voz alta.',
-                tips: 'Explain the subject to yourself out loud.',
-            },
-            {
-                conteudo: 'Dica de simulados',
-                content: 'Practice test tip',
-                dicas: 'Faça simulados cronometrando o tempo oficial.',
-                tips: 'Take practice tests timing yourself against the official clock.',
-            },
-            {
-                conteudo: 'Dica de redação (Repertório)',
-                content: 'Essay tip (Knowledge base)',
-                dicas: 'Esteja atualizado sobre os principais fatos do mundo.',
-                tips: 'Stay up to date on major world events.',
-            },
-            {
-                conteudo: 'Dica de foco',
-                content: 'Focus tip',
-                dicas: 'Deixe o celular em outro cômodo durante o estudo.',
-                tips: 'Leave your phone in another room while studying.',
-            },
-            {
-                conteudo: 'Dica de bem-estar',
-                content: 'Well-being tip',
-                dicas: 'Beba água e faça pequenos alongamentos.',
-                tips: 'Drink water and do some light stretching.',
-            },
-            // Para colocar na acordion
-            {
-                conteudo: 'Dica 1 para redação do vestibular',
-                content: 'Tip 1 for the college entrance exam essay',
-                dicas: 'Leia o edital e entenda o tema proposto.',
-                tips: 'Read the public notice and understand the proposed theme.',
+                dicas: 'Evite terminantemente a multitarefa; concentrar-se em uma única atividade por vez evita a sobrecarga cognitiva, aumenta significativamente a qualidade do aprendizado, reduz a taxa de erros e permite que você conclua suas tarefas em um tempo total muito menor.',
+                tips: 'Strictly avoid multitasking; focusing on a single task at a time prevents cognitive overload, significantly increases the quality of your learning, reduces error rates, and ultimately allows you to complete your tasks in a much shorter total amount of time.',
             },
             {
                 conteudo: 'Dica 2 para redação do vestibular',
                 content: 'Tip 2 for the college entrance exam essay',
-                dicas: 'Faça um planejamento do texto antes de começar a escrever.',
-                tips: 'Plan the text before you start writing.',
+                dicas: 'Faça um planejamento de texto estruturado antes de começar a escrever a introdução; monte um esqueleto ou projeto de texto delimitando claramente qual será a sua tese central, quais argumentos serão usados em cada parágrafo de desenvolvimento e qual proposta de intervenção solucionará o problema.',
+                tips: 'Create a structured text plan before you even begin writing the introduction; outline your essay project by clearly defining your central thesis, which arguments will be used in each development paragraph, and what intervention proposal will solve the problem.',
+            },
+            {
+                conteudo: 'Dica de saúde mental',
+                content: 'Mental health tip',
+                dicas: 'Mantenha a sua rotina de sono em dia e regular, dormindo de 7 a 8 horas por noite, pois é durante as fases mais profundas do sono que o cérebro processa as informações recebidas ao longo do dia, fixando e consolidando o conteúdo na memória de longo prazo.',
+                tips: 'Keep your sleep routine consistent and regular, aiming for 7 to 8 hours of quality rest per night, as it is during the deepest stages of sleep that the brain processes all the information received throughout the day, fixing and consolidating the content into long-term memory.',
             },
             {
                 conteudo: 'Dica 3 para redação do vestibular',
                 content: 'Tip 3 for the college entrance exam essay',
-                dicas: 'Use uma linguagem clara e objetiva, evitando gírias e expressões coloquiais.',
-                tips: 'Use clear and objective language, avoiding slang and colloquial expressions.',
+                dicas: 'Use uma linguagem formal, clara e totalmente objetiva, adequando-se perfeitamente à norma-padrão da Língua Portuguesa; evite gírias, expressões coloquiais, marcas de oralidade, clichês ou o uso excessivo de termos rebuscados que possam prejudicar a fluidez da leitura e a compreensão das suas ideias.',
+                tips: "Use formal, clear, and fully objective language, strictly adhering to the standard rules of written Portuguese; avoid slang, colloquial expressions, speech traits, clichés, or the excessive use of overly complex words that could hinder the text's flow and the understanding of your ideas.",
+            },
+            {
+                conteudo: 'Dica de organização',
+                content: 'Organization tip',
+                dicas: 'Crie um cronograma semanal que seja verdadeiramente realista e adaptado à sua rotina, distribuindo as matérias por blocos de tempo específicos, alternando entre disciplinas exatas e humanas, e incluindo obrigatoriamente momentos dedicados ao descanso e ao lazer para evitar o esgotamento mental.',
+                tips: 'Create a weekly schedule that is truly realistic and adapted to your daily routine, distributing subjects into specific time blocks, alternating between exact and human sciences, and mandatorily including dedicated moments for rest and leisure to prevent mental burnout.',
             },
             {
                 conteudo: 'Dica 4 para redação do vestibular',
                 content: 'Tip 4 for the college entrance exam essay',
-                dicas: 'Apresente argumentos consistentes e bem fundamentados, utilizando dados, fatos ou exemplos para sustentar suas ideias.',
-                tips: 'Present consistent and well-founded arguments, using data, facts, or examples to support your ideas.',
+                dicas: 'Apresente argumentos consistentes, progressivos e profundamente bem fundamentados na sua dissertação, utilizando dados estatísticos de fontes confiáveis, fatos históricos comprovados, conceitos filosóficos ou exemplos concretos da realidade para sustentar e legitimar o seu ponto de vista.',
+                tips: 'Present consistent, progressive, and deeply well-founded arguments in your essay, utilizing statistical data from reliable sources, proven historical facts, philosophical concepts, or concrete real-world examples to sustain and legitimize your point of view.',
+            },
+            {
+                conteudo: 'Dica de prova',
+                content: 'Exam tip',
+                dicas: 'Ao iniciar a avaliação, comece resolvendo as questões mais fáceis e aquelas cujo conteúdo você domina completamente; isso garante pontos valiosos logo no início, otimiza o tempo disponível e aumenta significativamente a sua autoconfiança para enfrentar os desafios mais complexos no final.',
+                tips: 'When starting an exam, begin by answering the easiest questions and those whose content you completely master; this guarantees valuable points early on, optimizes your available time, and significantly boosts your self-confidence to tackle the more complex challenges later.',
             },
             {
                 conteudo: 'Dica 5 para redação do vestibular',
                 content: 'Tip 5 for the college entrance exam essay',
-                dicas: 'Revise o texto para corrigir erros gramaticais, de ortografia e de coesão.',
-                tips: 'Proofread the text to correct grammar, spelling, and cohesion errors.',
+                dicas: 'Reserve os minutos finais exclusivamente para revisar o texto com distanciamento crítico, corrigindo pequenos desvios gramaticais, erros ortográficos, problemas de concordância ou falhas de coesão, garantindo uma transição perfeita entre os parágrafos antes de passar a limpo na folha oficial.',
+                tips: 'Reserve the final minutes exclusively to review your text with critical detachment, correcting minor grammatical slips, spelling mistakes, agreement errors, or cohesion flaws, ensuring a seamless transition between paragraphs before transferring it to the official answer sheet.',
+            },
+            {
+                conteudo: 'Dica de revisão',
+                content: 'Review tip',
+                dicas: 'Use mapas mentais, diagramas e resumos visuais para revisar temas complexos, conectando palavras-chave, conceitos principais e ramificações de forma dinâmica, o que estimula o hemisfério direito do cérebro e facilita a recuperação rápida das informações no dia da prova.',
+                tips: "Use mind maps, diagrams, and visual summaries to review complex topics, connecting keywords, main concepts, and secondary branches in a dynamic way, which stimulates the brain's right hemisphere and facilitates quick information retrieval on exam day.",
+            },
+            {
+                conteudo: 'Dica de ambiente',
+                content: 'Environment tip',
+                dicas: 'Separe um local fixo para os estudos que seja limpo, bem iluminado, silencioso e completamente livre de distrações visuais ou sonoras, garantindo que sua postura física esteja confortável para que toda a sua energia e atenção fiquem totalmente voltadas aos materiais didáticos.',
+                tips: 'Set aside a designated study space that is clean, well-lit, quiet, and completely free from visual or noise distractions, ensuring that your physical posture is comfortable so that all your energy and attention can remain entirely focused on your educational materials.',
+            },
+            {
+                conteudo: 'Dica de memorização',
+                content: 'Memorization tip',
+                dicas: 'Pratique a técnica da autoexplicação baseada na Técnica Feynman: explique a matéria para si mesmo em voz alta, utilizando suas próprias palavras e criando analogias simples, como se estivesse dando uma aula para alguém que nunca ouviu falar sobre o assunto, identificando onde estão suas dúvidas.',
+                tips: 'Practice the self-explanation technique based on the Feynman Method: explain the subject to yourself out loud, using your own words and creating simple analogies, as if you were teaching a lesson to someone who has never heard of the topic, thereby identifying gaps in your knowledge.',
+            },
+            {
+                conteudo: 'Dica de simulados',
+                content: 'Practice test tip',
+                dicas: 'Faça simulados completos reproduzindo fielmente as condições reais do exame, o que inclui cronometrar o tempo oficial, sentar-se em uma cadeira adequada, evitar consultas a materiais externos e gerenciar as pausas para ir ao banheiro, treinando assim o seu corpo e mente para o ritmo da prova.',
+                tips: 'Take complete practice tests while faithfully reproducing the real exam conditions, which includes timing yourself against the official clock, sitting in a proper chair, avoiding external material consultations, and managing bathroom breaks, thus training both body and mind for the actual test pacing.',
+            },
+            {
+                conteudo: 'Dica de redação (Repertório)',
+                content: 'Essay tip (Knowledge base)',
+                dicas: 'Esteja sempre atualizado sobre os principais fatos, debates e acontecimentos políticos, econômicos e sociais do mundo, lendo jornais, assistindo a documentários e consumindo portais de notícias confiáveis para construir um repertório sociocultural sólido e argumentativo.',
+                tips: 'Stay consistently up to date on major world events, debates, and political, economic, and social developments by reading newspapers, watching documentaries, and consuming reliable news portals to build a solid, argumentative, and sociocultural knowledge base.',
+            },
+            {
+                conteudo: 'Dica de foco',
+                content: 'Focus tip',
+                dicas: 'Antes de iniciar a sua sessão de estudos, deixe o celular em outro cômodo da casa ou utilize aplicativos rigorosos que bloqueiam o acesso às redes sociais, criando um bloqueio completo de notificações visuais e sonoras que interrompem o seu estado de fluxo e concentração profunda.',
+                tips: 'Before starting your study session, leave your phone in another room or use strict applications that block access to social media, creating a complete barrier against visual and auditory notifications that disrupt your state of flow and deep concentration.',
+            },
+            {
+                conteudo: 'Dica de bem-estar',
+                content: 'Well-being tip',
+                dicas: 'Não negligencie o seu corpo durante a rotina de estudos: mantenha uma garrafa de água sempre por perto para se manter hidratado e aproveite os pequenos intervalos para fazer alongamentos leves nos braços, pescoço e pernas, melhorando a circulação sanguínea e aliviando a tensão muscular acumulada.',
+                tips: 'Do not neglect your body during your study routine: keep a water bottle close by to stay properly hydrated and use short breaks to perform light stretches for your arms, neck, and legs, which improves blood circulation and relieves accumulated muscle tension.',
             },
         ],
     });

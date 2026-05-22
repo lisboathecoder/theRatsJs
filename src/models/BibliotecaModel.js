@@ -13,7 +13,7 @@ export default class BibliotecaModel {
             key: process.env.API_KEY_GRUPO3,
         },
         {
-            url: 'https://clubelivro-backend-zui4.onrender.com/api/livro',
+            url: 'https://atividade-portugues-backend.onrender.com/api/livro',
             key: process.env.API_KEY_GRUPO4,
         },
     ];
@@ -29,9 +29,7 @@ export default class BibliotecaModel {
             ),
         );
 
-        const livros = resultados
-            .filter((r) => r.status === 'fulfilled')
-            .flatMap((r) => r.value);
+        const livros = resultados.filter((r) => r.status === 'fulfilled').flatMap((r) => r.value);
 
         return livros.map((livro, index) => ({
             ...livro,
@@ -39,9 +37,15 @@ export default class BibliotecaModel {
         }));
     }
 
-    static async buscarPorId(id) {
-        const todos = await this.buscarTodos();
-
-        return todos.find((livro) => livro.id === Number(id)) ?? null;
+/*   static async buscarPorId(id) {
+        const data = await prisma.curiosidade.findUnique({ where: { id } });;
+        return data.find((livro) => livro.id === Number(id)) ?? null;
     }
+}
+*/
+
+static async buscarPorId(id) {
+    const todos = await this.buscarTodos();
+    return todos.find((livro) => livro.id === Number(id)) ?? null;
+}
 }
