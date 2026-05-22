@@ -89,7 +89,7 @@ A plataforma é totalmente bilíngue (Português/Inglês), com traduções adapt
 ### Passo a passo
 1. **Clonar o repositório**
    ```bash
-   git clone [https://github.com/lisboathecoder/theRatsJs.git](https://github.com/lisboathecoder/theRatsJs)
+   git clone https://github.com/lisboathecoder/theRatsJs
    ```
 2. **Configurar o Backend**
 ```bash
