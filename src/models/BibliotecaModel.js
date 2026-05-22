@@ -12,6 +12,10 @@ export default class BibliotecaModel {
             url: 'https://clubelivro-backend.onrender.com/api/livros',
             key: process.env.API_KEY_GRUPO3,
         },
+        {
+            url: 'https://clubelivro-backend-zui4.onrender.com/api/livro',
+            key: process.env.API_KEY_GRUPO4,
+        },
     ];
 
     static async buscarTodos() {
