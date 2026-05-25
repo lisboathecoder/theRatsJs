@@ -1423,7 +1423,7 @@ async function main() {
                     'Dyonélio Machado was a psychiatrist and writer from Rio Grande do Sul.',
                 materia: 'Literatura',
             },
-            // --- BIOLOGIA (ENEM/Vestibular) ---
+            // Biologia
             {
                 pergunta:
                     'A replicação semiconservativa do DNA implica que, após uma divisão, cada molécula-filha contém:',
@@ -1796,7 +1796,7 @@ async function main() {
                     'Scalar speed considers only the magnitude of distance traveled. Vector velocity considers displacement (change in position). Since the paths are different, the displacement vector may differ even with the same distance traveled. URM requires rectilinear trajectory and constant velocity — which is not the case here.',
                 materia: 'Física',
             },
-            // --- QUÍMICA (ENEM/Vestibular) ---
+            // Química
             {
                 pergunta:
                     'O antiácido estomacal age neutralizando o excesso de ácido clorídrico (HCl) produzido pelo estômago. Um comprimido contém hidróxido de magnésio Mg(OH)₂ como princípio ativo. A reação que ocorre é classificada como:',
@@ -2008,7 +2008,7 @@ async function main() {
                     "By Le Chatelier's Principle, if increasing temperature favors dissolution (greater solubility), the dissolution process absorbs heat — that is, it is endothermic (ΔH > 0). Upon cooling, equilibrium shifts toward crystallization (exothermic), precipitating the salt. This behavior is typical of most solid inorganic salts.",
                 materia: 'Química',
             },
-            // --- LÍNGUA PORTUGUESA (ENEM/Vestibular) ---
+            // Língua Portuguesa
             {
                 pergunta:
                     'Leia o trecho: "Ele tinha os olhos de um lobo faminto — vasculhavam cada canto da sala, calculando distâncias." A linguagem figurada predominante nesse trecho é:',
@@ -2217,7 +2217,7 @@ async function main() {
                     '"Mim" is an oblique pronoun used after prepositions, except when it is the subject of a verb in the infinitive. In "Between you and I", the correct form is "Between me and you", as after a preposition the oblique form is used. In "For me to solve" and "He asked for me to leave", the pronoun is the subject of the infinitive — the correct form would be "For I to solve" and "for I to leave". In "Let me speak", "me/eu" is the subject of the infinitive — correct.',
                 materia: 'Língua Portuguesa',
             },
-            // --- MATEMÁTICA (ENEM/Vestibular) ---
+            // Matemática
             {
                 pergunta:
                     'Uma loja oferece um desconto de 20% sobre o preço original de um produto. Em seguida, aplica um acréscimo de 20% sobre o valor com desconto. O preço final em relação ao original é:',
@@ -2403,7 +2403,7 @@ async function main() {
                 materia: 'Matemática',
             },
 
-            // --- ARTES (ENEM/Vestibular) ---
+            // Artes
             {
                 pergunta:
                     'Tarsila do Amaral pintou "Abaporu" em 1928 e a obra tornou-se símbolo do Movimento Antropofágico brasileiro. O termo "antropofagia", no contexto do Modernismo, significa:',
@@ -2635,7 +2635,7 @@ async function main() {
                 materia: 'Artes',
             },
 
-            // --- GEOGRAFIA ---
+            // Geografia
             {
                 pergunta: 'Qual o maior oceano do planeta?',
                 question: 'What is the largest ocean on the planet?',
@@ -2827,7 +2827,7 @@ async function main() {
                 materia: 'Geografia',
             },
 
-            // --- HISTÓRIA ---
+            // História
             {
                 pergunta: 'Em que ano começou a Segunda Guerra Mundial?',
                 question: 'In what year did World War II begin?',
