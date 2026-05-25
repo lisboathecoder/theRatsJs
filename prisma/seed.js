@@ -258,6 +258,14 @@ async function main() {
     await prisma.videoAula.createMany({
         data: [
             {
+                conteudo: 'Vídeo sobre o livro "Os Ratos" feito pelo aluno Davi Camoleis.',
+                content: 'Video about the book “Os Ratos” created by student Davi Camoleis.',
+                urlMidia: 'https://youtube.com/shorts/5GOQK1J8F08?si=dlHMmEOv5pRK0zkz',
+                descricao: 'Um resumo do livro "Os Ratos" contado de uma forma diferente e contagiante, feita pelo aluno de Valinhos, Davi Camoleis que, atualmente está no 3º Ano do Ensino Médio.',
+                description: 'A summary of the book "The Rats", retold in a unique and engaging way by Davi Camoleis, a student from Valinhos who is currently in his junior year of high school',
+
+            },
+            {
                 conteudo: 'Aula sobre Revolução Francesa',
                 content: 'Class about French Revolution',
                 urlMidia: 'https://www.youtube.com/watch?v=ppInSLfkRWo',
