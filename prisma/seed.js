@@ -1025,6 +1025,7 @@ async function main() {
     // Simulado
     await prisma.simulado.createMany({
         data: [
+            // Literatura
             {
                 pergunta: 'Qual é o nome do protagonista de "Os Ratos"?',
                 question: 'Who is the protagonist of "Os Ratos"?',
