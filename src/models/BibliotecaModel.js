@@ -17,7 +17,7 @@ export default class BibliotecaModel {
             key: process.env.API_KEY_GRUPO4,
         },
         {
-            url: 'https://clubelivro-backend-zui4.onrender.com/api/livro',
+            url: 'https://devstones-backend.onrender.com/api/livro/',
             key: process.env.API_KEY_GRUPO5,
         },
     ];
