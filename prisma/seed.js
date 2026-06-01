@@ -21,7 +21,7 @@ async function main() {
 
     console.log('📦 Inserindo dados...');
 
-    // Usuario
+    // Participantes
     await prisma.participantes.createMany({
         data: [
             {
@@ -144,9 +144,7 @@ async function main() {
         ],
     });
 
-    await prisma.personagem.deleteMany();
-
-    // Livro com personagens
+    // Livro com personagens expandidos
     await prisma.livro.create({
         data: {
             titulo: 'Os Ratos',
@@ -154,37 +152,322 @@ async function main() {
             autor: 'Dyonélio Machado',
             anoPublicacao: 1935,
 
+            // ─────────────────────────────────────────────────────────
+            //  DETALHES DO AUTOR
+            // ─────────────────────────────────────────────────────────
             detalhesAutor:
-                'Dyonélio Tubino Machado (1895–1985) nasceu em Quaraí, no Rio Grande do Sul. Médico psiquiatra, jornalista e escritor, é um dos nomes centrais do Modernismo de 1930. Sua formação em psiquiatria marca profundamente sua ficção: ele constrói personagens a partir de gestos miúdos, impulsos e pensamentos quase imperceptíveis, revelando a psicologia do homem comum submetido à pressão social e econômica. Foi preso por questões políticas, filiou-se ao Partido Comunista e chegou a dividir uma cela com Graciliano Ramos. Ao longo da vida publicou 19 títulos, mas é com Os Ratos que seu nome permanece na literatura brasileira.',
-            detalhesAutor_en:
-                'Dyonélio Tubino Machado (1895–1985) was born in Quaraí, Rio Grande do Sul. A psychiatrist, journalist, and writer, he is one of the central figures of Brazilian 1930s Modernism. His medical background deeply shapes his fiction: characters are built through small gestures, impulses, and near-imperceptible thoughts that expose the psychology of ordinary people under social and economic pressure. He was imprisoned for political reasons, joined the Communist Party, and shared a cell with fellow writer Graciliano Ramos. Over his lifetime he published 19 titles, but it is The Rats that secured his place in Brazilian literature.',
+                'Dyonélio Tubino Machado (Quaraí, RS, 21 ago. 1895 — Porto Alegre, RS, 1985) nasceu ' +
+                'dois dias antes do fim da Revolução Federalista: seu nascimento coincidiu quase ao ' +
+                'segundo com o tratado de paz que encerrou o conflito, e essa fronteira tensa entre ' +
+                'guerra e sobrevivência marcaria toda a sua sensibilidade. Filho de família simples ' +
+                'na cidade gaúcha que faz divisa com o Uruguai, ainda menino vendeu bilhetes de ' +
+                'loteria, trabalhou como balconista e foi monitor de classes atrasadas em escola ' +
+                'pública. Em 1911, aos dezesseis anos, fundou o jornal O Martelo, revelando precocemente ' +
+                'a vocação jornalística que manteria por décadas — foi ainda colaborador dos periódicos ' +
+                'Correio do Povo e Diário de Notícias e um dos fundadores da Associação Riograndense ' +
+                'de Imprensa (ARI).\n\n' +
+                'Transferiu-se para Porto Alegre, onde cursou Medicina e se especializou em psiquiatria, ' +
+                'trabalhando no Hospital São Pedro. Defendeu a tese de doutorado Uma definição biológica ' +
+                'do crime (1932), em que já conjugava os dois polos centrais de seu pensamento: a questão ' +
+                'médica e a questão social. Foi um dos responsáveis pela introdução da psicanálise freudiana ' +
+                'no Rio Grande do Sul, e essa formação clínica impregnou sua prosa: personagens são ' +
+                'construídos a partir de gestos miúdos, impulsos e pensamentos quase imperceptíveis — ' +
+                '"dedos ossudos e cabeçudos quebrando o pão em pedaços miudinhos", como escreve no ' +
+                'primeiro capítulo de Os Ratos, condensando em um único gesto a ansiedade crônica de ' +
+                'Naziazeno.\n\n' +
+                'Filiado ao Partido Comunista Brasileiro e presidente da seção gaúcha da Aliança Nacional ' +
+                'Libertadora (ANL), foi preso pela ditadura Vargas em 1935 — o mesmo ano em que Os Ratos ' +
+                'foi publicado. Cumpriu seis meses em Porto Alegre e mais um ano e meio no Pavilhão dos ' +
+                'Primários da Casa de Detenção, no Rio de Janeiro, onde conviveu com Olga Benário, ' +
+                'militantes socialistas e o romancista Graciliano Ramos — autor de Angústia (1936), obra ' +
+                'com a qual Os Ratos forma um par inseparável na crítica literária brasileira. Ironicamente, ' +
+                'a prisão aconteceu no mesmo ano em que o romance lhe rendeu o Prêmio Machado de Assis ' +
+                'da Academia Brasileira de Letras.\n\n' +
+                'Segundo consta, Os Ratos nasceu de um pesadelo que sua mãe lhe contou, e foi escrito em ' +
+                'apenas vinte dias para atender ao convite do escritor Érico Veríssimo para um concurso ' +
+                'literário — mas o material havia amadurecido por nove anos na memória e na observação ' +
+                'clínica do autor. O modo de escrita de Dyonélio é inconfundível: frases curtas e entrecortadas ' +
+                'que imitam o ritmo da ansiedade, uso extensivo de aspas e itálicos para marcar a tensão entre ' +
+                'a voz do narrador e a fala coloquial do personagem, repetições rítmicas como mantra ' +
+                '("Metido o focinho dentro do guichê, Duque confabula, confabula"), e a gradual ' +
+                'zoomorfização do texto — substituindo termos humanos por termos animais, como "focinho" ' +
+                'no lugar de "rosto", diluindo a fronteira entre o homem e o roedor que dá título ao livro.\n\n' +
+                'Ao longo de aproximadamente sessenta anos de atividade literária, publicou dezenove títulos, ' +
+                'entre romances, contos e ensaios. Da obra ficcional destacam-se ainda O louco do Cati (1942), ' +
+                'Desolação (1944), Passos perdidos (1946) e a Trilogia da Liberdade (Deuses econômicos, ' +
+                'Sol subterrâneo e Prodígios). Em 1946, ao lado do historiador Décio Freitas, fundou o ' +
+                'jornal Tribuna Gaúcha, porta-voz do PCB gaúcho. Morreu em Porto Alegre em 1985, ' +
+                'aos noventa anos. A casa em que viveu foi tombada como patrimônio inventariado da cidade. ' +
+                'Antonio Candido o considerou um dos escritores mais injustamente subestimados do ' +
+                'Modernismo de 1930, sublinhando que a "fatura requintada" de Os Ratos foi ofuscada pela ' +
+                'ausência de "ideologia ostensiva" — quando, na verdade, a crítica ao capitalismo e à ' +
+                'alienação urbana está inscrita na própria sintaxe do romance.',
 
+            detalhesAutor_en:
+                'Dyonélio Tubino Machado (Quaraí, RS, August 21, 1895 — Porto Alegre, RS, 1985) was born ' +
+                'two days before the end of the Federalist Revolution: his birth nearly coincided with the ' +
+                'peace treaty that ended the conflict, and that tense border between war and survival would ' +
+                'mark his entire sensibility. The son of a modest family in the Uruguayan-border town, as a ' +
+                'child he sold lottery tickets, worked as a shop assistant, and was a tutor at a public school. ' +
+                'In 1911, at sixteen, he founded the newspaper O Martelo, showing early the journalistic vocation ' +
+                'he would sustain for decades — he also contributed to Correio do Povo and Diário de Notícias ' +
+                'and co-founded the Riograndense Press Association (ARI).\n\n' +
+                'He moved to Porto Alegre, studied Medicine, and specialized in psychiatry at the Hospital ' +
+                'São Pedro. His doctoral thesis, A Biological Definition of Crime (1932), already linked his ' +
+                'two core concerns: the medical and the social. He was one of the pioneers of Freudian ' +
+                'psychoanalysis in Rio Grande do Sul, and that clinical training permeates his prose: ' +
+                'characters are built through minute gestures and near-imperceptible impulses — "bony, ' +
+                'knuckled fingers breaking bread into tiny crumbs," as he writes in the first chapter of ' +
+                "The Rats, condensing Naziazeno's chronic anxiety into a single gesture.\n\n" +
+                'A member of the Brazilian Communist Party and president of its Rio Grande do Sul branch of ' +
+                'the National Liberation Alliance (ANL), he was arrested by the Vargas dictatorship in 1935 — ' +
+                'the very year The Rats was published. He served six months in Porto Alegre and another eighteen ' +
+                'in Rio de Janeiro, where he shared a cell with Olga Benário, socialist activists, and novelist ' +
+                'Graciliano Ramos — author of Anguish (1936), a work with which The Rats forms an inseparable ' +
+                'pair in Brazilian literary criticism. Ironically, his arrest came the same year the novel ' +
+                'earned him the Machado de Assis Prize from the Brazilian Academy of Letters.\n\n' +
+                'The Rats was reportedly born from a nightmare his mother described to him, then written in ' +
+                'just twenty days for a competition at the invitation of Érico Veríssimo — but the material ' +
+                "had been ripening for nine years through memory and clinical observation. Dyonélio's style " +
+                'is unmistakable: short, broken sentences that mimic the rhythm of anxiety; quotation marks ' +
+                "and italics to mark the tension between narrator's voice and character's colloquial speech; " +
+                'rhythmic repetitions like mantras ("snout inside the ticket booth, Duque schemes, schemes"); ' +
+                'and the progressive zoomorphization of the text — replacing human terms with animal ones, ' +
+                'like "snout" instead of "face," dissolving the boundary between the man and the rodent that ' +
+                'titles the novel.\n\n' +
+                'Over roughly sixty years of literary activity he published nineteen titles. Other notable ' +
+                'works include The Madman of Cati (1942), Desolação (1944), Passos perdidos (1946), and ' +
+                'the Liberty Trilogy (Economic Gods, Underground Sun, and Prodigies). In 1946 he co-founded ' +
+                'the newspaper Tribuna Gaúcha with historian Décio Freitas. He died in Porto Alegre in 1985 ' +
+                'at the age of ninety. His former home has been listed as an inventoried heritage site. ' +
+                'Antonio Candido considered him one of the most unjustly undervalued writers of 1930s ' +
+                'Modernism, noting that the "refined craftsmanship" of The Rats had been overshadowed by ' +
+                'its lack of "overt ideology" — when in fact the critique of capitalism and urban alienation ' +
+                'is inscribed in the very syntax of the novel.',
+
+            // ─────────────────────────────────────────────────────────
+            //  GÊNERO
+            // ─────────────────────────────────────────────────────────
             genero: 'Romance psicológico, Realismo social, Modernismo de 1930',
             genero_en: 'Psychological novel, Social realism, 1930s Brazilian Modernism',
 
-            resumo: 'O livro acompanha um único dia na vida de Naziazeno Barbosa, funcionário público em Porto Alegre que acorda com um problema aparentemente simples: pagar 53 mil-réis ao leiteiro até o dia seguinte, ou perder o fornecimento de leite para seu filho pequeno, Mainho. A narrativa mergulha na angústia crescente do protagonista enquanto ele percorre ruas, repartições, bancos e cafés em busca de um empréstimo que ninguém quer conceder — transformando uma dívida trivial num calvário psicológico sem fim.',
+            // ─────────────────────────────────────────────────────────
+            //  RESUMO
+            // ─────────────────────────────────────────────────────────
+            resumo:
+                'O livro acompanha um único dia na vida de Naziazeno, funcionário público em ' +
+                'Porto Alegre que precisa conseguir 53 mil-réis para pagar o leiteiro e garantir ' +
+                'o leite de seu filho. A narrativa foca em seu calvário psicológico enquanto ' +
+                'percorre a cidade em busca de um empréstimo. Após perder dinheiro em um jogo e ' +
+                'vagar com fome, ele consegue a quantia no fim do dia com a ajuda de um amigo. ' +
+                'Porém, o desfecho é amargo: em casa, Naziazeno não dorme, atormentado pelo som ' +
+                'de ratos roendo as cédulas, ciente de que a rotina de miséria continuará ao amanhecer.',
+
             resumo_en:
-                "The novel follows a single day in the life of Naziazeno Barbosa, a civil servant in Porto Alegre who wakes up with a seemingly simple problem: paying 53 mil-réis to the milkman by the next morning, or losing the milk supply for his young son, Mainho. The narrative plunges into the protagonist's mounting anguish as he wanders streets, government offices, banks, and cafés in search of a loan no one will grant — turning a trivial debt into an unending psychological ordeal.",
+                'The novel follows a single day in the life of Naziazeno, a civil servant in ' +
+                'Porto Alegre who must find 53 mil-réis to pay the milkman and secure milk for ' +
+                'his son. The narrative focuses on his psychological ordeal as he wanders the city ' +
+                'seeking a loan. After losing money gambling and roaming the streets hungry, ' +
+                "he gets the cash late in the day with a friend's help. The ending, however, is " +
+                'bitter: back home, Naziazeno cannot sleep, haunted by the sound of rats gnawing ' +
+                'the banknotes, knowing the cycle of poverty repeats at dawn.',
 
+            // ─────────────────────────────────────────────────────────
+            //  CONTEXTO HISTÓRICO (expandido com vanguardas e mundo)
+            // ─────────────────────────────────────────────────────────
             contexto:
-                'A história se passa no centro de Porto Alegre dos anos 1930, cenário marcado pela Grande Depressão, pela instabilidade política da Era Vargas e pela ascensão de regimes autoritários. Dyonélio retrata a precariedade da classe média baixa urbana num momento em que a prosa regionalista dominava a cena literária brasileira — e opta deliberadamente pelo ambiente da cidade e pelo drama do assalariado anônimo.',
+                'A história se passa no centro de Porto Alegre em meados dos anos 1930, período marcado ' +
+                'por três grandes crises simultâneas. No plano econômico global, a Grande Depressão — ' +
+                'desencadeada pelo crash da Bolsa de Nova York em outubro de 1929 — havia derrubado o ' +
+                'preço do café de 200 mil-réis a saca para míseros 21 mil-réis em apenas um ano, ' +
+                'arruinando a base exportadora brasileira e empurrando massas de trabalhadores para o ' +
+                'desemprego ou para empregos públicos de salários corroídos pela inflação. É exatamente ' +
+                'esse funcionário público de baixa renda — dependente de um salário que não cobre as ' +
+                'despesas básicas — que Dyonélio coloca no centro do romance. No plano político nacional, ' +
+                'a Era Vargas (a partir de 1930) impunha um Estado autoritário e paternalista que, ao ' +
+                'mesmo tempo em que criava legislação trabalhista, reprimia sindicatos independentes, ' +
+                'perseguia comunistas e concentrava poder no Executivo Federal — contexto que Arrigucci Jr. ' +
+                'identifica no posfácio como pano de fundo do romance, "antecipando no cotidiano miúdo dos ' +
+                'necessitados a sombra dos anos cinzentos da ditadura de Getúlio". No plano das ideias, ' +
+                'o expressionismo alemão, o surrealismo francês e o existencialismo incipiente reformulavam ' +
+                'a relação entre a arte e a realidade: Georg Kaiser, Alfred Döblin (Berlin Alexanderplatz, ' +
+                '1929) e James Joyce (Ulysses, 1922) propunham narrativas centradas na deformação subjetiva ' +
+                'do mundo exterior — técnica que Dyonélio assimilou e transpôs para o cotidiano urbano ' +
+                'gaúcho. A Porto Alegre de 1935 era ainda uma cidade provinciana em acelerada modernização: ' +
+                'bondes elétricos, escritórios bancários internacionais (como o New York Bank), mercado ' +
+                'público e repartições do governo conviviam com uma classe média baixa acuada entre ' +
+                'as aspirações de respeitabilidade e a impossibilidade material de sustentá-las.',
+
             contexto_en:
-                'The story is set in downtown Porto Alegre in the 1930s, a backdrop shaped by the Great Depression, the political instability of the Vargas era, and the rise of authoritarian regimes. Dyonélio portrays the precariousness of the urban lower middle class at a time when regionalist rural prose dominated Brazilian fiction — deliberately choosing the city and the plight of the anonymous wage earner instead.',
+                'The story is set in downtown Porto Alegre in the mid-1930s, a period shaped by three ' +
+                'simultaneous crises. On the global economic front, the Great Depression — triggered by ' +
+                'the New York Stock Exchange crash of October 1929 — had collapsed the price of Brazilian ' +
+                'coffee from 200 mil-réis per sack to a mere 21 mil-réis within a year, devastating ' +
+                "the country's export base and pushing masses of workers into unemployment or into " +
+                'low-wage public sector jobs eroded by inflation. It is precisely this underpaid civil ' +
+                'servant — dependent on a salary that cannot cover basic expenses — whom Dyonélio places ' +
+                'at the center of the novel. On the national political front, the Vargas era (from 1930 ' +
+                'onward) imposed an authoritarian, paternalistic state that, while enacting labor laws, ' +
+                'simultaneously repressed independent unions, persecuted communists, and concentrated ' +
+                'power in the federal executive — a context that Arrigucci Jr. identifies in the afterword ' +
+                'as the novel\'s backdrop, "anticipating in the petty daily life of the needy the shadow ' +
+                'of the gray years of Getúlio\'s dictatorship." On the intellectual front, German ' +
+                'Expressionism, French Surrealism, and nascent Existentialism were reshaping the ' +
+                'relationship between art and reality: Georg Kaiser, Alfred Döblin (Berlin Alexanderplatz, ' +
+                '1929), and James Joyce (Ulysses, 1922) proposed narratives centered on the subjective ' +
+                'deformation of the external world — a technique Dyonélio absorbed and transposed onto ' +
+                'the everyday urban life of Porto Alegre. The city in 1935 was still a provincial town ' +
+                'in rapid modernization: electric trams, international bank branches (such as the New ' +
+                'York Bank), the public market, and government offices coexisted with a lower middle ' +
+                'class trapped between the aspirations of respectability and the material impossibility ' +
+                'of sustaining them.',
 
+            // ─────────────────────────────────────────────────────────
+            //  ESTILO DE ESCRITA (expandido)
+            // ─────────────────────────────────────────────────────────
             estiloEscrita:
-                'Linguagem direta, seca e econômica, composta de frases curtas que imitam a velocidade e a vertigem do pensamento ansioso. O narrador onisciente alterna discurso indireto livre e discurso direto, acompanhando de perto o fluxo mental de Naziazeno. Dyonélio usa repetições rítmicas ("confabula, confabula"), reticências em excesso e a zoomorfização — substituindo palavras como "face" por "focinho" — para aproximar o homem da figura do rato. Cada um dos 28 capítulos curtos carrega sua própria célula de suspense, resolvida no máximo no capítulo seguinte, mantendo o leitor em estado permanente de tensão.',
+                'A linguagem de Dyonélio é direta, seca e econômica, composta de frases curtas que imitam ' +
+                'a velocidade e a vertigem do pensamento ansioso — como se a própria sintaxe tivesse sido ' +
+                'roída pelos mesmos ratos que habitam o pesadelo de Naziazeno. O narrador onisciente alterna ' +
+                'continuamente discurso indireto livre e discurso direto, mergulhando no fluxo mental do ' +
+                'protagonista sem aviso prévio, de modo que o leitor frequentemente perde a fronteira entre ' +
+                'o que Naziazeno pensa e o que acontece de fato.\n\n' +
+                'Três recursos estilísticos definem o livro:\n\n' +
+                '1. REPETIÇÃO RÍTMICA: Dyonélio usa a repetição como mantra de angústia. ' +
+                '"Metido o focinho dentro do guichê, Duque confabula, confabula. O outro fala, revira ' +
+                'as mãos, faz o gesto de abrir a gaveta, mostrar. Mas Duque confabula, confabula..." ' +
+                '(cap. 27). A repetição não é ornamento; ela mimetiza a obsessão do protagonista, que ' +
+                'retorna à mesma ideia em espirais concêntricas.\n\n' +
+                '2. ZOOMORFIZAÇÃO PROGRESSIVA: Dyonélio substitui gradualmente termos humanos por termos ' +
+                'animais — "focinho" no lugar de "rosto" ou "cara", especialmente ao descrever Duque: ' +
+                '"Duque volta-se inteiramente para o lado de Naziazeno. Avança-lhe um focinho sereno e ' +
+                'atento." (cap. 19). Essa escolha lexical dissolve, palavra por palavra, a fronteira entre ' +
+                'os homens e os ratos que rondam a cozinha na cena final.\n\n' +
+                '3. ASPAS E ITÁLICOS COMO DISTÂNCIA CRÍTICA: Embora herdeiro da liberdade coloquial dos ' +
+                'modernistas de 1922, Dyonélio mantém reservas: coloca entre aspas ou em itálico expressões ' +
+                'populares ("bicho", "pega", "escarcéu"), sinalizando que a voz do personagem e a voz do ' +
+                'narrador culto coexistem em tensão, nunca se fundem completamente.\n\n' +
+                'A estrutura em 28 capítulos curtos — cada um carregando sua própria célula de suspense — ' +
+                'é outro traço distintivo: o leitor é mantido em estado de tensão permanente, com cada ' +
+                'capítulo resolvendo parcialmente a questão anterior apenas para abrir uma nova. ' +
+                'O crítico Davi Arrigucci Jr. observa que "o próprio discurso mimetiza a figura do rato, ' +
+                'torna-se entrecortado, miudinho, entranhando na tessitura fina do texto o gesto do roedor".',
+
             estiloEscrita_en:
-                'The language is direct, dry, and economical — short sentences that mimic the speed and vertigo of anxious thought. An omniscient narrator alternates between free indirect discourse and direct speech, closely tracking Naziazeno\'s mental flow. Dyonélio uses rhythmic repetitions, excessive ellipses, and zoomorphization — replacing words like "face" with "snout" — to blur the line between the man and the rat. Each of the 28 short chapters carries its own cell of suspense, resolved at most in the next one, keeping the reader in a constant state of tension.',
+                "Dyonélio's language is direct, dry, and economical — short sentences that mimic the speed " +
+                'and vertigo of anxious thought, as if the very syntax had been gnawed by the same rats ' +
+                "that haunt Naziazeno's nightmare. An omniscient narrator continuously alternates between " +
+                "free indirect discourse and direct speech, plunging into the protagonist's mental flow " +
+                'without warning, so the reader frequently loses the boundary between what Naziazeno thinks ' +
+                'and what actually happens.\n\n' +
+                'Three stylistic devices define the book:\n\n' +
+                '1. RHYTHMIC REPETITION: Dyonélio uses repetition as an anxiety mantra. ' +
+                '"Snout inside the ticket booth, Duque schemes, schemes. The other man talks, turns his ' +
+                'hands, makes as if to open the drawer, to show. But Duque schemes, schemes..." (ch. 27). ' +
+                "The repetition is not ornament; it mimics the protagonist's obsession, which returns to " +
+                'the same idea in concentric spirals.\n\n' +
+                '2. PROGRESSIVE ZOOMORPHIZATION: Dyonélio gradually replaces human terms with animal ones — ' +
+                '"snout" instead of "face," especially when describing Duque: "Duque turns entirely toward ' +
+                'Naziazeno. He pushes forward a serene, watchful snout." (ch. 19). This lexical choice ' +
+                'dissolves, word by word, the boundary between the men and the rats prowling the kitchen ' +
+                'in the final scene.\n\n' +
+                '3. QUOTATION MARKS AND ITALICS AS CRITICAL DISTANCE: Though an heir to the colloquial ' +
+                'freedom of the 1922 Modernists, Dyonélio maintains reservations: he places popular ' +
+                'expressions in quotation marks or italics ("bicho," "pega," "escarcéu"), signaling that ' +
+                "the character's voice and the narrator's cultivated voice coexist in tension, never " +
+                'fully merging.\n\n' +
+                'The structure of 28 short chapters — each carrying its own cell of suspense — is another ' +
+                'hallmark: the reader is kept in a state of permanent tension, with each chapter only ' +
+                'partially resolving the previous question before opening a new one. Critic Davi Arrigucci ' +
+                'Jr. notes that "the discourse itself mimics the figure of the rat, becomes broken, minute, ' +
+                'embedding in the fine weave of the text the gesture of the rodent."',
 
-            enredo: 'Avisada pelo leiteiro de que a dívida precisa ser quitada até o dia seguinte, Adelaide repassa o problema ao marido. Naziazeno passa então o dia inteiro percorrendo o centro de Porto Alegre — praças, repartições, bancos, botecos — tentando empréstimos com colegas, agiotas e superiores. A cada porta fechada, o desespero se aprofunda e o tempo psicológico se dilata. No limite, consegue penhorar uma joia de um amigo chamado Duque e paga o leiteiro. Mas o desfecho oferece apenas um alívio irônico: ao deitar, Naziazeno não consegue dormir, convencido de que ratos estão roendo o dinheiro que reservou. Ao amanhecer, os mesmos problemas o esperam.',
+            // ─────────────────────────────────────────────────────────
+            //  ENREDO
+            // ─────────────────────────────────────────────────────────
+            enredo:
+                'Avisada pelo leiteiro de que a dívida precisa ser quitada até o dia seguinte, Adelaide ' +
+                'repassa o problema ao marido. Naziazeno passa então o dia inteiro percorrendo o centro ' +
+                'de Porto Alegre — praças, repartições, bancos, botecos, uma roleta clandestina — ' +
+                'tentando empréstimos com colegas, agiotas e superiores. Sua primeira esperança é o ' +
+                'diretor da repartição, o Dr. Romeiro, que já o ajudou em situações anteriores, mas que ' +
+                'este dia está ausente. Com o companheiro Alcides, planeja acionar o corretor Andrade, ' +
+                'que supostamente deve uma comissão a Alcides; Andrade porém nega qualquer dívida e ' +
+                'redireciona Naziazeno ao subgerente do New York Bank. O protagonista vaga pelas ruas ' +
+                'com fome até conseguir cinco mil-réis com o conhecido Costa Miranda — e os perde ' +
+                'imediatamente ao apostar na roleta clandestina de uma tabacaria. Somente com o ' +
+                'surgimento tardio de Duque — o amigo astuto e malandramente adaptado à sobrevivência ' +
+                'urbana — a solução se concretiza: Duque empenha a joia de Alcides na loja do ourives ' +
+                'Martinez, obtendo o dinheiro suficiente. Naziazeno paga o leiteiro já de noite. ' +
+                'No desfecho, deitado no escuro, ele ouve ruídos e se convence de que ratos estão ' +
+                'roendo as cédulas deixadas sobre a mesa da cozinha — um colapso paranoico que o ' +
+                'mantém acordado até o amanhecer. Os galos cantam. O leiteiro bate o portão e despeja ' +
+                'o leite. E ele finalmente dorme — sabendo que as mesmas dívidas, multiplicadas, ' +
+                'o esperarão quando acordar.',
+
             enredo_en:
-                "Warned by the milkman that the debt must be paid by the next morning, Adelaide passes the problem on to her husband. Naziazeno then spends the entire day crossing downtown Porto Alegre — squares, government offices, banks, and bars — trying to borrow money from colleagues, moneylenders, and superiors. Each closed door deepens his despair and stretches psychological time. At the last moment, he pawns a friend's jewelry and pays the milkman. But the ending offers only bitter irony: lying down, Naziazeno cannot sleep, convinced rats are gnawing at the money he set aside. At dawn, the same problems await him.",
+                'Warned by the milkman that the debt must be settled by the next morning, Adelaide ' +
+                'passes the problem to her husband. Naziazeno then spends the entire day crossing downtown ' +
+                'Porto Alegre — squares, government offices, banks, bars, a clandestine roulette table — ' +
+                'trying to borrow money from colleagues, moneylenders, and superiors. His first hope is ' +
+                'his supervisor Dr. Romeiro, who has helped him before, but who is absent that day. ' +
+                'With his colleague Alcides, he plans to approach the broker Andrade, who supposedly owes ' +
+                'Alcides a commission; Andrade denies any debt and redirects Naziazeno to the deputy ' +
+                'manager of the New York Bank. The protagonist wanders the streets hungry until he gets ' +
+                'five thousand réis from acquaintance Costa Miranda — only to lose it immediately at the ' +
+                'tobacco-shop roulette table. Only with the late arrival of Duque — the cunning friend ' +
+                "cunningly adapted to urban survival — does a solution take shape: Duque pawns Alcides's " +
+                "ring at the jeweler Martinez's shop, securing just enough. Naziazeno pays the milkman " +
+                'that night. In the denouement, lying in the dark, he hears noises and convinces himself ' +
+                'rats are gnawing the banknotes left on the kitchen table — a paranoid collapse that keeps ' +
+                'him awake until dawn. The roosters crow. The milkman slams the gate and pours the milk. ' +
+                'And he finally sleeps — knowing the same debts, multiplied, will be waiting when he wakes.',
 
+            // ─────────────────────────────────────────────────────────
+            //  VEROSSIMILHANÇA
+            // ─────────────────────────────────────────────────────────
             verossimilhanca:
-                'Dyonélio ancora a narrativa em locais reais de Porto Alegre — a Praça da Alfândega, o Mercado Público, o Café Nacional, o New York Bank — criando uma topografia urbana concreta e reconhecível. A minúcia psicológica com que descreve gestos como sacudir moedas no bolso, cortar nervosamente um pão em migalhas ou estudar como abordar um superior confere à obra um realismo que ultrapassa o documental: o leitor sente a humilhação e o cansaço de Naziazeno como experiências físicas.',
-            verossimilhanca_en:
-                "Dyonélio anchors the narrative in real Porto Alegre locations — Praça da Alfândega, the Public Market, Café Nacional, the New York Bank — creating a concrete, recognizable urban topography. The psychological minuteness with which he describes gestures like jingling coins in a pocket, nervously crumbling bread, or rehearsing how to approach a superior gives the novel a realism that goes beyond the documentary: the reader feels Naziazeno's humiliation and exhaustion as physical sensations.",
+                'Dyonélio ancora a narrativa em locais reais de Porto Alegre dos anos 1930 — a Praça da ' +
+                'Alfândega, o Mercado Público, o Café Nacional, o New York Bank, a Igreja das Dores, ' +
+                'o Hotel Sperb, o Restaurante dos Operários —, criando uma topografia urbana concreta ' +
+                'e reconhecível que funciona simultaneamente como documentário social e como mapa da ' +
+                'humilhação. As ruas raramente têm nomes declarados no texto (Rua Sete, Ladeira, ' +
+                'Santa Catarina), mas os marcos referenciados bastam para que o leitor porto-alegrense ' +
+                'reconstituísse mentalmente cada passo de Naziazeno em seu vaivém entre a repartição ' +
+                'e o centro comercial.\n\n' +
+                'A minutagem psicológica é igualmente precisa: Dyonélio descreve com exatidão clínica ' +
+                'gestos como sacudir moedas no bolso, cortar nervosamente um pão em migalhas, estudar ' +
+                'longamente como abordar um superior, sentir os dedos suarem ao segurar uma cédula ' +
+                'amassada ("papel sovado e liso, como se lhe tivessem passado talco"). Esses detalhes ' +
+                'conferem ao romance um realismo que transcende o documental: o leitor não apenas ' +
+                'compreende a situação de Naziazeno — sente o cansaço, a fome e a humilhação como ' +
+                'experiências físicas. O crítico Davi Arrigucci Jr. identificou nessa precisão a ' +
+                'influência do expressionismo alemão: a cidade não é descrita de fora, por um narrador ' +
+                'que a domina topograficamente, mas vivida por dentro, no "corpo a corpo do homem com ' +
+                'o meio", deformada pela visão subjetiva de quem a percorre desesperado.',
 
+            verossimilhanca_en:
+                'Dyonélio anchors the narrative in real Porto Alegre locations of the 1930s — Praça da ' +
+                'Alfândega, the Public Market, Café Nacional, the New York Bank, Igreja das Dores, Hotel ' +
+                'Sperb, Restaurante dos Operários — creating a concrete, recognizable urban topography ' +
+                'that functions simultaneously as social documentary and as a map of humiliation. Streets ' +
+                'rarely have declared names in the text (Rua Sete, Ladeira, Santa Catarina), but the ' +
+                'referenced landmarks are enough for a Porto Alegre reader to mentally reconstruct every ' +
+                "step of Naziazeno's back-and-forth between the government office and the commercial center.\n\n" +
+                'The psychological precision is equally exact: Dyonélio describes with clinical accuracy ' +
+                'gestures such as jingling coins in a pocket, nervously crumbling bread, spending long ' +
+                'stretches rehearsing how to approach a superior, feeling fingers sweat while holding a ' +
+                'crumpled banknote ("worn and smooth paper, as if dusted with talc"). These details give ' +
+                'the novel a realism that transcends the documentary: the reader does not merely understand ' +
+                "Naziazeno's situation — they feel the exhaustion, the hunger, and the humiliation as " +
+                'physical sensations. Critic Davi Arrigucci Jr. identified in this precision the influence ' +
+                'of German Expressionism: the city is not described from outside by a narrator who commands ' +
+                'it topographically, but lived from within, in the "hand-to-hand struggle of man and milieu," ' +
+                'deformed by the subjective vision of someone crossing it in desperation.',
+
+            // ─────────────────────────────────────────────────────────
+            //  LISTA DE PERSONAGENS
+            // ─────────────────────────────────────────────────────────
             personagens: [
                 'Naziazeno Barbosa',
                 'Adelaide',
@@ -194,62 +477,584 @@ async function main() {
                 'Alcides',
                 'Duque',
                 'Costa Miranda',
+                'Andrade',
+                'Fraga',
+                'Mr. Rees',
+                'Martinez',
+                'Dupasquier',
+                'Cipriano',
             ],
 
+            // ─────────────────────────────────────────────────────────
+            //  CARACTERÍSTICAS LITERÁRIAS (expandidas com vanguardas)
+            // ─────────────────────────────────────────────────────────
             caracteristicasLiterarias:
-                'Pertencente à segunda fase do Modernismo brasileiro, o romance se destaca pelo uso do tempo psicológico em oposição ao tempo cronológico; pela crítica ao capitalismo e à alienação urbana; pela influência direta da psicanálise freudiana na construção do protagonista; pela ausência de heróis ou momentos sublimes — apenas a mediocridade e a fragmentação do cotidiano. A comparação com Dostoiévski é frequente na crítica: assim como Raskólnikov em Crime e Castigo, Naziazeno é um homem comum empurrado para um abismo de angústia e impotência. O romance ganhou o Prêmio Machado de Assis da Academia Brasileira de Letras.',
-            caracteristicasLiterarias_en:
-                "Belonging to the second phase of Brazilian Modernism, the novel stands out for its use of psychological time versus chronological time; its critique of capitalism and urban alienation; the direct Freudian psychoanalytic influence on the protagonist's construction; and the absence of heroes or sublime moments — only the mediocrity and fragmentation of daily life. Critics frequently compare it to Dostoevsky: like Raskolnikov in Crime and Punishment, Naziazeno is an ordinary man pushed to the edge of anguish and powerlessness. The novel won the Machado de Assis Prize from the Brazilian Academy of Letters.",
+                'Pertencente à segunda fase do Modernismo brasileiro, Os Ratos se distingue por um ' +
+                'conjunto de escolhas formais que o colocam em diálogo direto com as vanguardas europeias ' +
+                'das décadas de 1910 e 1920:\n\n' +
+                '• EXPRESSIONISMO ALEMÃO: A deformação subjetiva do espaço urbano é o procedimento ' +
+                'central do livro. Como em "O Capote" de Gógol ou em Berlin Alexanderplatz de Alfred ' +
+                'Döblin (1929), a cidade não existe como dado objetivo, mas como projeção dos estados ' +
+                'interiores do protagonista. A Enciclopédia Itaú Cultural registra que "Os Ratos ' +
+                'incorpora procedimentos literários próprios ao expressionismo, em particular a ' +
+                'deformação subjetiva de tempo, espaço e ambiências, apresentados como tais pelo ponto ' +
+                'de vista do protagonista." O crítico Davi Arrigucci Jr. acrescenta que "a deformação, ' +
+                'categoria central da arte expressionista, torna-se um princípio fundamental da ' +
+                'construção do romance".\n\n' +
+                '• FLUXO DE CONSCIÊNCIA (JOYCE / MODERNISMO ANGLO-SAXÃO): À maneira de Ulysses ' +
+                '(James Joyce, 1922) — que também narra um único dia na vida de um homem comum ' +
+                'percorrendo uma cidade —, Dyonélio constrói o protagonista a partir do inside view: ' +
+                'o leitor acessa os pensamentos de Naziazeno em tempo real, sem filtro narrativo ' +
+                'estabilizador. A crítica comparou o romance ao Ulysses especificamente pelo dispositivo ' +
+                'de compressão temporal: um único dia que se dilata em tempo psicológico quase infinito.\n\n' +
+                '• REALISMO PSICOLÓGICO / INFLUÊNCIA FREUDIANA: A formação psiquiátrica de Dyonélio ' +
+                'imprime ao romance uma leitura clínica do inconsciente: os sonhos acordados de ' +
+                'Naziazeno, suas associações livres, sua dificuldade de separar desejo e realidade ' +
+                '(ele "vê" cenas que não aconteceram, antecipa diálogos com o diretor como se fossem ' +
+                'reais) são todos mecanismos freudianos aplicados à literatura. Nesse aspecto o romance ' +
+                'dialoga com o surrealismo europeu, que também explorava os territórios do inconsciente ' +
+                'e do sonho como matéria narrativa.\n\n' +
+                '• KAFKA E O ABSURDO BUROCRÁTICO: A situação de Naziazeno tem afinidades profundas com ' +
+                'o universo kafkiano: um homem comum preso em um sistema de regras que o esmaga sem ' +
+                'nunca revelar sua lógica, onde cada porta aberta leva a outra porta fechada. Arrigucci Jr. ' +
+                'aponta que "a fábula circular e persecutória do ser acuado tende a se confundir com a ' +
+                'situação tipicamente kafkiana: a recorrência da opressão e do constante adiamento".\n\n' +
+                '• DOSTOIÉVSKI E OS "HUMILHADOS E OFENDIDOS": A comparação com Dostoiévski — ' +
+                'especialmente com Crime e Castigo (Raskólnikov) e com os "humilhados e ofendidos" de ' +
+                'vários romances — é a mais recorrente na crítica. Assim como Gógol em "O Capote" criou ' +
+                'o arquétipo do pequeno burocrata numa São Petersburgo hostil, Dyonélio cria o seu ' +
+                'equivalente porto-alegrense.\n\n' +
+                'No plano da forma brasileira, o livro se destaca pelo uso do tempo psicológico em ' +
+                'oposição ao tempo cronológico; pela ausência de heróis ou momentos sublimes; pela ' +
+                'crítica ao capitalismo e à alienação urbana inscrita na própria sintaxe (e não em ' +
+                'discursos do narrador). O romance ganhou o Prêmio Machado de Assis da Academia ' +
+                'Brasileira de Letras e é, segundo Antonio Candido, um dos exemplos mais bem-acabados ' +
+                'de como tratar "problemas humanos básicos da vida em sociedade sem cair no naturalismo ' +
+                'rasteiro".',
 
+            caracteristicasLiterarias_en:
+                'Belonging to the second phase of Brazilian Modernism, The Rats stands out for a set ' +
+                'of formal choices that place it in direct dialogue with the European avant-gardes of ' +
+                'the 1910s and 1920s:\n\n' +
+                "• GERMAN EXPRESSIONISM: The subjective deformation of urban space is the novel's " +
+                'central procedure. As in Gogol\'s "The Overcoat" or Alfred Döblin\'s Berlin Alexanderplatz ' +
+                "(1929), the city does not exist as objective datum but as a projection of the protagonist's " +
+                'inner states. The Itaú Cultural Encyclopedia records that "The Rats incorporates literary ' +
+                'procedures characteristic of Expressionism, particularly the subjective deformation of ' +
+                'time, space, and atmosphere, as presented through the protagonist\'s point of view." ' +
+                'Critic Davi Arrigucci Jr. adds that "deformation, a central category of Expressionist ' +
+                'art, becomes a fundamental principle of the novel\'s construction."\n\n' +
+                '• STREAM OF CONSCIOUSNESS (JOYCE / ANGLO-SAXON MODERNISM): In the manner of Ulysses ' +
+                '(James Joyce, 1922) — which also narrates a single day in the life of an ordinary man ' +
+                'crossing a city — Dyonélio constructs the protagonist from an inside view: the reader ' +
+                "accesses Naziazeno's thoughts in real time, without a stabilizing narrative filter. " +
+                'Critics have compared the novel to Ulysses specifically for its temporal compression: ' +
+                'a single day that expands into nearly infinite psychological time.\n\n' +
+                "• PSYCHOLOGICAL REALISM / FREUDIAN INFLUENCE: Dyonélio's psychiatric training imprints " +
+                "a clinical reading of the unconscious: Naziazeno's waking dreams, free associations, " +
+                'and difficulty separating desire from reality (he "sees" scenes that haven\'t happened, ' +
+                'pre-enacts dialogues with his director as if real) are all Freudian mechanisms applied ' +
+                'to literature. In this respect the novel also converses with European Surrealism, which ' +
+                'explored the unconscious and dreams as narrative material.\n\n' +
+                "• KAFKA AND BUREAUCRATIC ABSURDITY: Naziazeno's situation has deep affinities with " +
+                'the Kafkaesque universe: an ordinary man trapped in a system of rules that crushes him ' +
+                'without ever revealing its logic, where each open door leads to another closed one. ' +
+                'Arrigucci Jr. notes that "the circular, persecutory fable of the cornered being tends ' +
+                'to merge with the typically Kafkaesque situation: the recurrence of oppression and ' +
+                'constant deferral."\n\n' +
+                '• DOSTOEVSKY AND THE "HUMILIATED AND INSULTED": The comparison with Dostoevsky — ' +
+                'especially Crime and Punishment (Raskolnikov) and the "humiliated and insulted" across ' +
+                'his novels — is the most recurrent in criticism. Just as Gogol\'s "The Overcoat" created ' +
+                'the archetype of the minor bureaucrat in a hostile St. Petersburg, Dyonélio creates his ' +
+                'Porto Alegre equivalent.\n\n' +
+                'At the level of Brazilian literary form, the book stands out for its use of psychological ' +
+                'time versus chronological time; the absence of heroes or sublime moments; and the critique ' +
+                'of capitalism and urban alienation inscribed in the very syntax (not in narrator ' +
+                'declarations). The novel won the Machado de Assis Prize from the Brazilian Academy of ' +
+                'Letters and is, according to Antonio Candido, one of the finest examples of treating ' +
+                '"fundamental human problems of social life without lapsing into crude naturalism."',
+
+            // ─────────────────────────────────────────────────────────
+            //  CONCLUSÃO
+            // ─────────────────────────────────────────────────────────
             conclusao:
-                'Os Ratos foi escrito em apenas 20 dias para um concurso, mas amadurecido durante nove anos. Quase um século depois de sua publicação, o romance permanece urgente: a topografia da humilhação financeira, o individualismo da cidade e a solidão do homem na multidão não envelheceram. A imagem final — Naziazeno acordado no escuro, ouvindo ratos que talvez não existam, protegendo um dinheiro que mal cobre a próxima dívida — é uma das mais perturbadoras da literatura brasileira.',
+                'Os Ratos foi escrito em apenas vinte dias para um concurso, mas amadurecido durante ' +
+                'nove anos. Quase um século depois de sua publicação, o romance permanece urgente: a ' +
+                'topografia da humilhação financeira, o individualismo da cidade e a solidão do homem ' +
+                'na multidão não envelheceram. A imagem final — Naziazeno acordado no escuro, ouvindo ' +
+                '"Depois duma trégua, os ratos voltaram a roer, a roer... Outra vez naquele canto do ' +
+                'assoalho do comedouro o triturar fininho de madeira roída" — é uma das mais perturbadoras ' +
+                'da literatura brasileira, e talvez a mais honesta: o herói não triunfa nem perece; ' +
+                'simplesmente dorme, para acordar no mesmo círculo. É esse círculo infernal — e não ' +
+                'qualquer resolução — a verdade do livro.',
+
             conclusao_en:
-                'The Rats was written in just 20 days for a competition, but had been maturing for nine years. Nearly a century after its publication, the novel remains urgent: the topography of financial humiliation, urban individualism, and the loneliness of a man lost in the crowd have not aged. The final image — Naziazeno awake in the dark, hearing rats that may not exist, guarding money that barely covers the next debt — is one of the most unsettling in Brazilian literature.',
+                'The Rats was written in just twenty days for a competition, but had been maturing for ' +
+                'nine years. Nearly a century after its publication, the novel remains urgent: the ' +
+                'topography of financial humiliation, urban individualism, and the loneliness of a man ' +
+                'lost in the crowd have not aged. The final image — Naziazeno awake in the dark, hearing ' +
+                '"after a truce, the rats returned to gnaw, to gnaw... again in that corner of the ' +
+                'dining-room floor the faint grating of gnawed wood" — is one of the most unsettling in ' +
+                'Brazilian literature, and perhaps the most honest: the hero neither triumphs nor perishes; ' +
+                'he simply sleeps, only to wake inside the same circle. It is that infernal circle — not ' +
+                'any resolution — that is the truth of the book.',
         },
     });
 
+    // ============================================================
+    //  PERSONAGENS — createMany expandido
+    // ============================================================
+
     await prisma.personagem.createMany({
         data: [
+            // ── PERSONAGENS JÁ EXISTENTES, AGORA EXPANDIDOS ─────────
+
+            {
+                nome: 'Naziazeno Barbosa',
+                caracteristicas_pt:
+                    'Ansioso, obsessivo, impotente, orgulhoso, autodepreciativo, instável, incapaz ' +
+                    'de ação direta. Funcionário público de meia-idade, casado, pai de um filho pequeno. ' +
+                    'Vive entre a aspiração de respeitabilidade e a permanente impossibilidade material ' +
+                    'de sustentá-la.',
+                caracteristicas_en:
+                    'Anxious, obsessive, powerless, proud, self-deprecating, unstable, incapable of ' +
+                    'direct action. A middle-aged civil servant, married, father of a young child. He ' +
+                    'lives between the aspiration to respectability and the permanent material inability ' +
+                    'to sustain it.',
+                representacao_pt:
+                    'É o anti-herói por excelência da segunda fase do modernismo brasileiro. Naziazeno ' +
+                    'representa o homem comum esmagado pela mecânica do capitalismo urbano: não um ' +
+                    'operário em luta de classes consciente, mas um assalariado anônimo que internaliza ' +
+                    'a lógica do sistema e culpa a si mesmo pelo próprio fracasso. Sua psicologia foi ' +
+                    'comparada à de Raskólnikov (Crime e Castigo) — não pelo crime, mas pelo estado de ' +
+                    'angústia paralisante que transforma cada gesto miúdo num campo de batalha interior. ' +
+                    'O crítico Davi Arrigucci Jr. observa que "ele erra solitário ao acaso no labirinto ' +
+                    'das ruas, em busca da pequena quantia que parece cada vez mais impossível de obter ' +
+                    'à medida que o tempo se esvai". Sua relação com o dinheiro é quase fetichista: ' +
+                    '"Pago o leiteiro, o mundo recomeçará, novo" — frase que condensa tanto a esperança ' +
+                    'quanto a ilusão que estrutura toda a narrativa. No plano do estilo, seu corpo é ' +
+                    'gradualmente zoomorfizado ao longo do texto: os "dedos ossudos e cabeçudos ' +
+                    'quebrando o pão em pedaços miudinhos" do primeiro capítulo prefiguram os ratos ' +
+                    'que roem na cena final.',
+                representacao_en:
+                    'He is the anti-hero par excellence of the second phase of Brazilian Modernism. ' +
+                    'Naziazeno represents the ordinary man crushed by the mechanics of urban capitalism: ' +
+                    'not a worker with class consciousness, but an anonymous wage earner who internalizes ' +
+                    'the logic of the system and blames himself for his own failure. His psychology has ' +
+                    "been compared to Raskolnikov's (Crime and Punishment) — not for crime, but for the " +
+                    'state of paralyzing anguish that turns every small gesture into an interior battlefield. ' +
+                    'Critic Davi Arrigucci Jr. observes that "he wanders alone at random through the ' +
+                    'labyrinth of streets, in search of the small sum that seems increasingly impossible ' +
+                    'to obtain as time runs out." His relationship with money is almost fetishistic: ' +
+                    '"Once I pay the milkman, the world will begin anew" — a sentence that condenses both ' +
+                    'the hope and the illusion that structures the entire narrative. At the stylistic level, ' +
+                    'his body is gradually zoomorphized throughout the text: the "bony, knuckled fingers ' +
+                    'breaking bread into tiny crumbs" in the first chapter prefigure the rats gnawing ' +
+                    'in the final scene.',
+            },
+
             {
                 nome: 'Adelaide',
-                caracteristicas_pt: 'Preocupada, prática, direta, responsável e realista',
+                caracteristicas_pt:
+                    'Preocupada, prática, direta, responsável e realista. É descrita como tendo "uma ' +
+                    'cara branca, redonda, de criança grande chorosa" — imagem que condensa sua ' +
+                    'fragilidade e ao mesmo tempo sua submissão resignada à situação doméstica.',
                 caracteristicas_en:
-                    'Worried, practical, straightforward, responsible and realistic',
+                    'Worried, practical, straightforward, responsible, and realistic. She is described ' +
+                    'as having "a round white face, like a large tearful child" — an image that captures ' +
+                    'both her fragility and her resigned submission to the domestic situation.',
                 representacao_pt:
-                    'Representa a realidade doméstica e a pressão familiar, sendo a voz da responsabilidade e da sobrevivência dentro do lar, além de evidenciar o impacto da pobreza nas relações familiares',
+                    'Representa a realidade doméstica e a pressão familiar, sendo a voz da ' +
+                    'responsabilidade e da sobrevivência dentro do lar. É ela quem abre o romance ' +
+                    'comunicando a ameaça do leiteiro e, assim, colocando em movimento toda a máquina ' +
+                    'narrativa. Sua presença é escassa no corpo do texto — Naziazeno a evoca ' +
+                    'principalmente como voz interna acusatória ("tu ainda não pagaste o doutor, ' +
+                    'Naziazeno") —, mas sua autoridade moral é constante. O crítico aponta que ' +
+                    'Naziazeno a vê como excessivamente tímida e submissa, chegando a compará-la ' +
+                    'desfavoravelmente com "a mulher do amanuense" — o que revela mais sobre a ' +
+                    'misoginia e a projeção do protagonista do que sobre a personagem em si. ' +
+                    'Na cena final, Adelaide dorme com "o sono sereno, como de morta", enquanto ' +
+                    'Naziazeno faz vigília paranoica — contraste que sublinha como o colapso ' +
+                    'psicológico é exclusivamente masculino naquele lar.',
                 representacao_en:
-                    'Represents domestic reality and family pressure, acting as the voice of responsibility and survival within the household, also highlighting the impact of poverty on family relationships',
+                    'Represents domestic reality and family pressure, acting as the voice of ' +
+                    'responsibility and survival within the household. It is she who opens the novel ' +
+                    "by conveying the milkman's threat and thereby setting the entire narrative machine " +
+                    'in motion. Her presence is sparse in the body of the text — Naziazeno evokes her ' +
+                    'mainly as an accusatory inner voice ("you still haven\'t paid the doctor, Naziazeno") ' +
+                    '— but her moral authority is constant. Critics note that Naziazeno sees her as ' +
+                    'excessively timid and submissive, unfavorably comparing her to "the amanuensis\'s ' +
+                    'wife" — which reveals more about the protagonist\'s misogyny and projection than ' +
+                    'about the character herself. In the final scene, Adelaide sleeps with "a serene ' +
+                    'sleep, like that of a dead woman," while Naziazeno keeps paranoid vigil — a contrast ' +
+                    'that underscores how the psychological collapse is exclusively masculine in that household.',
             },
+
+            {
+                nome: 'Mainho',
+                caracteristicas_pt:
+                    'Filho pequeno de Naziazeno e Adelaide, cujo nome carinhoso (diminutivo de ' +
+                    '"menino") aparece apenas em referências indiretas. Criança lactente, cuja ' +
+                    'dependência do leite é o gatilho imediato de toda a crise.',
+                caracteristicas_en:
+                    'The young son of Naziazeno and Adelaide, whose affectionate nickname (a diminutive ' +
+                    'of "menino," boy) appears only in indirect references. An infant whose dependence ' +
+                    'on milk is the immediate trigger of the entire crisis.',
+                representacao_pt:
+                    'Mainho é o símbolo da inocência vulnerável e da responsabilidade paterna — ' +
+                    'a justificativa moral que impede Naziazeno de simplesmente desistir. Sua existência ' +
+                    'transforma uma dívida banal em imperativo ético: não pagar o leite não é apenas ' +
+                    'um problema financeiro, é uma falha como pai. Por isso a dívida tem um peso ' +
+                    'desproporcional ao seu valor monetário. No plano narrativo, Mainho nunca aparece ' +
+                    'como personagem ativo — é apenas uma presença sonora (sua respiração ritmada ' +
+                    'contrasta com o chiado dos ratos na cena final) e uma pressão emocional constante. ' +
+                    'Na última cena, "o filho tem uma respiração ritmada. O ruído da sua respiração ' +
+                    'destaca-se daquele fundo, daquele chiado ambiente" — ele dorme enquanto o pai ' +
+                    'desfaz na paranoia.',
+                representacao_en:
+                    'Mainho is the symbol of vulnerable innocence and paternal responsibility — the ' +
+                    'moral justification that prevents Naziazeno from simply giving up. His existence ' +
+                    'turns a trivial debt into an ethical imperative: not paying for the milk is not ' +
+                    'just a financial failure; it is a failure as a father. This is why the debt carries ' +
+                    'a weight disproportionate to its monetary value. Narratively, Mainho never appears ' +
+                    'as an active character — he is only a sonic presence (his rhythmic breathing ' +
+                    'contrasting with the sound of rats in the final scene) and a constant emotional ' +
+                    'pressure. In the last scene, "the son has a rhythmic breathing. The sound of his ' +
+                    'breathing stands out from that background hiss" — he sleeps while his father ' +
+                    'unravels into paranoia.',
+            },
+
+            {
+                nome: 'O Leiteiro',
+                caracteristicas_pt:
+                    'Bruto, impaciente, rígido, prático. Descrito como um "índio malencarado" que ' +
+                    'chega de madrugada, ainda encontra a família dormindo e fustiga o burro com fúria ' +
+                    'ao partir. Não tem nome próprio no livro.',
+                caracteristicas_en:
+                    'Brutal, impatient, rigid, practical. Described as a "surly Indian" who arrives at ' +
+                    'dawn, still finding the family asleep, and whips his donkey furiously on leaving. ' +
+                    'He has no proper name in the book.',
+                representacao_pt:
+                    'O Leiteiro é a face mais concreta da pressão econômica: não um antagonista com ' +
+                    'psicologia ou motivação complexa, mas uma força impessoal — quase uma lei da ' +
+                    'natureza — que exige ser satisfeita em prazo determinado. Sua presença domina ' +
+                    'psicologicamente o romance inteiro sem que ele apareça fisicamente mais do que ' +
+                    'na cena inicial: a palavra "leiteiro" ressoa como refrão obsessivo na consciência ' +
+                    'de Naziazeno durante todo o dia ("o leiteiro!... o leiteiro!... lá está no fundo ' +
+                    'de tudo o leiteiro!"), tornando-se a imagem metonímica de todas as dívidas, ' +
+                    'de toda a humilhação e de todo o medo. O posfácio de Arrigucci Jr. observa que ' +
+                    '"o tempo, que os latinos compararam alguma vez a um rato, rói as horas contra o ' +
+                    'empenho desse homem perseguido pela própria privação" — e o leiteiro é o agente ' +
+                    'concreto desse tempo devorador.',
+                representacao_en:
+                    'The Milkman is the most concrete face of economic pressure: not an antagonist with ' +
+                    'complex psychology or motivation, but an impersonal force — almost a law of nature — ' +
+                    'that demands satisfaction by a specific deadline. His presence psychologically ' +
+                    'dominates the entire novel without him physically appearing more than in the opening ' +
+                    'scene: the word "leiteiro" (milkman) resonates as an obsessive refrain in Naziazeno\'s ' +
+                    'consciousness throughout the day ("the milkman!... the milkman!... there at the bottom ' +
+                    'of everything is the milkman!"), becoming the metonymic image of all debts, all ' +
+                    'humiliation, and all fear. Arrigucci Jr.\'s afterword notes that "time, which the ' +
+                    'Latins once compared to a rat, gnaws the hours against the effort of this man ' +
+                    'persecuted by his own privation" — and the milkman is the concrete agent of ' +
+                    'that devouring time.',
+            },
+
             {
                 nome: 'Duque',
                 caracteristicas_pt:
-                    'Astuto, manipulador, esperto, oportunista, sociável, persuasivo',
+                    'Astuto, manipulador, esperto, oportunista, sociável, persuasivo. Tem "focinho ' +
+                    'sereno e atento" — zoomorfizado pelo narrador como o rato mais adaptado ao ' +
+                    'ambiente. Conhece agiotas, corretores e bilheteiros de cinema, navegando com ' +
+                    'naturalidade nos circuitos informais de crédito.',
                 caracteristicas_en:
-                    'Cunning, manipulative, clever, opportunistic, sociable, persuasive',
+                    'Cunning, manipulative, clever, opportunistic, sociable, persuasive. He has a ' +
+                    '"serene, watchful snout" — zoomorphized by the narrator as the rat most adapted ' +
+                    'to the environment. He knows moneylenders, brokers, and cinema ticket sellers, ' +
+                    'navigating informal credit circuits with ease.',
                 representacao_pt:
-                    'Representa o indivíduo que se adapta ao sistema por meio da malandragem e da esperteza, simbolizando estratégias de sobrevivência em uma sociedade desigual',
+                    'Duque é o "outro rato" de que fala o posfácio — o indivíduo que não se debate ' +
+                    'contra o sistema, mas o usa. Onde Naziazeno trava, Duque desliza; onde Naziazeno ' +
+                    'pede, Duque negocia. Ele representa a malandragem como estratégia de sobrevivência: ' +
+                    'o "jeitinho" codificado em personagem. Mas sua solução para o problema de Naziazeno ' +
+                    'é apenas imediata — empenha a joia de Alcides e resolve a dívida do dia — sem ' +
+                    'alterar em nada a condição estrutural do protagonista. Assim, Duque é ao mesmo ' +
+                    'tempo o salvador e a prova de que não há salvação real: "resolve seu problema ' +
+                    'imediato, sem mudar-lhe a condição miserável" (Arrigucci Jr.). A cena em que ' +
+                    '"metido o focinho dentro do guichê, Duque confabula, confabula" é um dos momentos ' +
+                    'mais expressionistas do livro: a zoomorfização completa-se justamente no personagem ' +
+                    'que vence — sugerindo que a adaptação ao sistema tem um custo de humanidade.',
                 representacao_en:
-                    'Represents the individual who adapts to the system through cunning and street-smart behavior, symbolizing survival strategies in an unequal society',
+                    'Duque is the "other rat" mentioned in the afterword — the individual who does not ' +
+                    'struggle against the system but uses it. Where Naziazeno freezes, Duque slides; ' +
+                    'where Naziazeno begs, Duque negotiates. He represents cunning as a survival ' +
+                    'strategy: the Brazilian "jeitinho" encoded as character. But his solution to ' +
+                    "Naziazeno's problem is only immediate — he pawns Alcides's ring and settles the " +
+                    "day's debt — without altering in any way the protagonist's structural condition. " +
+                    'Thus Duque is simultaneously the savior and the proof that there is no real ' +
+                    'salvation: "he resolves the immediate problem without changing the miserable ' +
+                    'condition" (Arrigucci Jr.). The scene in which "snout inside the ticket booth, ' +
+                    'Duque schemes, schemes" is one of the most expressionist moments in the book: the ' +
+                    'zoomorphization is complete in precisely the character who succeeds — suggesting ' +
+                    'that adaptation to the system carries a cost in humanity.',
             },
+
             {
                 nome: 'Alcides',
                 caracteristicas_pt:
-                    'Mais estável, aparentemente tranquilo, prático, menos emocional, observador',
+                    'Mais estável, aparentemente tranquilo, prático, menos emocional, observador. ' +
+                    'Colega de repartição e amigo de longa data. É ele quem paga o café de Naziazeno ' +
+                    'no início do dia e depois, ao lado de Duque, articula a solução final (o penhor ' +
+                    'de seu anel).',
                 caracteristicas_en:
-                    'More stable, apparently calm, practical, less emotional, observant',
+                    'More stable, apparently calm, practical, less emotional, observant. A fellow ' +
+                    "civil servant and long-time friend. He is the one who pays for Naziazeno's coffee " +
+                    'at the start of the day and later, alongside Duque, arranges the final solution ' +
+                    '(the pawning of his ring).',
                 representacao_pt:
-                    'Representa uma alternativa ao desespero de Naziazeno, simbolizando alguém mais adaptado à realidade, embora ainda inserido no mesmo contexto social difícil',
+                    'Alcides representa uma alternativa ao desespero de Naziazeno — alguém que ' +
+                    'habita o mesmo mundo precário mas mantém uma aparência de equilíbrio. Sua ' +
+                    '"cara deslavada e ausente" funciona como espelho acalmante para Naziazeno em ' +
+                    'momentos de pico da ansiedade ("Alcides ali à sua frente, ele não se sente tão ' +
+                    'só"). É também o mediador prático: distribui tarefas, conhece o Andrade, articula ' +
+                    'a ida ao Martinez. Sua disposição em empenhar o próprio anel para resolver o ' +
+                    'problema de Naziazeno é o único gesto de solidariedade real no livro — e mesmo ' +
+                    'esse gesto é mediado por Duque, nunca direto.',
                 representacao_en:
-                    'Represents an alternative to Naziazeno’s despair, symbolizing someone more adapted to reality, although still within the same difficult social context',
+                    "Alcides represents an alternative to Naziazeno's despair — someone who inhabits " +
+                    'the same precarious world but maintains an appearance of balance. His "pale, ' +
+                    'absent face" functions as a calming mirror for Naziazeno in moments of peak ' +
+                    'anxiety ("With Alcides there in front of him, he doesn\'t feel so alone"). He is ' +
+                    'also a practical mediator: he distributes tasks, knows Andrade, and arranges the ' +
+                    "trip to Martinez. His willingness to pawn his own ring to solve Naziazeno's " +
+                    'problem is the only gesture of real solidarity in the book — and even that gesture ' +
+                    'is mediated through Duque, never direct.',
             },
+
             {
-                nome: 'Dona Rosa (leiteira)',
-                caracteristicas_pt: 'Rígida, cobradora, direta, impaciente, prática',
-                caracteristicas_en: 'Strict, demanding, direct, impatient, practical',
+                nome: 'Costa Miranda',
+                caracteristicas_pt:
+                    'Cidadão baixote, conhecido de Naziazeno, de fisionomia fechada e carteira de ' +
+                    'notas divididas por compartimentos. Empresta-lhe cinco mil-réis sem questionamentos, ' +
+                    'mas antes pede que Naziazeno diga ao Alcides para pagar uma letra de agiota da ' +
+                    'qual ele é avalista.',
+                caracteristicas_en:
+                    'A short acquaintance of Naziazeno, with a closed expression and a wallet with ' +
+                    'notes sorted by denomination. He lends him five thousand réis without questions, ' +
+                    "but first asks Naziazeno to tell Alcides to pay a moneylender's note for which he " +
+                    'is guarantor.',
                 representacao_pt:
-                    'Representa a pressão econômica imediata e impessoal, simbolizando como as relações sociais são mediadas pelo dinheiro e pela necessidade de sobrevivência',
+                    'Costa Miranda representa a complexa rede de favores, dívidas e avalismos que ' +
+                    'sustenta a sociabilidade da classe média baixa urbana dos anos 1930 — um sistema ' +
+                    'em que todos devem a todos, mas ninguém tem de sobra. Sua aparição é breve, mas ' +
+                    'reveladora: ele empresta os cinco mil-réis com a naturalidade de quem sabe que ' +
+                    'a reciprocidade é a única moeda social disponível. Ironicamente, o dinheiro que ' +
+                    'Costa Miranda cede é imediatamente perdido por Naziazeno na roleta — ' +
+                    'evidenciando como o impulso autodestrutivo do protagonista sabota qualquer ' +
+                    'auxílio externo.',
                 representacao_en:
-                    'Represents immediate and impersonal economic pressure, symbolizing how social relations are mediated by money and survival needs',
+                    'Costa Miranda represents the complex network of favors, debts, and guarantees ' +
+                    'that sustains the sociability of the urban lower middle class in the 1930s — a ' +
+                    'system where everyone owes everyone, but no one has anything to spare. His ' +
+                    'appearance is brief but revealing: he lends the five thousand réis with the ' +
+                    'naturalness of someone who knows that reciprocity is the only social currency ' +
+                    'available. Ironically, the money Costa Miranda gives is immediately lost by ' +
+                    "Naziazeno at the roulette table — showing how the protagonist's self-destructive " +
+                    'impulse sabotages any external help.',
+            },
+
+            {
+                nome: 'Dr. Romeiro',
+                caracteristicas_pt:
+                    'Diretor da repartição onde Naziazeno trabalha. Ausente no dia crítico da narrativa. ' +
+                    'Descrito como um homem jovem, sempre azafamado, que em ocasiões anteriores ' +
+                    'já socorreu Naziazeno com pequenos empréstimos.',
+                caracteristicas_en:
+                    'Director of the government office where Naziazeno works. Absent on the critical ' +
+                    'day of the narrative. Described as a young, always busy man who on previous ' +
+                    'occasions has helped Naziazeno with small loans.',
+                representacao_pt:
+                    'O Dr. Romeiro representa a autoridade benevolente em que Naziazeno deposita sua ' +
+                    'esperança mais concreta — e cuja ausência nesse dia específico encarna a ' +
+                    'arbitrariedade do sistema. Durante horas, o romance é estruturado pela expectativa ' +
+                    'de encontrá-lo: Naziazeno ensaia mentalmente o diálogo, visualiza o gesto do ' +
+                    'diretor tirando o dinheiro do bolso, conta e reconta os argumentos. A não-aparição ' +
+                    'do Dr. Romeiro é um dos momentos mais kafkianos do livro: a instância de poder que ' +
+                    'poderia resolver tudo simplesmente não está. O escândalo mencionado em torno de ' +
+                    'sua relação com um "Dr. Rist" acrescenta uma dimensão de corrupção institucional ' +
+                    'ao pano de fundo da narrativa.',
+                representacao_en:
+                    'Dr. Romeiro represents the benevolent authority in whom Naziazeno places his most ' +
+                    'concrete hope — and whose absence on that specific day embodies the arbitrariness ' +
+                    'of the system. For hours the novel is structured around the expectation of meeting ' +
+                    'him: Naziazeno mentally rehearses the dialogue, visualizes the director pulling ' +
+                    "money from his pocket, counts and recounts his arguments. Dr. Romeiro's non-appearance " +
+                    'is one of the most Kafkaesque moments in the book: the authority figure who could ' +
+                    'solve everything simply is not there. The scandal mentioned around his relationship ' +
+                    'with a "Dr. Rist" adds a dimension of institutional corruption to the narrative background.',
+            },
+
+            // ── PERSONAGENS NOVOS ─────────────────────────────────────
+
+            {
+                nome: 'Andrade',
+                caracteristicas_pt:
+                    'Corretor de valores da Rua Quinze. Figura robusta, azafamada, decidida, "repleta ' +
+                    'de expediente". Lembra a Naziazeno a fisionomia do patrão Gonzaga, antigo dono ' +
+                    'de engraxataria. Tem negócios com Alcides.',
+                caracteristicas_en:
+                    'A stockbroker on Rua Quinze. A robust, busy, decisive figure, "full of resourcefulness." ' +
+                    'He reminds Naziazeno of the boss Gonzaga, former shoeshine parlor owner. He has ' +
+                    'business dealings with Alcides.',
+                representacao_pt:
+                    'Andrade representa o burguês empreendedor que transita com desenvoltura nos ' +
+                    'circuitos do dinheiro — tudo o que Naziazeno não consegue ser. A cena em que ' +
+                    'o protagonista o visita em casa é um dos momentos mais humilhantes do romance: ' +
+                    'Andrade recebe-o com uma garotinha ao colo, fala de cima de uma poltrona, muda ' +
+                    'de expressão ao perceber o verdadeiro propósito da visita, e por fim o dispensa ' +
+                    'com a sugestão de ir ao New York Bank. Sua indiferença educada é mais devastadora ' +
+                    'do que uma recusa grosseira. Encarna a frieza das relações econômicas mediadas ' +
+                    'pelo cálculo de interesse — tema central do Modernismo social de 1930.',
+                representacao_en:
+                    'Andrade represents the entrepreneurial bourgeois who moves effortlessly through ' +
+                    'money circuits — everything Naziazeno cannot be. The scene in which the protagonist ' +
+                    "visits him at home is one of the novel's most humiliating moments: Andrade receives " +
+                    'him with a little girl on his lap, speaks from an armchair, changes expression when ' +
+                    'he perceives the true purpose of the visit, and finally dismisses him with a ' +
+                    'suggestion to go to the New York Bank. His polite indifference is more devastating ' +
+                    'than a rude refusal. He embodies the coldness of economic relations mediated by ' +
+                    'self-interest — a central theme of the Social Modernism of the 1930s.',
+            },
+
+            {
+                nome: 'Fraga',
+                caracteristicas_pt:
+                    'Vizinho de Naziazeno, do outro lado da rua. Homem bronco, sorridente e de ventre ' +
+                    'grosso. Dá a impressão de ter a vida "bem arrumada": paga o padeiro e o leiteiro ' +
+                    'em dia. Nunca falta ao trabalho e tem "todas as exterioridades dum sujeito ordenado".',
+                caracteristicas_en:
+                    "Naziazeno's neighbor, across the street. A coarse, smiling man with a large belly. " +
+                    'He gives the impression of having a "well-organized" life: he pays the baker and ' +
+                    'the milkman on time. He never misses work and has "all the outward signs of an ' +
+                    'orderly person."',
+                representacao_pt:
+                    'Fraga é o espelho invertido de Naziazeno: ocupa o mesmo estrato social, mas ' +
+                    'parece organizado e seguro. Sua presença no início do romance — parado na porta ' +
+                    'de casa enquanto Naziazeno aguarda o bonde constrangido — encarna o olhar social ' +
+                    'vigilante que oprime o protagonista. A ironia revelada pelo narrador é que Fraga ' +
+                    'também "não paga ninguém" — sua aparência de ordem é ilusória, mas socialmente ' +
+                    'eficaz. Ele representa a máscara que a respeitabilidade de classe exige e que ' +
+                    'Naziazeno não consegue sustentar.',
+                representacao_en:
+                    "Fraga is Naziazeno's inverted mirror: he occupies the same social stratum but " +
+                    'appears organized and secure. His presence at the opening of the novel — standing ' +
+                    'at his front door while Naziazeno waits for the tram in embarrassment — embodies ' +
+                    'the vigilant social gaze that oppresses the protagonist. The irony revealed by the ' +
+                    'narrator is that Fraga also "pays no one" — his appearance of order is illusory, ' +
+                    'but socially effective. He represents the mask that class respectability demands ' +
+                    'and that Naziazeno cannot sustain.',
+            },
+
+            {
+                nome: 'Martinez',
+                caracteristicas_pt:
+                    'Dono da loja de penhores onde a joia de Alcides estava depositada. Homem de boa ' +
+                    'vontade que, já à noite e fora do horário comercial, abre o estabelecimento para ' +
+                    'devolver a peça empenhada.',
+                caracteristicas_en:
+                    "Owner of the pawnshop where Alcides's ring was held. A good-natured man who, " +
+                    'already at night and outside business hours, opens his establishment to return ' +
+                    'the pawned item.',
+                representacao_pt:
+                    'Martinez é uma das raras figuras de generosidade prática no romance. Sua ' +
+                    'disposição em abrir a loja fora do horário para devolver a joia simboliza o ' +
+                    'gesto humano que, no limite da degradação social, ainda é possível. Sua brevidade ' +
+                    'narrativa contrasta com a importância estrutural: sem ele, a solução final ' +
+                    'de Duque seria inviável.',
+                representacao_en:
+                    'Martinez is one of the rare figures of practical generosity in the novel. His ' +
+                    'willingness to open his shop after hours to return the ring symbolizes the human ' +
+                    'gesture that, at the edge of social degradation, is still possible. His brief ' +
+                    "narrative presence contrasts with his structural importance: without him, Duque's " +
+                    'final solution would be unworkable.',
+            },
+
+            {
+                nome: 'Dupasquier',
+                caracteristicas_pt:
+                    'Dono de uma joalheria. Examina o anel de Alcides e oferece 350 mil-réis. ' +
+                    'Ao descobrir que a proposta é de penhor e não de venda, desiste do negócio ' +
+                    'abruptamente.',
+                caracteristicas_en:
+                    "Owner of a jewelry store. He examines Alcides's ring and offers 350 mil-réis. " +
+                    'Upon discovering the proposal is for a pawn and not a sale, he abruptly withdraws ' +
+                    'from the deal.',
+                representacao_pt:
+                    'Dupasquier representa o mercado formal que fecha as portas para quem não tem ' +
+                    'para oferecer senão uma garantia precária. Sua recusa — educada, mas definitiva — ' +
+                    'é mais uma porta que se fecha na odisseia de Naziazeno, confirmando que o ' +
+                    'sistema de crédito formal é inacessível para o homem comum em situação de ' +
+                    'necessidade urgente. Sua presença reforça a dependência dos pobres em relação ' +
+                    'aos circuitos informais (agiotas, penhoristas, favores entre amigos) que Duque ' +
+                    'domina e Naziazeno não.',
+                representacao_en:
+                    'Dupasquier represents the formal market that closes its doors to those who have ' +
+                    'nothing to offer but precarious collateral. His refusal — polite but definitive — ' +
+                    "is yet another door closing in Naziazeno's odyssey, confirming that the formal " +
+                    'credit system is inaccessible to the ordinary man in urgent need. His presence ' +
+                    "reinforces the poor's dependence on informal circuits (moneylenders, pawnbrokers, " +
+                    'favors between friends) that Duque masters and Naziazeno does not.',
+            },
+
+            {
+                nome: 'Mr. Rees',
+                caracteristicas_pt:
+                    'Gerente do New York Bank. Estava em viagem ao Rio de Janeiro no dia da narrativa ' +
+                    'e, portanto, inacessível. É mencionado como possível intermediário para a ' +
+                    'comissão que Andrade supostamente deve ao Alcides.',
+                caracteristicas_en:
+                    'Manager of the New York Bank. He was traveling to Rio de Janeiro on the day of the ' +
+                    'narrative and therefore inaccessible. He is mentioned as a possible intermediary ' +
+                    'for the commission Andrade supposedly owes Alcides.',
+                representacao_pt:
+                    'Mr. Rees é a personificação do capital estrangeiro que permeia a Porto Alegre dos ' +
+                    'anos 1930 — o New York Bank é um dos poucos marcos topográficos reais do romance, ' +
+                    'e sua menção âncora o texto na realidade histórica da dependência econômica ' +
+                    'brasileira em relação ao capital norte-americano durante a Grande Depressão. ' +
+                    'Sua ausência (está viajando) é mais uma manifestação da inacessibilidade ' +
+                    'estrutural do poder para o homem comum.',
+                representacao_en:
+                    'Mr. Rees embodies the foreign capital that permeates 1930s Porto Alegre — the ' +
+                    'New York Bank is one of the few real topographical landmarks of the novel, and ' +
+                    'its mention anchors the text in the historical reality of Brazilian economic ' +
+                    'dependence on North American capital during the Great Depression. His absence ' +
+                    '(he is traveling) is one more manifestation of the structural inaccessibility ' +
+                    'of power for the ordinary man.',
+            },
+
+            {
+                nome: 'Cipriano',
+                caracteristicas_pt:
+                    'Chofer pessoal do Dr. Romeiro. Aparece brevemente "numa lufada" com o automóvel ' +
+                    'do diretor. Sua presença sinaliza que o diretor está em movimento — mas seu ' +
+                    'paradeiro é incerto para os funcionários da repartição.',
+                caracteristicas_en:
+                    "Dr. Romeiro's personal driver. He appears briefly in a rush with the director's " +
+                    'car. His presence signals that the director is on the move — but his whereabouts ' +
+                    'are uncertain to the office staff.',
+                representacao_pt:
+                    'Cipriano é uma personagem menor mas funcionalmente importante: sua aparição ' +
+                    'repentina cria uma faísca de esperança em Naziazeno (o diretor pode estar ' +
+                    'chegando!) imediatamente frustrada pela incerteza. No universo do romance, ' +
+                    'até os sinais positivos se revelam ilusórios. Ele representa também a distância ' +
+                    'hierárquica concreta: o diretor tem chofer próprio e automóvel enquanto seus ' +
+                    'funcionários esperam o bonde no calor.',
+                representacao_en:
+                    'Cipriano is a minor but functionally important character: his sudden appearance ' +
+                    'creates a spark of hope in Naziazeno (the director might be arriving!) immediately ' +
+                    "frustrated by uncertainty. In the novel's universe, even positive signs prove " +
+                    'illusory. He also represents concrete hierarchical distance: the director has a ' +
+                    'personal driver and car while his employees wait for the tram in the heat.',
             },
         ],
     });
@@ -257,6 +1062,33 @@ async function main() {
     // VideoAula
     await prisma.videoAula.createMany({
         data: [
+            {
+                conteudo: 'Relações do livro com outros livros europeus - por Arthur Morais',
+                content: 'Relations between the book and other European books - by Arthur Morais.',
+                urlMidia: 'https://www.youtube.com/watch?v=AzrqYR-Re9M',
+                descricao:
+                    'Nesse vídeo, Arthur Morais irá explicar como o livro "Os Ratos" pode estar diretamente relacionado com outros livros europeus, como "Crime e Castigo" e "Memórias do Subsolo", ambos de Fiódor Dostoiévski.',
+                description:
+                    'In this video, Arthur Morais will explain how the book "Os Ratos" can be directly related to other European books, such as "Crime and Punishment" and "Notes from Underground", both by Fyodor Dostoevsky.',
+            },
+            {
+                conteudo: 'Vídeo sobre o livro "Os Ratos" feito pelo aluno Davi Camoleis.',
+                content: 'Video about the book “Os Ratos” created by student Davi Camoleis.',
+                urlMidia: 'https://youtube.com/shorts/5GOQK1J8F08?si=dlHMmEOv5pRK0zkz',
+                descricao:
+                    'Um resumo do livro "Os Ratos" contado de uma forma diferente e contagiante, feita pelo aluno de Valinhos, Davi Camoleis que, atualmente está no 3º Ano do Ensino Médio.',
+                description:
+                    'A complete and detailed explanation of the French Revolution, covering everything from the crisis of the Old Regime, the division of the estamental society into three estates, the fall of the Bastille, to the period of Jacobean terror and the subsequent rise of Napoleon Bonaparte to power.',
+            },
+            {
+                conteudo: 'Entendendo os personagens de "Os Ratos" | por Pedro Arthur',
+                content: 'Understanding the Characters of "Os Ratos" | by Pedro Arthur',
+                urlMidia: 'https://youtube.com/shorts/hF-6w3_4rjw?si=djEAARuyyPsbiC_i',
+                descricao:
+                    'Nesse vídeo, Pedro Arthur vai resumir e caracterizar os personagens principais do livro "Os Ratos" de Dyonélio Machado. Além disso, vai explicar a representação desses personagens no contexto real e da época.',
+                description:
+                    'In this video, Pedro Arthur will summarize and characterize the main characters from the book "Os Ratos" by Dyonélio Machado. In addition, he will explain the representation of these characters in both the real-world and historical context of that era.',
+            },
             {
                 conteudo: 'Aula sobre Revolução Francesa',
                 content: 'Class about French Revolution',
@@ -910,114 +1742,6 @@ async function main() {
                     'Publicado em 1935, o livro completa 90 anos em 2025 e permanece atual, pois o ciclo de endividamento e precariedade vivido por Naziazeno ainda ecoa na realidade brasileira.',
                 curiosity:
                     'Published in 1935, the book turns 90 in 2025 and remains relevant, as the cycle of debt and precariousness experienced by Naziazeno still echoes in Brazilian reality.',
-            },
-        ],
-    });
-
-    // Dicas
-    await prisma.dicas.createMany({
-        data: [
-            {
-                conteudo: 'Dica de estudo',
-                content: 'Study tip',
-                dicas: 'Utilize o método Pomodoro de forma estratégica: estude com foco total e sem interrupções por 25 minutos e, em seguida, faça uma pausa de 5 minutos para descansar a mente e oxigenar o cérebro, repetindo o ciclo até completar quatro blocos, quando você deverá fazer uma pausa mais longa de 15 a 30 minutos.',
-                tips: 'Utilize the Pomodoro technique strategically: study with absolute focus and zero distractions for 25 minutes, then take a 5-minute break to rest your mind and refresh your brain, repeating this cycle until you complete four blocks, after which you should take a longer restorative break of 15 to 30 minutes.',
-            },
-            {
-                conteudo: 'Dica 1 para redação do vestibular',
-                content: 'Tip 1 for the college entrance exam essay',
-                dicas: 'Leia o edital com extrema atenção para conhecer todos os critérios de correção e dedique os primeiros minutos da prova a interpretar o tema proposto de forma minuciosa, evitando tangenciamentos e garantindo que você compreendeu o recorte temático exato exigido pela banca examinadora.',
-                tips: 'Read the exam guidelines with extreme attention to know all the grading criteria and dedicate the first few minutes of the test to carefully interpreting the proposed theme, preventing any off-topic drift and ensuring you fully understand the exact thematic scope required by the examination board.',
-            },
-            {
-                conteudo: 'Dica de produtividade',
-                content: 'Productivity tip',
-                dicas: 'Evite terminantemente a multitarefa; concentrar-se em uma única atividade por vez evita a sobrecarga cognitiva, aumenta significativamente a qualidade do aprendizado, reduz a taxa de erros e permite que você conclua suas tarefas em um tempo total muito menor.',
-                tips: 'Strictly avoid multitasking; focusing on a single task at a time prevents cognitive overload, significantly increases the quality of your learning, reduces error rates, and ultimately allows you to complete your tasks in a much shorter total amount of time.',
-            },
-            {
-                conteudo: 'Dica 2 para redação do vestibular',
-                content: 'Tip 2 for the college entrance exam essay',
-                dicas: 'Faça um planejamento de texto estruturado antes de começar a escrever a introdução; monte um esqueleto ou projeto de texto delimitando claramente qual será a sua tese central, quais argumentos serão usados em cada parágrafo de desenvolvimento e qual proposta de intervenção solucionará o problema.',
-                tips: 'Create a structured text plan before you even begin writing the introduction; outline your essay project by clearly defining your central thesis, which arguments will be used in each development paragraph, and what intervention proposal will solve the problem.',
-            },
-            {
-                conteudo: 'Dica de saúde mental',
-                content: 'Mental health tip',
-                dicas: 'Mantenha a sua rotina de sono em dia e regular, dormindo de 7 a 8 horas por noite, pois é durante as fases mais profundas do sono que o cérebro processa as informações recebidas ao longo do dia, fixando e consolidando o conteúdo na memória de longo prazo.',
-                tips: 'Keep your sleep routine consistent and regular, aiming for 7 to 8 hours of quality rest per night, as it is during the deepest stages of sleep that the brain processes all the information received throughout the day, fixing and consolidating the content into long-term memory.',
-            },
-            {
-                conteudo: 'Dica 3 para redação do vestibular',
-                content: 'Tip 3 for the college entrance exam essay',
-                dicas: 'Use uma linguagem formal, clara e totalmente objetiva, adequando-se perfeitamente à norma-padrão da Língua Portuguesa; evite gírias, expressões coloquiais, marcas de oralidade, clichês ou o uso excessivo de termos rebuscados que possam prejudicar a fluidez da leitura e a compreensão das suas ideias.',
-                tips: "Use formal, clear, and fully objective language, strictly adhering to the standard rules of written Portuguese; avoid slang, colloquial expressions, speech traits, clichés, or the excessive use of overly complex words that could hinder the text's flow and the understanding of your ideas.",
-            },
-            {
-                conteudo: 'Dica de organização',
-                content: 'Organization tip',
-                dicas: 'Crie um cronograma semanal que seja verdadeiramente realista e adaptado à sua rotina, distribuindo as matérias por blocos de tempo específicos, alternando entre disciplinas exatas e humanas, e incluindo obrigatoriamente momentos dedicados ao descanso e ao lazer para evitar o esgotamento mental.',
-                tips: 'Create a weekly schedule that is truly realistic and adapted to your daily routine, distributing subjects into specific time blocks, alternating between exact and human sciences, and mandatorily including dedicated moments for rest and leisure to prevent mental burnout.',
-            },
-            {
-                conteudo: 'Dica 4 para redação do vestibular',
-                content: 'Tip 4 for the college entrance exam essay',
-                dicas: 'Apresente argumentos consistentes, progressivos e profundamente bem fundamentados na sua dissertação, utilizando dados estatísticos de fontes confiáveis, fatos históricos comprovados, conceitos filosóficos ou exemplos concretos da realidade para sustentar e legitimar o seu ponto de vista.',
-                tips: 'Present consistent, progressive, and deeply well-founded arguments in your essay, utilizing statistical data from reliable sources, proven historical facts, philosophical concepts, or concrete real-world examples to sustain and legitimize your point of view.',
-            },
-            {
-                conteudo: 'Dica de prova',
-                content: 'Exam tip',
-                dicas: 'Ao iniciar a avaliação, comece resolvendo as questões mais fáceis e aquelas cujo conteúdo você domina completamente; isso garante pontos valiosos logo no início, otimiza o tempo disponível e aumenta significativamente a sua autoconfiança para enfrentar os desafios mais complexos no final.',
-                tips: 'When starting an exam, begin by answering the easiest questions and those whose content you completely master; this guarantees valuable points early on, optimizes your available time, and significantly boosts your self-confidence to tackle the more complex challenges later.',
-            },
-            {
-                conteudo: 'Dica 5 para redação do vestibular',
-                content: 'Tip 5 for the college entrance exam essay',
-                dicas: 'Reserve os minutos finais exclusivamente para revisar o texto com distanciamento crítico, corrigindo pequenos desvios gramaticais, erros ortográficos, problemas de concordância ou falhas de coesão, garantindo uma transição perfeita entre os parágrafos antes de passar a limpo na folha oficial.',
-                tips: 'Reserve the final minutes exclusively to review your text with critical detachment, correcting minor grammatical slips, spelling mistakes, agreement errors, or cohesion flaws, ensuring a seamless transition between paragraphs before transferring it to the official answer sheet.',
-            },
-            {
-                conteudo: 'Dica de revisão',
-                content: 'Review tip',
-                dicas: 'Use mapas mentais, diagramas e resumos visuais para revisar temas complexos, conectando palavras-chave, conceitos principais e ramificações de forma dinâmica, o que estimula o hemisfério direito do cérebro e facilita a recuperação rápida das informações no dia da prova.',
-                tips: "Use mind maps, diagrams, and visual summaries to review complex topics, connecting keywords, main concepts, and secondary branches in a dynamic way, which stimulates the brain's right hemisphere and facilitates quick information retrieval on exam day.",
-            },
-            {
-                conteudo: 'Dica de ambiente',
-                content: 'Environment tip',
-                dicas: 'Separe um local fixo para os estudos que seja limpo, bem iluminado, silencioso e completamente livre de distrações visuais ou sonoras, garantindo que sua postura física esteja confortável para que toda a sua energia e atenção fiquem totalmente voltadas aos materiais didáticos.',
-                tips: 'Set aside a designated study space that is clean, well-lit, quiet, and completely free from visual or noise distractions, ensuring that your physical posture is comfortable so that all your energy and attention can remain entirely focused on your educational materials.',
-            },
-            {
-                conteudo: 'Dica de memorização',
-                content: 'Memorization tip',
-                dicas: 'Pratique a técnica da autoexplicação baseada na Técnica Feynman: explique a matéria para si mesmo em voz alta, utilizando suas próprias palavras e criando analogias simples, como se estivesse dando uma aula para alguém que nunca ouviu falar sobre o assunto, identificando onde estão suas dúvidas.',
-                tips: 'Practice the self-explanation technique based on the Feynman Method: explain the subject to yourself out loud, using your own words and creating simple analogies, as if you were teaching a lesson to someone who has never heard of the topic, thereby identifying gaps in your knowledge.',
-            },
-            {
-                conteudo: 'Dica de simulados',
-                content: 'Practice test tip',
-                dicas: 'Faça simulados completos reproduzindo fielmente as condições reais do exame, o que inclui cronometrar o tempo oficial, sentar-se em uma cadeira adequada, evitar consultas a materiais externos e gerenciar as pausas para ir ao banheiro, treinando assim o seu corpo e mente para o ritmo da prova.',
-                tips: 'Take complete practice tests while faithfully reproducing the real exam conditions, which includes timing yourself against the official clock, sitting in a proper chair, avoiding external material consultations, and managing bathroom breaks, thus training both body and mind for the actual test pacing.',
-            },
-            {
-                conteudo: 'Dica de redação (Repertório)',
-                content: 'Essay tip (Knowledge base)',
-                dicas: 'Esteja sempre atualizado sobre os principais fatos, debates e acontecimentos políticos, econômicos e sociais do mundo, lendo jornais, assistindo a documentários e consumindo portais de notícias confiáveis para construir um repertório sociocultural sólido e argumentativo.',
-                tips: 'Stay consistently up to date on major world events, debates, and political, economic, and social developments by reading newspapers, watching documentaries, and consuming reliable news portals to build a solid, argumentative, and sociocultural knowledge base.',
-            },
-            {
-                conteudo: 'Dica de foco',
-                content: 'Focus tip',
-                dicas: 'Antes de iniciar a sua sessão de estudos, deixe o celular em outro cômodo da casa ou utilize aplicativos rigorosos que bloqueiam o acesso às redes sociais, criando um bloqueio completo de notificações visuais e sonoras que interrompem o seu estado de fluxo e concentração profunda.',
-                tips: 'Before starting your study session, leave your phone in another room or use strict applications that block access to social media, creating a complete barrier against visual and auditory notifications that disrupt your state of flow and deep concentration.',
-            },
-            {
-                conteudo: 'Dica de bem-estar',
-                content: 'Well-being tip',
-                dicas: 'Não negligencie o seu corpo durante a rotina de estudos: mantenha uma garrafa de água sempre por perto para se manter hidratado e aproveite os pequenos intervalos para fazer alongamentos leves nos braços, pescoço e pernas, melhorando a circulação sanguínea e aliviando a tensão muscular acumulada.',
-                tips: 'Do not neglect your body during your study routine: keep a water bottle close by to stay properly hydrated and use short breaks to perform light stretches for your arms, neck, and legs, which improves blood circulation and relieves accumulated muscle tension.',
             },
         ],
     });
@@ -1754,7 +2478,7 @@ async function main() {
                 opcaoD: '1 : 2 : 1.',
                 optionD: '1 : 2 : 1.',
                 opcaoE: 'All dominant individuals.',
-                opcaoE: 'Todos os indivíduos dominantes.',
+                optionE: 'Todos os indivíduos dominantes.',
                 respostaCorreta: '3 : 1.',
                 correctAnswer: '3 : 1.',
                 explicacao:
@@ -3092,6 +3816,114 @@ async function main() {
                 explanation:
                     'In Minas Gerais, the scarcity of marble led to the creative use of local soapstone and wood, visible in his masterpieces in Congonhas.',
                 materia: 'Artes',
+            },
+        ],
+    });
+
+    // Dicas
+    await prisma.dicas.createMany({
+        data: [
+            {
+                conteudo: 'Dica de estudo',
+                content: 'Study tip',
+                dicas: 'Utilize o método Pomodoro de forma estratégica: estude com foco total e sem interrupções por 25 minutos e, em seguida, faça uma pausa de 5 minutos para descansar a mente e oxigenar o cérebro, repetindo o ciclo até completar quatro blocos, quando você deverá fazer uma pausa mais longa de 15 a 30 minutos.',
+                tips: 'Utilize the Pomodoro technique strategically: study with absolute focus and zero distractions for 25 minutes, then take a 5-minute break to rest your mind and refresh your brain, repeating this cycle until you complete four blocks, after which you should take a longer restorative break of 15 to 30 minutes.',
+            },
+            {
+                conteudo: 'Dica 1 para redação do vestibular',
+                content: 'Tip 1 for the college entrance exam essay',
+                dicas: 'Leia o edital com extrema atenção para conhecer todos os critérios de correção e dedique os primeiros minutos da prova a interpretar o tema proposto de forma minuciosa, evitando tangenciamentos e garantindo que você compreendeu o recorte temático exato exigido pela banca examinadora.',
+                tips: 'Read the exam guidelines with extreme attention to know all the grading criteria and dedicate the first few minutes of the test to carefully interpreting the proposed theme, preventing any off-topic drift and ensuring you fully understand the exact thematic scope required by the examination board.',
+            },
+            {
+                conteudo: 'Dica de produtividade',
+                content: 'Productivity tip',
+                dicas: 'Evite terminantemente a multitarefa; concentrar-se em uma única atividade por vez evita a sobrecarga cognitiva, aumenta significativamente a qualidade do aprendizado, reduz a taxa de erros e permite que você conclua suas tarefas em um tempo total muito menor.',
+                tips: 'Strictly avoid multitasking; focusing on a single task at a time prevents cognitive overload, significantly increases the quality of your learning, reduces error rates, and ultimately allows you to complete your tasks in a much shorter total amount of time.',
+            },
+            {
+                conteudo: 'Dica 2 para redação do vestibular',
+                content: 'Tip 2 for the college entrance exam essay',
+                dicas: 'Faça um planejamento de texto estruturado antes de começar a escrever a introdução; monte um esqueleto ou projeto de texto delimitando claramente qual será a sua tese central, quais argumentos serão usados em cada parágrafo de desenvolvimento e qual proposta de intervenção solucionará o problema.',
+                tips: 'Create a structured text plan before you even begin writing the introduction; outline your essay project by clearly defining your central thesis, which arguments will be used in each development paragraph, and what intervention proposal will solve the problem.',
+            },
+            {
+                conteudo: 'Dica de saúde mental',
+                content: 'Mental health tip',
+                dicas: 'Mantenha a sua rotina de sono em dia e regular, dormindo de 7 a 8 horas por noite, pois é durante as fases mais profundas do sono que o cérebro processa as informações recebidas ao longo do dia, fixando e consolidando o conteúdo na memória de longo prazo.',
+                tips: 'Keep your sleep routine consistent and regular, aiming for 7 to 8 hours of quality rest per night, as it is during the deepest stages of sleep that the brain processes all the information received throughout the day, fixing and consolidating the content into long-term memory.',
+            },
+            {
+                conteudo: 'Dica 3 para redação do vestibular',
+                content: 'Tip 3 for the college entrance exam essay',
+                dicas: 'Use uma linguagem formal, clara e totalmente objetiva, adequando-se perfeitamente à norma-padrão da Língua Portuguesa; evite gírias, expressões coloquiais, marcas de oralidade, clichês ou o uso excessivo de termos rebuscados que possam prejudicar a fluidez da leitura e a compreensão das suas ideias.',
+                tips: "Use formal, clear, and fully objective language, strictly adhering to the standard rules of written Portuguese; avoid slang, colloquial expressions, speech traits, clichés, or the excessive use of overly complex words that could hinder the text's flow and the understanding of your ideas.",
+            },
+            {
+                conteudo: 'Dica de organização',
+                content: 'Organization tip',
+                dicas: 'Crie um cronograma semanal que seja verdadeiramente realista e adaptado à sua rotina, distribuindo as matérias por blocos de tempo específicos, alternando entre disciplinas exatas e humanas, e incluindo obrigatoriamente momentos dedicados ao descanso e ao lazer para evitar o esgotamento mental.',
+                tips: 'Create a weekly schedule that is truly realistic and adapted to your daily routine, distributing subjects into specific time blocks, alternating between exact and human sciences, and mandatorily including dedicated moments for rest and leisure to prevent mental burnout.',
+            },
+            {
+                conteudo: 'Dica 4 para redação do vestibular',
+                content: 'Tip 4 for the college entrance exam essay',
+                dicas: 'Apresente argumentos consistentes, progressivos e profundamente bem fundamentados na sua dissertação, utilizando dados estatísticos de fontes confiáveis, fatos históricos comprovados, conceitos filosóficos ou exemplos concretos da realidade para sustentar e legitimar o seu ponto de vista.',
+                tips: 'Present consistent, progressive, and deeply well-founded arguments in your essay, utilizing statistical data from reliable sources, proven historical facts, philosophical concepts, or concrete real-world examples to sustain and legitimize your point of view.',
+            },
+            {
+                conteudo: 'Dica de prova',
+                content: 'Exam tip',
+                dicas: 'Ao iniciar a avaliação, comece resolvendo as questões mais fáceis e aquelas cujo conteúdo você domina completamente; isso garante pontos valiosos logo no início, otimiza o tempo disponível e aumenta significativamente a sua autoconfiança para enfrentar os desafios mais complexos no final.',
+                tips: 'When starting an exam, begin by answering the easiest questions and those whose content you completely master; this guarantees valuable points early on, optimizes your available time, and significantly boosts your self-confidence to tackle the more complex challenges later.',
+            },
+            {
+                conteudo: 'Dica 5 para redação do vestibular',
+                content: 'Tip 5 for the college entrance exam essay',
+                dicas: 'Reserve os minutos finais exclusivamente para revisar o texto com distanciamento crítico, corrigindo pequenos desvios gramaticais, erros ortográficos, problemas de concordância ou falhas de coesão, garantindo uma transição perfeita entre os parágrafos antes de passar a limpo na folha oficial.',
+                tips: 'Reserve the final minutes exclusively to review your text with critical detachment, correcting minor grammatical slips, spelling mistakes, agreement errors, or cohesion flaws, ensuring a seamless transition between paragraphs before transferring it to the official answer sheet.',
+            },
+            {
+                conteudo: 'Dica de revisão',
+                content: 'Review tip',
+                dicas: 'Use mapas mentais, diagramas e resumos visuais para revisar temas complexos, conectando palavras-chave, conceitos principais e ramificações de forma dinâmica, o que estimula o hemisfério direito do cérebro e facilita a recuperação rápida das informações no dia da prova.',
+                tips: "Use mind maps, diagrams, and visual summaries to review complex topics, connecting keywords, main concepts, and secondary branches in a dynamic way, which stimulates the brain's right hemisphere and facilitates quick information retrieval on exam day.",
+            },
+            {
+                conteudo: 'Dica de ambiente',
+                content: 'Environment tip',
+                dicas: 'Separe um local fixo para os estudos que seja limpo, bem iluminado, silencioso e completamente livre de distrações visuais ou sonoras, garantindo que sua postura física esteja confortável para que toda a sua energia e atenção fiquem totalmente voltadas aos materiais didáticos.',
+                tips: 'Set aside a designated study space that is clean, well-lit, quiet, and completely free from visual or noise distractions, ensuring that your physical posture is comfortable so that all your energy and attention can remain entirely focused on your educational materials.',
+            },
+            {
+                conteudo: 'Dica de memorização',
+                content: 'Memorization tip',
+                dicas: 'Pratique a técnica da autoexplicação baseada na Técnica Feynman: explique a matéria para si mesmo em voz alta, utilizando suas próprias palavras e criando analogias simples, como se estivesse dando uma aula para alguém que nunca ouviu falar sobre o assunto, identificando onde estão suas dúvidas.',
+                tips: 'Practice the self-explanation technique based on the Feynman Method: explain the subject to yourself out loud, using your own words and creating simple analogies, as if you were teaching a lesson to someone who has never heard of the topic, thereby identifying gaps in your knowledge.',
+            },
+            {
+                conteudo: 'Dica de simulados',
+                content: 'Practice test tip',
+                dicas: 'Faça simulados completos reproduzindo fielmente as condições reais do exame, o que inclui cronometrar o tempo oficial, sentar-se em uma cadeira adequada, evitar consultas a materiais externos e gerenciar as pausas para ir ao banheiro, treinando assim o seu corpo e mente para o ritmo da prova.',
+                tips: 'Take complete practice tests while faithfully reproducing the real exam conditions, which includes timing yourself against the official clock, sitting in a proper chair, avoiding external material consultations, and managing bathroom breaks, thus training both body and mind for the actual test pacing.',
+            },
+            {
+                conteudo: 'Dica de redação (Repertório)',
+                content: 'Essay tip (Knowledge base)',
+                dicas: 'Esteja sempre atualizado sobre os principais fatos, debates e acontecimentos políticos, econômicos e sociais do mundo, lendo jornais, assistindo a documentários e consumindo portais de notícias confiáveis para construir um repertório sociocultural sólido e argumentativo.',
+                tips: 'Stay consistently up to date on major world events, debates, and political, economic, and social developments by reading newspapers, watching documentaries, and consuming reliable news portals to build a solid, argumentative, and sociocultural knowledge base.',
+            },
+            {
+                conteudo: 'Dica de foco',
+                content: 'Focus tip',
+                dicas: 'Antes de iniciar a sua sessão de estudos, deixe o celular em outro cômodo da casa ou utilize aplicativos rigorosos que bloqueiam o acesso às redes sociais, criando um bloqueio completo de notificações visuais e sonoras que interrompem o seu estado de fluxo e concentração profunda.',
+                tips: 'Before starting your study session, leave your phone in another room or use strict applications that block access to social media, creating a complete barrier against visual and auditory notifications that disrupt your state of flow and deep concentration.',
+            },
+            {
+                conteudo: 'Dica de bem-estar',
+                content: 'Well-being tip',
+                dicas: 'Não negligencie o seu corpo durante a rotina de estudos: mantenha uma garrafa de água sempre por perto para se manter hidratado e aproveite os pequenos intervalos para fazer alongamentos leves nos braços, pescoço e pernas, melhorando a circulação sanguínea e aliviando a tensão muscular acumulada.',
+                tips: 'Do not neglect your body during your study routine: keep a water bottle close by to stay properly hydrated and use short breaks to perform light stretches for your arms, neck, and legs, which improves blood circulation and relieves accumulated muscle tension.',
             },
         ],
     });
