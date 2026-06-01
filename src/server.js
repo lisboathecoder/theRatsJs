@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+import cors from 'cors';
 import livroRoutes from './routes/livroRoute.js';
 import participantesRoutes from './routes/participantesRoute.js';
 import curiosidadesRoutes from './routes/curiosidadesRoute.js';
@@ -10,6 +11,7 @@ import simuladoRoutes from './routes/simuladoRoute.js';
 import bibliotecaRoutes from './routes/bibliotecaRoute.js';
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
