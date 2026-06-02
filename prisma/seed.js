@@ -1072,6 +1072,24 @@ async function main() {
                     'In this video, Arthur Morais will explain how the book "Os Ratos" can be directly related to other European books, such as "Crime and Punishment" and "Notes from Underground", both by Fyodor Dostoevsky.',
             },
             {
+                conteudo: 'Relações do livro com filmes contemporâneos - por Arthur Morais',
+                content: 'Relations between the book and contemporary films - by Arthur Morais.',
+                urlMidia: 'https://www.youtube.com/watch?v=BLrrhwy2hNk',
+                descricao:
+                    'Nesse vídeo, Arthur Morais irá explicar como o livro "Os Ratos" pode estar diretamente relacionado com filmes contemporâneos, como "Ilha do Medo" e "Joker".',
+                description:
+                    'In this video, Arthur Morais will explain how the book "Os Ratos" can be directly related to contemporary films, such as "Shutter Island" and "Joker".',
+            },
+            {
+                conteudo: 'Por que "Os Ratos"? - por Arthur Morais',
+                content: 'Why "Os Ratos"? - by Arthur Morais.',
+                urlMidia: 'https://www.youtube.com/watch?v=fwzW8h_KdY0',
+                descricao:
+                    'Nesse vídeo, Arthur Morais irá explicar o motivo do título do livro "Os Ratos", relacionando a metáfora dos ratos com a situação de miséria e desespero do protagonista Naziazeno.',
+                description:
+                    'In this video, Arthur Morais will explain the reason for the title of the book "Os Ratos", relating the metaphor of rats to the situation of misery and despair of the protagonist Naziazeno.',
+            },
+            {
                 conteudo: 'Vídeo sobre o livro "Os Ratos" feito pelo aluno Davi Camoleis.',
                 content: 'Video about the book “Os Ratos” created by student Davi Camoleis.',
                 urlMidia: 'https://youtube.com/shorts/5GOQK1J8F08?si=dlHMmEOv5pRK0zkz',
@@ -3823,6 +3841,36 @@ async function main() {
     // Dicas
     await prisma.dicas.createMany({
         data: [
+            {
+                conteudo: 'Tema de redação',
+                content: 'Essay topic',
+                dicas: 'O impacto da inteligência artificial na educação brasileira pode ser um tema relevante para o ENEM 2026. Reflita sobre os benefícios das novas tecnologias para o aprendizado, mas também sobre desafios como desigualdade de acesso, dependência tecnológica e a necessidade de regulamentação.',
+                tips: 'The impact of artificial intelligence on Brazilian education may be a relevant topic for ENEM 2026. Reflect on the benefits of new technologies for learning, but also on challenges such as unequal access, technological dependence, and the need for regulation.',
+            },
+            {
+                conteudo: 'Tema de redação',
+                content: 'Essay topic',
+                dicas: 'A saúde mental dos jovens na era digital é uma discussão cada vez mais presente. Considere fatores como o uso excessivo das redes sociais, a pressão por desempenho, o cyberbullying e as possíveis soluções para promover o bem-estar psicológico.',
+                tips: 'Youth mental health in the digital age is an increasingly relevant discussion. Consider factors such as excessive social media use, performance pressure, cyberbullying, and possible solutions to promote psychological well-being.',
+            },
+            {
+                conteudo: 'Tema de redação',
+                content: 'Essay topic',
+                dicas: 'Os desafios da inclusão social diante do envelhecimento da população brasileira podem aparecer como proposta de redação. Analise questões relacionadas à qualidade de vida dos idosos, acessibilidade, mercado de trabalho e políticas públicas voltadas para essa parcela da sociedade.',
+                tips: 'The challenges of social inclusion in the face of Brazil’s aging population may appear as an essay topic. Analyze issues related to the quality of life of older adults, accessibility, the labor market, and public policies aimed at this segment of society.',
+            },
+            {
+                conteudo: 'Tema de redação',
+                content: 'Essay topic',
+                dicas: 'A preservação ambiental e os eventos climáticos extremos continuam sendo assuntos de grande relevância. Pense sobre desmatamento, enchentes, secas, responsabilidade governamental e ações individuais para minimizar os impactos das mudanças climáticas.',
+                tips: 'Environmental preservation and extreme climate events remain highly relevant issues. Consider deforestation, floods, droughts, government responsibility, and individual actions to mitigate the impacts of climate change.',
+            },
+            {
+                conteudo: 'Tema de redação',
+                content: 'Essay topic',
+                dicas: 'O combate à desinformação na sociedade contemporânea é um tema que reúne tecnologia, cidadania e educação. Reflita sobre a disseminação de notícias falsas, os impactos sociais desse fenômeno e o papel das instituições na promoção da informação confiável.',
+                tips: 'Combating misinformation in contemporary society is a topic that brings together technology, citizenship, and education. Reflect on the spread of fake news, the social impacts of this phenomenon, and the role of institutions in promoting reliable information.',
+            },
             {
                 conteudo: 'Dica de estudo',
                 content: 'Study tip',
